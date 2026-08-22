@@ -20,6 +20,10 @@ def reset_position(env, board, turn):
     env.first_agent_action = None
 
 
+def swap_players(board):
+    return [[3 - cell if cell in (1, 2) else cell for cell in row] for row in board]
+
+
 def test_red_observation_semantics():
     env = GreatKingdomEnv(agent_player=2)
     env.logic.board = [[0] * 9 for _ in range(9)]
@@ -193,6 +197,28 @@ def test_random_opponent_normal_last_move_triggers_score_end():
     assert env.logic.get_playable_spots() == []
 
 
+def test_random_blue_normal_last_move_triggers_score_end():
+    env = GreatKingdomEnv(agent_player=2)
+    red_last_move_board = [
+        [0, 1, 1, 2, 0, 0, 2, 1, 0],
+        [1, 1, 1, 2, 2, 2, 2, 1, 0],
+        [1, 2, 2, 2, 0, 0, 2, 1, 1],
+        [1, 2, 2, 2, 0, 2, 2, 2, 2],
+        [2, 2, 2, 0, 3, 1, 0, 1, 1],
+        [0, 2, 2, 2, 1, 1, 2, 2, 1],
+        [0, 2, 1, 1, 1, 0, 1, 1, 0],
+        [2, 2, 2, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 0, 0, 0, 0, 1, 0],
+    ]
+    reset_position(env, swap_players(red_last_move_board), turn=1)
+    assert env.logic.get_playable_spots() == [(6, 4)]
+
+    env._opponent_move_random()
+    assert env.logic.game_over
+    assert env.logic.winner in (0, 1, 2)
+    assert env.logic.get_playable_spots() == []
+
+
 if __name__ == "__main__":
     test_red_observation_semantics()
     test_blue_observation_semantics()
@@ -204,4 +230,5 @@ if __name__ == "__main__":
     test_existing_red_action_mask_semantics()
     test_invalid_agent_player_is_rejected()
     test_random_opponent_normal_last_move_triggers_score_end()
+    test_random_blue_normal_last_move_triggers_score_end()
     print("both-player env tests: PASS")

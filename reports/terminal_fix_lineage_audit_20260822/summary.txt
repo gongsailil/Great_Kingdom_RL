@@ -1,0 +1,62 @@
+# Terminal-fix lineage audit
+
+No training was performed. All evaluations used the corrected environment,
+fixed seeds, and action masks. Random-opponent policy inference was deterministic;
+policy-vs-policy inference was stochastic for both policies.
+
+## [Confirmed] Regression and integrity
+
+Checkpoint commit: d3469520ac7f2722dbc8537bff1f867a059dec73
+Regression: test_rules_minimal.py PASS; test_gk_env_players.py PASS; test_frozen_policy_env.py PASS.
+All model hashes unchanged: true
+All mask checks clean: true
+
+## [Confirmed] Corrected random evaluations
+
+Condition | Red wins | Blue wins | Draws | Agent win rate | Red suicide | Blue suicide | Mask violations | Mean length | Terminal reasons
+--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---
+red0_vs_random_blue | 346 | 154 | 0 | 0.692 | 10 | 31 | 0 | 45.582 | capture=459, suicide=41, score/no-playable=0, other=0
+blue0_vs_random_red | 116 | 384 | 0 | 0.768 | 22 | 6 | 0 | 42.044 | capture=472, suicide=28, score/no-playable=0, other=0
+red1_vs_random_blue | 391 | 109 | 0 | 0.782 | 14 | 18 | 0 | 40.882 | capture=468, suicide=32, score/no-playable=0, other=0
+blue1_vs_random_red | 93 | 407 | 0 | 0.814 | 31 | 3 | 0 | 40.682 | capture=465, suicide=34, score/no-playable=1, other=0
+
+## [Confirmed] Corrected 2x2 cross-play (Red win rate)
+
+ | Blue0 | Blue1
+--- | ---: | ---:
+Red0 | 0.440 | 0.316
+Red1 | 0.600 | 0.320
+
+Cell | Red suicide | Blue suicide | Mask violations | Mean length | Terminal reasons
+--- | ---: | ---: | ---: | ---: | ---
+red0_vs_blue0 | 28 | 29 | 0 | 46.594 | capture=443, suicide=57, score/no-playable=0, other=0
+red0_vs_blue1 | 44 | 18 | 0 | 45.516 | capture=438, suicide=62, score/no-playable=0, other=0
+red1_vs_blue0 | 9 | 37 | 0 | 44.656 | capture=453, suicide=46, score/no-playable=1, other=0
+red1_vs_blue1 | 17 | 18 | 0 | 42.010 | capture=465, suicide=35, score/no-playable=0, other=0
+
+## [Confirmed] Old vs corrected
+
+Condition | Old | Corrected | Difference
+--- | ---: | ---: | ---:
+red0_vs_random_blue | 0.692 | 0.692 | +0.000
+blue0_vs_random_red | 0.768 | 0.768 | +0.000
+red1_vs_random_blue | 0.782 | 0.782 | +0.000
+blue1_vs_random_red | 0.814 | 0.814 | +0.000
+red0_vs_blue0 | 0.440 | 0.440 | +0.000
+red0_vs_blue1 | 0.316 | 0.316 | +0.000
+red1_vs_blue0 | 0.600 | 0.600 | +0.000
+red1_vs_blue1 | 0.320 | 0.320 | +0.000
+
+No-playable score terminations by condition:
+{"crossplay/red0_vs_blue0": 0, "crossplay/red0_vs_blue1": 0, "crossplay/red1_vs_blue0": 1, "crossplay/red1_vs_blue1": 0, "random/blue0_vs_random_red": 0, "random/blue1_vs_random_red": 1, "random/red0_vs_random_blue": 0, "random/red1_vs_random_blue": 0}
+
+## [Interpretation]
+
+The corrected environment preserves every requested relative ordering: Red1 remains above Red0 against Blue0, Blue1 remains above Blue0 against Red1, and Blue1 does not fall below Blue0 against Red0. Random-opponent generation improvements also remain. The terminal fix changes termination handling but does not reverse the lineage evidence in these fixed-seed audits.
+Lineage decision: MAINTAIN existing Red0 -> Blue0 -> Red1 -> Blue1 lineage
+Red2 recommendation: Proceed with one Red2 continuation-10k experiment as the next isolated step.
+
+## [Unconfirmed]
+
+This audit does not establish later self-play convergence, human-play strength,
+Nash equilibrium behavior, or the effect of additional continuation rounds.

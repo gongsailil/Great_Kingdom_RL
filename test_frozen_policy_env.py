@@ -34,6 +34,10 @@ def set_position(env, board, turn):
     env.opponent_mask_violations = 0
 
 
+def swap_players(board):
+    return [[3 - cell if cell in (1, 2) else cell for cell in row] for row in board]
+
+
 def test_observation_for_each_player():
     env = FrozenPolicyOpponentEnv(
         agent_player=2,
@@ -236,6 +240,35 @@ def test_frozen_red_normal_last_move_triggers_score_end():
     assert env.opponent_mask_violations == 0
 
 
+def test_frozen_blue_normal_last_move_triggers_score_end():
+    env = FrozenPolicyOpponentEnv(
+        agent_player=2,
+        opponent_model_path=BLUE_MODEL,
+        opponent_deterministic=False,
+    )
+    red_last_move_board = [
+        [0, 1, 1, 2, 0, 0, 2, 1, 0],
+        [1, 1, 1, 2, 2, 2, 2, 1, 0],
+        [1, 2, 2, 2, 0, 0, 2, 1, 1],
+        [1, 2, 2, 2, 0, 2, 2, 2, 2],
+        [2, 2, 2, 0, 3, 1, 0, 1, 1],
+        [0, 2, 2, 2, 1, 1, 2, 2, 1],
+        [0, 2, 1, 1, 1, 0, 1, 1, 0],
+        [2, 2, 2, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 0, 0, 0, 0, 1, 0],
+    ]
+    set_position(env, swap_players(red_last_move_board), turn=1)
+    env.opponent_model = ScriptedModel(6 + 4 * 9)
+    assert env.logic.get_playable_spots() == [(6, 4)]
+
+    result = env._opponent_move_random()
+    assert result == MoveResult.NORMAL
+    assert env.logic.game_over
+    assert env.logic.winner in (0, 1, 2)
+    assert env.logic.get_playable_spots() == []
+    assert env.opponent_mask_violations == 0
+
+
 if __name__ == "__main__":
     test_observation_for_each_player()
     test_deterministic_frozen_blue_opens_and_uses_mask()
@@ -246,4 +279,5 @@ if __name__ == "__main__":
     test_frozen_red_suicide_is_selectable_and_loses()
     test_frozen_red_capture_is_immediate_win()
     test_frozen_red_normal_last_move_triggers_score_end()
+    test_frozen_blue_normal_last_move_triggers_score_end()
     print("frozen-policy env tests: PASS")

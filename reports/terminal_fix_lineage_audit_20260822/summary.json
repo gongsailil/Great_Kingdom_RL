@@ -1,0 +1,397 @@
+{
+  "experiment": "terminal_fix_lineage_audit_20260822",
+  "training_performed": false,
+  "checkpoint_commit": "d3469520ac7f2722dbc8537bff1f867a059dec73",
+  "episodes_per_condition": 500,
+  "random_master_seed": 30000,
+  "crossplay_master_seed": 20260822,
+  "model_paths": {
+    "red0": "models/MaskablePPO_CNN/masked_ppo_10000.zip",
+    "blue0": "models/MaskablePPO_CNN/blue_masked_ppo_10000.zip",
+    "red1": "models/MaskablePPO_CNN/red10k_ft_vs_blue10k_plus10k.zip",
+    "blue1": "models/MaskablePPO_CNN/blue10k_ft_vs_red1_plus10k.zip"
+  },
+  "expected_model_hashes": {
+    "red0": "e28340c33406a333940df1fe94eee39b9f78494c4b2b2886cd565f27de27c944",
+    "blue0": "17f990f29d0f2f6ae09c386561cb700210dc267820eed5f828565d7ffd9992ba",
+    "red1": "5dcc2d8b016f55ddc4e2c9abd7c7e860a485e8fd105399b0be7e6ef037fe8883",
+    "blue1": "4b1bdc51904d8b471c576da57df2019e1ba46dd31a069e3db84bd879d18c3e44"
+  },
+  "model_hashes_before": {
+    "red0": "e28340c33406a333940df1fe94eee39b9f78494c4b2b2886cd565f27de27c944",
+    "blue0": "17f990f29d0f2f6ae09c386561cb700210dc267820eed5f828565d7ffd9992ba",
+    "red1": "5dcc2d8b016f55ddc4e2c9abd7c7e860a485e8fd105399b0be7e6ef037fe8883",
+    "blue1": "4b1bdc51904d8b471c576da57df2019e1ba46dd31a069e3db84bd879d18c3e44"
+  },
+  "model_hashes_after": {
+    "red0": "e28340c33406a333940df1fe94eee39b9f78494c4b2b2886cd565f27de27c944",
+    "blue0": "17f990f29d0f2f6ae09c386561cb700210dc267820eed5f828565d7ffd9992ba",
+    "red1": "5dcc2d8b016f55ddc4e2c9abd7c7e860a485e8fd105399b0be7e6ef037fe8883",
+    "blue1": "4b1bdc51904d8b471c576da57df2019e1ba46dd31a069e3db84bd879d18c3e44"
+  },
+  "model_hashes_unchanged": true,
+  "regression_tests": {
+    "test_rules_minimal.py": "PASS",
+    "test_gk_env_players.py": "PASS",
+    "test_frozen_policy_env.py": "PASS",
+    "no_playable_both_opponent_colors": "PASS"
+  },
+  "corrected_random_evaluations": {
+    "red0_vs_random_blue": {
+      "episodes": 500,
+      "red_wins": 346,
+      "blue_wins": 154,
+      "draws": 0,
+      "red_win_rate": 0.692,
+      "blue_win_rate": 0.308,
+      "red_suicides": 10,
+      "red_suicide_rate": 0.02,
+      "blue_suicides": 31,
+      "blue_suicide_rate": 0.062,
+      "mask_violations": 0,
+      "nonterminal_all_false_masks": 0,
+      "mean_game_length": 45.582,
+      "terminal_reason_histogram": {
+        "capture": 459,
+        "suicide": 41,
+        "score/no-playable": 0,
+        "other": 0
+      },
+      "raw_outcome_histogram": {
+        "agent_capture_win": 315,
+        "agent_suicide": 10,
+        "opponent_capture_win": 144,
+        "opponent_suicide": 31
+      },
+      "no_playable_score_terminations": 0,
+      "agent_player": 2,
+      "agent_deterministic": true,
+      "opponent": "uniformly random",
+      "master_seed": 30000
+    },
+    "blue0_vs_random_red": {
+      "episodes": 500,
+      "red_wins": 116,
+      "blue_wins": 384,
+      "draws": 0,
+      "red_win_rate": 0.232,
+      "blue_win_rate": 0.768,
+      "red_suicides": 22,
+      "red_suicide_rate": 0.044,
+      "blue_suicides": 6,
+      "blue_suicide_rate": 0.012,
+      "mask_violations": 0,
+      "nonterminal_all_false_masks": 0,
+      "mean_game_length": 42.044,
+      "terminal_reason_histogram": {
+        "capture": 472,
+        "suicide": 28,
+        "score/no-playable": 0,
+        "other": 0
+      },
+      "raw_outcome_histogram": {
+        "agent_capture_win": 362,
+        "agent_suicide": 6,
+        "opponent_capture_win": 110,
+        "opponent_suicide": 22
+      },
+      "no_playable_score_terminations": 0,
+      "agent_player": 1,
+      "agent_deterministic": true,
+      "opponent": "uniformly random",
+      "master_seed": 30000
+    },
+    "red1_vs_random_blue": {
+      "episodes": 500,
+      "red_wins": 391,
+      "blue_wins": 109,
+      "draws": 0,
+      "red_win_rate": 0.782,
+      "blue_win_rate": 0.218,
+      "red_suicides": 14,
+      "red_suicide_rate": 0.028,
+      "blue_suicides": 18,
+      "blue_suicide_rate": 0.036,
+      "mask_violations": 0,
+      "nonterminal_all_false_masks": 0,
+      "mean_game_length": 40.882,
+      "terminal_reason_histogram": {
+        "capture": 468,
+        "suicide": 32,
+        "score/no-playable": 0,
+        "other": 0
+      },
+      "raw_outcome_histogram": {
+        "agent_capture_win": 373,
+        "agent_suicide": 14,
+        "opponent_capture_win": 95,
+        "opponent_suicide": 18
+      },
+      "no_playable_score_terminations": 0,
+      "agent_player": 2,
+      "agent_deterministic": true,
+      "opponent": "uniformly random",
+      "master_seed": 30000
+    },
+    "blue1_vs_random_red": {
+      "episodes": 500,
+      "red_wins": 93,
+      "blue_wins": 407,
+      "draws": 0,
+      "red_win_rate": 0.186,
+      "blue_win_rate": 0.814,
+      "red_suicides": 31,
+      "red_suicide_rate": 0.062,
+      "blue_suicides": 3,
+      "blue_suicide_rate": 0.006,
+      "mask_violations": 0,
+      "nonterminal_all_false_masks": 0,
+      "mean_game_length": 40.682,
+      "terminal_reason_histogram": {
+        "capture": 465,
+        "suicide": 34,
+        "score/no-playable": 1,
+        "other": 0
+      },
+      "raw_outcome_histogram": {
+        "agent_capture_win": 376,
+        "agent_suicide": 3,
+        "opponent_capture_win": 89,
+        "opponent_suicide": 31,
+        "score": 1
+      },
+      "no_playable_score_terminations": 1,
+      "agent_player": 1,
+      "agent_deterministic": true,
+      "opponent": "uniformly random",
+      "master_seed": 30000
+    }
+  },
+  "corrected_crossplay": {
+    "red_win_rate_matrix": {
+      "Red0": {
+        "Blue0": 0.44,
+        "Blue1": 0.316
+      },
+      "Red1": {
+        "Blue0": 0.6,
+        "Blue1": 0.32
+      }
+    },
+    "cells": {
+      "red0_vs_blue0": {
+        "episodes": 500,
+        "red_wins": 220,
+        "blue_wins": 280,
+        "draws": 0,
+        "red_win_rate": 0.44,
+        "blue_win_rate": 0.56,
+        "red_suicides": 28,
+        "red_suicide_rate": 0.056,
+        "blue_suicides": 29,
+        "blue_suicide_rate": 0.058,
+        "mask_violations": 0,
+        "nonterminal_all_false_masks": 0,
+        "mean_game_length": 46.594,
+        "terminal_reason_histogram": {
+          "capture": 443,
+          "suicide": 57,
+          "score/no-playable": 0,
+          "other": 0
+        },
+        "raw_outcome_histogram": {
+          "agent_capture_win": 191,
+          "agent_suicide": 28,
+          "opponent_capture_win": 252,
+          "opponent_suicide": 29
+        },
+        "no_playable_score_terminations": 0,
+        "red_deterministic": false,
+        "blue_deterministic": false,
+        "master_seed": 20260822
+      },
+      "red0_vs_blue1": {
+        "episodes": 500,
+        "red_wins": 158,
+        "blue_wins": 342,
+        "draws": 0,
+        "red_win_rate": 0.316,
+        "blue_win_rate": 0.684,
+        "red_suicides": 44,
+        "red_suicide_rate": 0.088,
+        "blue_suicides": 18,
+        "blue_suicide_rate": 0.036,
+        "mask_violations": 0,
+        "nonterminal_all_false_masks": 0,
+        "mean_game_length": 45.516,
+        "terminal_reason_histogram": {
+          "capture": 438,
+          "suicide": 62,
+          "score/no-playable": 0,
+          "other": 0
+        },
+        "raw_outcome_histogram": {
+          "agent_capture_win": 140,
+          "agent_suicide": 44,
+          "opponent_capture_win": 298,
+          "opponent_suicide": 18
+        },
+        "no_playable_score_terminations": 0,
+        "red_deterministic": false,
+        "blue_deterministic": false,
+        "master_seed": 20260822
+      },
+      "red1_vs_blue0": {
+        "episodes": 500,
+        "red_wins": 300,
+        "blue_wins": 200,
+        "draws": 0,
+        "red_win_rate": 0.6,
+        "blue_win_rate": 0.4,
+        "red_suicides": 9,
+        "red_suicide_rate": 0.018,
+        "blue_suicides": 37,
+        "blue_suicide_rate": 0.074,
+        "mask_violations": 0,
+        "nonterminal_all_false_masks": 0,
+        "mean_game_length": 44.656,
+        "terminal_reason_histogram": {
+          "capture": 453,
+          "suicide": 46,
+          "score/no-playable": 1,
+          "other": 0
+        },
+        "raw_outcome_histogram": {
+          "agent_capture_win": 262,
+          "agent_suicide": 9,
+          "opponent_capture_win": 191,
+          "opponent_suicide": 37,
+          "score": 1
+        },
+        "no_playable_score_terminations": 1,
+        "red_deterministic": false,
+        "blue_deterministic": false,
+        "master_seed": 20260822
+      },
+      "red1_vs_blue1": {
+        "episodes": 500,
+        "red_wins": 160,
+        "blue_wins": 340,
+        "draws": 0,
+        "red_win_rate": 0.32,
+        "blue_win_rate": 0.68,
+        "red_suicides": 17,
+        "red_suicide_rate": 0.034,
+        "blue_suicides": 18,
+        "blue_suicide_rate": 0.036,
+        "mask_violations": 0,
+        "nonterminal_all_false_masks": 0,
+        "mean_game_length": 42.01,
+        "terminal_reason_histogram": {
+          "capture": 465,
+          "suicide": 35,
+          "score/no-playable": 0,
+          "other": 0
+        },
+        "raw_outcome_histogram": {
+          "agent_capture_win": 142,
+          "agent_suicide": 17,
+          "opponent_capture_win": 323,
+          "opponent_suicide": 18
+        },
+        "no_playable_score_terminations": 0,
+        "red_deterministic": false,
+        "blue_deterministic": false,
+        "master_seed": 20260822
+      }
+    }
+  },
+  "no_playable_score_termination_counts": {
+    "random/red0_vs_random_blue": 0,
+    "random/blue0_vs_random_red": 0,
+    "random/red1_vs_random_blue": 0,
+    "random/blue1_vs_random_red": 1,
+    "crossplay/red0_vs_blue0": 0,
+    "crossplay/red0_vs_blue1": 0,
+    "crossplay/red1_vs_blue0": 1,
+    "crossplay/red1_vs_blue1": 0
+  },
+  "old_references": {
+    "random": {
+      "red0_vs_random_blue": 0.692,
+      "blue0_vs_random_red": 0.768,
+      "red1_vs_random_blue": 0.782,
+      "blue1_vs_random_red": 0.814
+    },
+    "crossplay": {
+      "red0_vs_blue0": 0.44,
+      "red0_vs_blue1": 0.316,
+      "red1_vs_blue0": 0.6,
+      "red1_vs_blue1": 0.32
+    }
+  },
+  "old_vs_corrected": {
+    "random": {
+      "red0_vs_random_blue": {
+        "old": 0.692,
+        "corrected": 0.692,
+        "difference": 0.0
+      },
+      "blue0_vs_random_red": {
+        "old": 0.768,
+        "corrected": 0.768,
+        "difference": 0.0
+      },
+      "red1_vs_random_blue": {
+        "old": 0.782,
+        "corrected": 0.782,
+        "difference": 0.0
+      },
+      "blue1_vs_random_red": {
+        "old": 0.814,
+        "corrected": 0.814,
+        "difference": 0.0
+      }
+    },
+    "crossplay": {
+      "red0_vs_blue0": {
+        "old": 0.44,
+        "corrected": 0.44,
+        "difference": 0.0
+      },
+      "red0_vs_blue1": {
+        "old": 0.316,
+        "corrected": 0.316,
+        "difference": 0.0
+      },
+      "red1_vs_blue0": {
+        "old": 0.6,
+        "corrected": 0.6,
+        "difference": 0.0
+      },
+      "red1_vs_blue1": {
+        "old": 0.32,
+        "corrected": 0.32,
+        "difference": 0.0
+      }
+    }
+  },
+  "ordering_checks": {
+    "red1_beats_red0_vs_random_blue": true,
+    "blue1_beats_blue0_vs_random_red": true,
+    "red1_beats_red0_vs_blue0": true,
+    "blue1_beats_blue0_vs_red1": true,
+    "blue1_not_weaker_than_blue0_vs_red0": true
+  },
+  "all_mask_checks_clean": true,
+  "interpretation": "The corrected environment preserves every requested relative ordering: Red1 remains above Red0 against Blue0, Blue1 remains above Blue0 against Red1, and Blue1 does not fall below Blue0 against Red0. Random-opponent generation improvements also remain. The terminal fix changes termination handling but does not reverse the lineage evidence in these fixed-seed audits.",
+  "lineage_maintained": true,
+  "lineage_decision": "MAINTAIN existing Red0 -> Blue0 -> Red1 -> Blue1 lineage",
+  "red2_recommendation": "Proceed with one Red2 continuation-10k experiment as the next isolated step.",
+  "unconfirmed": [
+    "later self-play convergence",
+    "human-play strength",
+    "Nash equilibrium behavior",
+    "effect of additional continuation rounds"
+  ]
+}
