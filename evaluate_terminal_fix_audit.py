@@ -300,6 +300,95 @@ def evaluate_crossplay(
     return result
 
 
+def evaluate_blue_crossplay(
+    *, blue_model_path, red_model_path, episodes, master_seed, label
+):
+    blue_model = MaskablePPO.load(blue_model_path, device="cpu")
+    env = FrozenPolicyOpponentEnv(
+        agent_player=1,
+        opponent_model_path=red_model_path,
+        opponent_deterministic=False,
+        opponent_seed=master_seed + 100_000,
+    )
+    red_wins = blue_wins = draws = 0
+    red_suicides = blue_suicides = mask_violations = 0
+    game_lengths = []
+    blue_win_indicators = []
+    terminal_histogram = Counter()
+    raw_histogram = Counter()
+
+    print(f"\n=== {label}: {episodes} corrected-env games ===", flush=True)
+    for episode in range(episodes):
+        obs, _ = env.reset(seed=master_seed + episode)
+        blue_rng = np.random.default_rng(
+            np.random.SeedSequence([master_seed, episode, 1])
+        )
+        terminated = truncated = False
+        info = {}
+        while not (terminated or truncated):
+            action_mask = checked_mask(env)
+            action = predict_with_local_rng(
+                blue_model,
+                obs,
+                action_mask,
+                False,
+                blue_rng,
+            )
+            if action < 0 or action >= action_mask.size or not action_mask[action]:
+                mask_violations += 1
+            obs, _, terminated, truncated, info = env.step(action)
+
+        mask_violations += env.opponent_mask_violations
+        winner = info.get("winner", env.logic.winner)
+        if winner == 2:
+            red_wins += 1
+            blue_win_indicators.append(0)
+        elif winner == 1:
+            blue_wins += 1
+            blue_win_indicators.append(1)
+        else:
+            draws += 1
+            blue_win_indicators.append(0)
+        outcome = info.get("outcome")
+        if outcome == "agent_suicide":
+            blue_suicides += 1
+        elif outcome == "opponent_suicide":
+            red_suicides += 1
+        record_terminal(terminal_histogram, raw_histogram, info, env)
+        game_lengths.append(len(env.move_trace))
+
+        completed = episode + 1
+        if completed % 100 == 0 or completed == episodes:
+            print(
+                f"  {completed}/{episodes}: blue_wins={blue_wins} "
+                f"blue_win_rate={blue_wins / completed:.3f}",
+                flush=True,
+            )
+
+    env.close()
+    result = finalize_result(
+        episodes=episodes,
+        red_wins=red_wins,
+        blue_wins=blue_wins,
+        draws=draws,
+        red_suicides=red_suicides,
+        blue_suicides=blue_suicides,
+        mask_violations=mask_violations,
+        game_lengths=game_lengths,
+        terminal_histogram=terminal_histogram,
+        raw_histogram=raw_histogram,
+    )
+    result.update(
+        {
+            "red_deterministic": False,
+            "blue_deterministic": False,
+            "master_seed": master_seed,
+            "blue_win_indicators": blue_win_indicators,
+        }
+    )
+    return result
+
+
 def terminal_text(result):
     histogram = result["terminal_reason_histogram"]
     return ", ".join(f"{key}={histogram[key]}" for key in TERMINAL_CATEGORIES)
