@@ -1,100 +1,140 @@
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
-import random
-from great_kingdom import GreatKingdomLogic, BOARD_SIZE
+
+from great_kingdom import GreatKingdomLogic, MoveResult, BOARD_SIZE
 
 
 class GreatKingdomEnv(gym.Env):
-    def __init__(self):
-        super(GreatKingdomEnv, self).__init__()
+    """Minimal experiment environment.
+
+    Agent: Red (2, default) or Blue (1).
+    Opponent: the other color, uniformly random over selectable moves.
+    Masked actions: occupied cells + territory-forbidden cells only.
+    Suicide remains selectable and is an immediate loss.
+    """
+
+    metadata = {"render_modes": []}
+
+    def __init__(self, agent_player=2):
+        super().__init__()
+        if agent_player not in (1, 2):
+            raise ValueError("agent_player must be Blue (1) or Red (2)")
         self.board_size = BOARD_SIZE
-
-        # Action: 0~80
         self.action_space = spaces.Discrete(self.board_size * self.board_size)
-
-        # Observation: (3, 9, 9) 3-Channel Image Format
         self.observation_space = spaces.Box(
-            low=0, high=1, shape=(3, self.board_size, self.board_size), dtype=np.uint8
+            low=0,
+            high=1,
+            shape=(3, self.board_size, self.board_size),
+            dtype=np.uint8,
         )
+        self.logic = GreatKingdomLogic()
+        self.agent_player = agent_player
+        self.opponent_player = 3 - agent_player
+        self.agent_moves = 0
+        self.first_agent_action = None
 
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
         self.logic = GreatKingdomLogic()
-        # AI (Red) Post -> Place Blue first
-        self._opponent_move_smart()
+        self.agent_moves = 0
+        self.first_agent_action = None
+
+        # Blue starts. For the default Red agent, Blue is the opponent and
+        # makes the opening move. A Blue agent acts immediately after reset.
+        if self.agent_player == 2:
+            self._opponent_move_random()
+
         return self._get_obs(), {}
 
+    def action_masks(self):
+        """Mask only impossible actions.
+
+        Required directly on the env for MaskablePPO + SubprocVecEnv.
+        True = selectable, False = impossible.
+        """
+        mask = np.zeros(self.board_size * self.board_size, dtype=bool)
+        for action in range(self.board_size * self.board_size):
+            x = action % self.board_size
+            y = action // self.board_size
+            mask[action] = not self.logic.is_impossible_action(x, y)
+        return mask
+
     def step(self, action):
-        x = int(action % self.board_size)
-        y = int(action // self.board_size)
+        action = int(action)
+        x = action % self.board_size
+        y = action // self.board_size
 
-        # 1. AI's Placement
-        valid = self.logic.place_stone(x, y)
-        if not valid:
-            # Foul play (for early learning)
-            return self._get_obs(), -5, True, False, {}
+        if self.logic.is_impossible_action(x, y):
+            # This should never happen when masks are consumed correctly.
+            return self._get_obs(), -1.0, True, False, {
+                "outcome": "mask_violation",
+                "winner": self.opponent_player,
+            }
 
-        # 2. Check AI's win
+        if self.first_agent_action is None:
+            self.first_agent_action = action
+        self.agent_moves += 1
+
+        result = self.logic.place_stone_detailed(x, y)
+
+        if result == MoveResult.SUICIDE_LOSS:
+            return self._get_obs(), -1.0, True, False, self._terminal_info("agent_suicide")
+
+        if result == MoveResult.CAPTURE_WIN:
+            return self._get_obs(), 1.0, True, False, self._terminal_info("agent_capture_win")
+
         if self.logic.game_over:
-            reward = 20 if self.logic.winner == 2 else -20
-            return self._get_obs(), reward, True, False, {}
+            return self._terminal_transition("agent_terminal")
 
-        # 3. Opponent's Placement
-        self._opponent_move_smart()
+        # Random opponent (Blue for a Red agent, Red for a Blue agent).
+        opponent_result = self._opponent_move_random()
 
-        # 4. Check Opponent's win (AI's Defeat)
+        if opponent_result == MoveResult.SUICIDE_LOSS:
+            return self._get_obs(), 1.0, True, False, self._terminal_info("opponent_suicide")
+
+        if opponent_result == MoveResult.CAPTURE_WIN:
+            return self._get_obs(), -1.0, True, False, self._terminal_info("opponent_capture_win")
+
         if self.logic.game_over:
-            reward = 20 if self.logic.winner == 2 else -20
-            return self._get_obs(), reward, True, False, {}
+            return self._terminal_transition("score")
 
-        return self._get_obs(), 0.1, False, False, {}
+        # Sparse reward: no survival bonus.
+        return self._get_obs(), 0.0, False, False, {}
+
+    def _terminal_transition(self, outcome):
+        if self.logic.winner == self.agent_player:
+            reward = 1.0
+        elif self.logic.winner == self.opponent_player:
+            reward = -1.0
+        else:
+            reward = 0.0
+        return self._get_obs(), reward, True, False, self._terminal_info(outcome)
+
+    def _terminal_info(self, outcome):
+        return {
+            "outcome": outcome,
+            "winner": self.logic.winner,
+            "agent_moves": self.agent_moves,
+            "first_agent_action": self.first_agent_action,
+        }
 
     def _get_obs(self):
-        board = np.array(self.logic.board)
-        # Split into 3-channels: [My stone (2), Opponent's stone (1), blank/neutral (0,3)]
-        my_stones = (board == 2).astype(np.uint8)
-        opp_stones = (board == 1).astype(np.uint8)
+        board = np.asarray(self.logic.board)
+        my_stones = (board == self.agent_player).astype(np.uint8)
+        opp_stones = (board == self.opponent_player).astype(np.uint8)
         neutral = ((board == 0) | (board == 3)).astype(np.uint8)
         return np.stack([my_stones, opp_stones, neutral], axis=0)
 
-    def _opponent_move_smart(self):
-        if self.logic.game_over: return
-        empty_spots = self.logic.get_empty_spots()
-        if not empty_spots:
+    def _opponent_move_random(self):
+        if self.logic.game_over:
+            return self.logic.last_move_result
+
+        playable = self.logic.get_playable_spots()
+        if not playable:
             self.logic.check_game_end_simple()
-            return
+            return self.logic.last_move_result
 
-        # 1. If there is a way to win, it will do it unconditionally
-        for ex, ey in empty_spots:
-            test_game = self.logic.copy()
-            if test_game.place_stone(ex, ey):
-                if test_game.game_over and test_game.winner == 1:
-                    self.logic.place_stone(ex, ey)
-                    return
-
-        # 2. Central Oriented Random
-        weighted_spots = []
-        for ex, ey in empty_spots:
-            dist = abs(ex - 4) + abs(ey - 4)
-            weight = 10 - dist
-            weighted_spots.append(((ex, ey), weight))
-
-        total = sum(w for _, w in weighted_spots)
-        r = random.uniform(0, total)
-        curr = 0
-        selected = weighted_spots[0][0]
-
-        for move, w in weighted_spots:
-            curr += w
-            if curr >= r:
-                selected = move
-                break
-
-        if not self.logic.place_stone(selected[0], selected[1]):
-            # Fully random backup in case of failure
-            random.shuffle(empty_spots)
-            for rx, ry in empty_spots:
-                if self.logic.place_stone(rx, ry): return
-
-        self.logic.check_game_end_simple()
+        idx = int(self.np_random.integers(len(playable)))
+        x, y = playable[idx]
+        return self.logic.place_stone_detailed(x, y)

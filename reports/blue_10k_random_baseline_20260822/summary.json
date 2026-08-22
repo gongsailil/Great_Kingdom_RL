@@ -1,0 +1,233 @@
+{
+  "status": "complete",
+  "configuration": {
+    "episodes_per_condition": 500,
+    "opponent_seed_base": 30000,
+    "agent_seed_base": 40000,
+    "agent_player": 1,
+    "opponent_player": 2,
+    "red_komi": 3.0,
+    "model_path": "models/MaskablePPO_CNN/blue_masked_ppo_10000.zip",
+    "training_requested_timesteps": 10000,
+    "training_stored_num_timesteps": 10240,
+    "ppo_deterministic": true,
+    "ppo_action_mask": true
+  },
+  "blue_random_baseline": {
+    "condition": "random_blue_vs_random_red",
+    "episodes": 500,
+    "wins": 275,
+    "losses": 225,
+    "draws": 0,
+    "win_rate": 0.55,
+    "agent_suicides": 21,
+    "agent_suicide_rate": 0.042,
+    "mask_violations": 0,
+    "mean_agent_moves": 23.426,
+    "first_move_coordinate_histogram": {
+      "0,0": 7,
+      "1,0": 6,
+      "2,0": 8,
+      "3,0": 6,
+      "4,0": 9,
+      "5,0": 5,
+      "6,0": 6,
+      "7,0": 5,
+      "8,0": 8,
+      "0,1": 2,
+      "1,1": 9,
+      "2,1": 6,
+      "3,1": 7,
+      "4,1": 12,
+      "5,1": 5,
+      "6,1": 7,
+      "7,1": 8,
+      "8,1": 4,
+      "0,2": 5,
+      "1,2": 4,
+      "2,2": 6,
+      "3,2": 6,
+      "4,2": 8,
+      "5,2": 6,
+      "6,2": 3,
+      "7,2": 5,
+      "8,2": 10,
+      "0,3": 9,
+      "1,3": 8,
+      "2,3": 5,
+      "3,3": 12,
+      "4,3": 11,
+      "5,3": 8,
+      "6,3": 6,
+      "7,3": 4,
+      "8,3": 4,
+      "0,4": 11,
+      "1,4": 7,
+      "2,4": 5,
+      "3,4": 8,
+      "5,4": 11,
+      "6,4": 6,
+      "7,4": 4,
+      "8,4": 1,
+      "0,5": 3,
+      "1,5": 2,
+      "2,5": 8,
+      "3,5": 10,
+      "4,5": 8,
+      "5,5": 7,
+      "6,5": 5,
+      "7,5": 7,
+      "8,5": 5,
+      "0,6": 6,
+      "1,6": 8,
+      "2,6": 2,
+      "3,6": 6,
+      "4,6": 7,
+      "5,6": 4,
+      "6,6": 4,
+      "7,6": 4,
+      "8,6": 5,
+      "0,7": 4,
+      "1,7": 3,
+      "2,7": 9,
+      "3,7": 3,
+      "4,7": 10,
+      "5,7": 5,
+      "6,7": 6,
+      "7,7": 5,
+      "8,7": 4,
+      "0,8": 6,
+      "1,8": 8,
+      "2,8": 3,
+      "3,8": 7,
+      "4,8": 9,
+      "5,8": 5,
+      "6,8": 5,
+      "7,8": 10,
+      "8,8": 4
+    },
+    "top_first_moves": [
+      {
+        "coordinate": [
+          3,
+          3
+        ],
+        "action": 30,
+        "count": 12,
+        "frequency": 0.024
+      },
+      {
+        "coordinate": [
+          4,
+          1
+        ],
+        "action": 13,
+        "count": 12,
+        "frequency": 0.024
+      },
+      {
+        "coordinate": [
+          4,
+          3
+        ],
+        "action": 31,
+        "count": 11,
+        "frequency": 0.022
+      },
+      {
+        "coordinate": [
+          5,
+          4
+        ],
+        "action": 41,
+        "count": 11,
+        "frequency": 0.022
+      },
+      {
+        "coordinate": [
+          0,
+          4
+        ],
+        "action": 36,
+        "count": 11,
+        "frequency": 0.022
+      },
+      {
+        "coordinate": [
+          8,
+          2
+        ],
+        "action": 26,
+        "count": 10,
+        "frequency": 0.02
+      },
+      {
+        "coordinate": [
+          7,
+          8
+        ],
+        "action": 79,
+        "count": 10,
+        "frequency": 0.02
+      },
+      {
+        "coordinate": [
+          4,
+          7
+        ],
+        "action": 67,
+        "count": 10,
+        "frequency": 0.02
+      },
+      {
+        "coordinate": [
+          3,
+          5
+        ],
+        "action": 48,
+        "count": 10,
+        "frequency": 0.02
+      },
+      {
+        "coordinate": [
+          2,
+          7
+        ],
+        "action": 65,
+        "count": 9,
+        "frequency": 0.018
+      }
+    ]
+  },
+  "experiment": "Blue agent 10k MaskablePPO vs Random Red",
+  "scope": "Single agent vs random; not self-play.",
+  "blue_ppo_10k": {
+    "condition": "blue_ppo_10k_vs_random_red",
+    "episodes": 500,
+    "wins": 384,
+    "losses": 116,
+    "draws": 0,
+    "win_rate": 0.768,
+    "agent_suicides": 6,
+    "agent_suicide_rate": 0.012,
+    "mask_violations": 0,
+    "mean_agent_moves": 21.39,
+    "first_move_coordinate_histogram": {
+      "4,6": 500
+    },
+    "top_first_moves": [
+      {
+        "coordinate": [
+          4,
+          6
+        ],
+        "action": 58,
+        "count": 500,
+        "frequency": 1.0
+      }
+    ]
+  },
+  "win_rate_delta": 0.21799999999999997,
+  "criterion": "Blue PPO win rate > Random Blue baseline win rate",
+  "criterion_passed": true
+}
