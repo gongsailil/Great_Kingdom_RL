@@ -50,3 +50,16 @@ Great_Kingdom_RL/
 │
 └── models/
     └── PPO_CNN/              # Trained PPO model checkpoints (auto-saved)
+```
+
+## Current RL pipeline
+
+- MaskablePPO with occupied/territory action masking
+- Canonical observations for both Red and Blue player perspectives
+- Alternating continuation training against one explicitly frozen policy
+- One generation per explicit `run_alternating_generation.py` invocation
+
+See [PROJECT_STATE_20260822.md](PROJECT_STATE_20260822.md) for the validated
+state and next GPU step. Checkpoint paths, hashes, and counters are recorded in
+[CHECKPOINT_MANIFEST.md](CHECKPOINT_MANIFEST.md). Model ZIP files are local
+artifacts and are intentionally excluded from Git.
