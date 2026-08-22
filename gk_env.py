@@ -143,4 +143,7 @@ class GreatKingdomEnv(gym.Env):
 
         idx = int(self.np_random.integers(len(playable)))
         x, y = playable[idx]
-        return self.logic.place_stone_detailed(x, y)
+        result = self.logic.place_stone_detailed(x, y)
+        if result == MoveResult.NORMAL:
+            self.logic.check_game_end_simple()
+        return result

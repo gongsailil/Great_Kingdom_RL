@@ -171,6 +171,28 @@ def test_invalid_agent_player_is_rejected():
             raise AssertionError(f"agent_player={player} should be rejected")
 
 
+def test_random_opponent_normal_last_move_triggers_score_end():
+    env = GreatKingdomEnv(agent_player=1)
+    board = [
+        [0, 1, 1, 2, 0, 0, 2, 1, 0],
+        [1, 1, 1, 2, 2, 2, 2, 1, 0],
+        [1, 2, 2, 2, 0, 0, 2, 1, 1],
+        [1, 2, 2, 2, 0, 2, 2, 2, 2],
+        [2, 2, 2, 0, 3, 1, 0, 1, 1],
+        [0, 2, 2, 2, 1, 1, 2, 2, 1],
+        [0, 2, 1, 1, 1, 0, 1, 1, 0],
+        [2, 2, 2, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 0, 0, 0, 0, 1, 0],
+    ]
+    reset_position(env, board, turn=2)
+    assert env.logic.get_playable_spots() == [(6, 4)]
+
+    env._opponent_move_random()
+    assert env.logic.game_over
+    assert env.logic.winner in (0, 1, 2)
+    assert env.logic.get_playable_spots() == []
+
+
 if __name__ == "__main__":
     test_red_observation_semantics()
     test_blue_observation_semantics()
@@ -181,4 +203,5 @@ if __name__ == "__main__":
     test_blue_capture_is_immediate_win()
     test_existing_red_action_mask_semantics()
     test_invalid_agent_player_is_rejected()
+    test_random_opponent_normal_last_move_triggers_score_end()
     print("both-player env tests: PASS")

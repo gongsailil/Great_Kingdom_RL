@@ -106,6 +106,8 @@ class FrozenPolicyOpponentEnv(GreatKingdomEnv):
         x = action % self.board_size
         y = action // self.board_size
         result = self.logic.place_stone_detailed(x, y)
+        if result.name == "NORMAL":
+            self.logic.check_game_end_simple()
         trace_entry = self._trace_entry(self.opponent_player, action)
         trace_entry["move_result"] = result.name
         self.move_trace.append(trace_entry)
