@@ -224,6 +224,7 @@ def evaluate_crossplay(
     red_wins = blue_wins = draws = 0
     red_suicides = blue_suicides = mask_violations = 0
     game_lengths = []
+    red_win_indicators = []
     terminal_histogram = Counter()
     raw_histogram = Counter()
 
@@ -252,10 +253,13 @@ def evaluate_crossplay(
         winner = info.get("winner", env.logic.winner)
         if winner == 2:
             red_wins += 1
+            red_win_indicators.append(1)
         elif winner == 1:
             blue_wins += 1
+            red_win_indicators.append(0)
         else:
             draws += 1
+            red_win_indicators.append(0)
         outcome = info.get("outcome")
         if outcome == "agent_suicide":
             red_suicides += 1
@@ -290,6 +294,7 @@ def evaluate_crossplay(
             "red_deterministic": False,
             "blue_deterministic": False,
             "master_seed": master_seed,
+            "red_win_indicators": red_win_indicators,
         }
     )
     return result

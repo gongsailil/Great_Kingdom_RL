@@ -1,0 +1,46 @@
+# Red2 continuation vs Frozen Blue1
+
+Red1 was continued for one additional 10k request against stochastic frozen Blue1.
+Policy-vs-policy evaluations used stochastic masked sampling and paired seeds.
+No absolute policy ranking is inferred from generation numbers.
+
+## [Infrastructure]
+
+Checkpoint commit: 571dc8c0238a629a4255bce9f53191116c878ea6
+Infrastructure pass: true
+Timestep counter: 20480 -> 30720
+Update counter: 200 -> 300
+Optimizer state entries: 18 -> 18
+
+## [Confirmed evaluations]
+
+Condition | Red wins | Blue wins | Draws | Red win rate | Red suicide | Blue suicide | Mask | Mean length | Terminal reasons
+--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---
+PRE Red1 vs Blue1 | 160 | 340 | 0 | 0.320 | 17 | 18 | 0 | 42.010 | capture=465, suicide=35, score/no-playable=0, other=0
+POST Red2 vs Blue1 | 275 | 225 | 0 | 0.550 | 18 | 34 | 0 | 42.502 | capture=448, suicide=52, score/no-playable=0, other=0
+Red1 vs Blue0 | 300 | 200 | 0 | 0.600 | 9 | 37 | 0 | 44.656 | capture=453, suicide=46, score/no-playable=1, other=0
+Red2 vs Blue0 | 351 | 149 | 0 | 0.702 | 7 | 38 | 0 | 40.544 | capture=455, suicide=45, score/no-playable=0, other=0
+Red2 vs Random Blue | 421 | 79 | 0 | 0.842 | 5 | 35 | 0 | 36.342 | capture=460, suicide=40, score/no-playable=0, other=0
+
+Latest-opponent delta: +0.230
+Paired bootstrap 95% CI: [+0.174, +0.286]
+Previous-opponent retention delta: +0.102
+Retention paired bootstrap 95% CI: [+0.046, +0.156]
+
+## 2x2 generation cross-play (Red win rate)
+
+ | Blue0 | Blue1
+--- | ---: | ---:
+Red1 | 0.600 | 0.320
+Red2 | 0.702 | 0.550
+
+## [Interpretation]
+
+Latest-opponent adaptation: PASS: clear positive improvement against Blue1
+Forgetting/cycling evidence: NONE in this matrix: Blue0 retention did not decrease in point estimate
+Next recommendation: Run exactly one Blue2 latest-only continuation cycle before considering automation.
+
+## [Unconfirmed]
+
+Later alternating behavior, opponent-pool benefit, absolute policy ranking,
+self-play convergence, human-play strength, and Nash behavior remain unconfirmed.
