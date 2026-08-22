@@ -120,9 +120,15 @@ class GreatKingdomEnv(gym.Env):
         }
 
     def _get_obs(self):
+        return self._get_obs_for(self.agent_player)
+
+    def _get_obs_for(self, player):
+        """Return the canonical observation from either player's view."""
+        if player not in (1, 2):
+            raise ValueError("player must be Blue (1) or Red (2)")
         board = np.asarray(self.logic.board)
-        my_stones = (board == self.agent_player).astype(np.uint8)
-        opp_stones = (board == self.opponent_player).astype(np.uint8)
+        my_stones = (board == player).astype(np.uint8)
+        opp_stones = (board == 3 - player).astype(np.uint8)
         neutral = ((board == 0) | (board == 3)).astype(np.uint8)
         return np.stack([my_stones, opp_stones, neutral], axis=0)
 

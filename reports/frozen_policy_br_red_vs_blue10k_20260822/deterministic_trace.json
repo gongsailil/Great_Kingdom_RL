@@ -1,0 +1,521 @@
+{
+  "red_model_path": "models/MaskablePPO_CNN/masked_ppo_10000.zip",
+  "blue_model_path": "models/MaskablePPO_CNN/blue_masked_ppo_10000.zip",
+  "deterministic": true,
+  "master_seed": 20260822,
+  "winner": 1,
+  "outcome": "opponent_capture_win",
+  "win_reason": "Blue Wins (Capture)",
+  "game_length": 37,
+  "mask_violations": 0,
+  "moves": [
+    {
+      "ply": 1,
+      "player": 1,
+      "color": "Blue",
+      "action": 58,
+      "coordinate": [
+        4,
+        6
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 2,
+      "player": 2,
+      "color": "Red",
+      "action": 59,
+      "coordinate": [
+        5,
+        6
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 3,
+      "player": 1,
+      "color": "Blue",
+      "action": 43,
+      "coordinate": [
+        7,
+        4
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 4,
+      "player": 2,
+      "color": "Red",
+      "action": 46,
+      "coordinate": [
+        1,
+        5
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 5,
+      "player": 1,
+      "color": "Blue",
+      "action": 70,
+      "coordinate": [
+        7,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 6,
+      "player": 2,
+      "color": "Red",
+      "action": 68,
+      "coordinate": [
+        5,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 7,
+      "player": 1,
+      "color": "Blue",
+      "action": 61,
+      "coordinate": [
+        7,
+        6
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 8,
+      "player": 2,
+      "color": "Red",
+      "action": 15,
+      "coordinate": [
+        6,
+        1
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 9,
+      "player": 1,
+      "color": "Blue",
+      "action": 63,
+      "coordinate": [
+        0,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 10,
+      "player": 2,
+      "color": "Red",
+      "action": 79,
+      "coordinate": [
+        7,
+        8
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 11,
+      "player": 1,
+      "color": "Blue",
+      "action": 30,
+      "coordinate": [
+        3,
+        3
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 12,
+      "player": 2,
+      "color": "Red",
+      "action": 73,
+      "coordinate": [
+        1,
+        8
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 13,
+      "player": 1,
+      "color": "Blue",
+      "action": 67,
+      "coordinate": [
+        4,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 14,
+      "player": 2,
+      "color": "Red",
+      "action": 2,
+      "coordinate": [
+        2,
+        0
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 15,
+      "player": 1,
+      "color": "Blue",
+      "action": 10,
+      "coordinate": [
+        1,
+        1
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 16,
+      "player": 2,
+      "color": "Red",
+      "action": 74,
+      "coordinate": [
+        2,
+        8
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 17,
+      "player": 1,
+      "color": "Blue",
+      "action": 7,
+      "coordinate": [
+        7,
+        0
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 18,
+      "player": 2,
+      "color": "Red",
+      "action": 12,
+      "coordinate": [
+        3,
+        1
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 19,
+      "player": 1,
+      "color": "Blue",
+      "action": 71,
+      "coordinate": [
+        8,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 20,
+      "player": 2,
+      "color": "Red",
+      "action": 37,
+      "coordinate": [
+        1,
+        4
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 21,
+      "player": 1,
+      "color": "Blue",
+      "action": 55,
+      "coordinate": [
+        1,
+        6
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 22,
+      "player": 2,
+      "color": "Red",
+      "action": 48,
+      "coordinate": [
+        3,
+        5
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 23,
+      "player": 1,
+      "color": "Blue",
+      "action": 57,
+      "coordinate": [
+        3,
+        6
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 24,
+      "player": 2,
+      "color": "Red",
+      "action": 1,
+      "coordinate": [
+        1,
+        0
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 25,
+      "player": 1,
+      "color": "Blue",
+      "action": 64,
+      "coordinate": [
+        1,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 26,
+      "player": 2,
+      "color": "Red",
+      "action": 77,
+      "coordinate": [
+        5,
+        8
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 27,
+      "player": 1,
+      "color": "Blue",
+      "action": 80,
+      "coordinate": [
+        8,
+        8
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 28,
+      "player": 2,
+      "color": "Red",
+      "action": 41,
+      "coordinate": [
+        5,
+        4
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 29,
+      "player": 1,
+      "color": "Blue",
+      "action": 49,
+      "coordinate": [
+        4,
+        5
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 30,
+      "player": 2,
+      "color": "Red",
+      "action": 4,
+      "coordinate": [
+        4,
+        0
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 31,
+      "player": 1,
+      "color": "Blue",
+      "action": 66,
+      "coordinate": [
+        3,
+        7
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 32,
+      "player": 2,
+      "color": "Red",
+      "action": 11,
+      "coordinate": [
+        2,
+        1
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 33,
+      "player": 1,
+      "color": "Blue",
+      "action": 24,
+      "coordinate": [
+        6,
+        2
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 34,
+      "player": 2,
+      "color": "Red",
+      "action": 51,
+      "coordinate": [
+        6,
+        5
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 35,
+      "player": 1,
+      "color": "Blue",
+      "action": 16,
+      "coordinate": [
+        7,
+        1
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 36,
+      "player": 2,
+      "color": "Red",
+      "action": 75,
+      "coordinate": [
+        3,
+        8
+      ],
+      "move_result": "NORMAL"
+    },
+    {
+      "ply": 37,
+      "player": 1,
+      "color": "Blue",
+      "action": 78,
+      "coordinate": [
+        6,
+        8
+      ],
+      "move_result": "CAPTURE_WIN"
+    }
+  ],
+  "final_board": [
+    [
+      0,
+      2,
+      2,
+      0,
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      3,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      2,
+      1,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      1,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      1,
+      2,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      2,
+      2,
+      2,
+      0,
+      2,
+      1,
+      2,
+      1
+    ]
+  ]
+}
