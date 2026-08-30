@@ -39,7 +39,10 @@ def play_self_play_game(network, config, device, rng):
         legal_mask = action_mask_for_logic(logic, player)
         illegal_probability = float(policy[~legal_mask].sum())
         if illegal_probability > 1e-8:
-            illegal_probability_violations += 1
+            raise RuntimeError(
+                "self-play MCTS assigned probability to an illegal action: "
+                f"{illegal_probability}"
+            )
         if policy.shape != (NUM_ACTIONS,) or not np.isclose(policy.sum(), 1.0):
             raise RuntimeError("self-play MCTS policy is not a normalized 82-vector")
 
@@ -76,6 +79,8 @@ def play_self_play_game(network, config, device, rng):
         "game_length": len(history),
         "pass_usage": pass_usage,
         "illegal_probability_violations": illegal_probability_violations,
+        "score_blue": logic.score_blue,
+        "score_red": logic.score_red,
     }
     return examples, stats
 

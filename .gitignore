@@ -2,4 +2,6 @@
 __pycache__/
 *.pyc
 models/**/*.zip
+models/**/*.pt
+runs/
 overnight_*.log
