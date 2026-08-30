@@ -1,0 +1,41 @@
+# Generic alternating one-generation result
+
+Exactly one explicitly configured child checkpoint was generated.
+No next-generation invocation, loop, pool update, or self-trigger was performed.
+
+## [Runner infrastructure]
+
+Infrastructure pass: true
+Learner: red
+CLI: /home/bene15/Great_Kingdom_RL/.venv/bin/python run_alternating_generation.py --learner-player red --parent-model models/MaskablePPO_CNN/red8_ft_vs_blue7_plus10k.zip --latest-opponent models/MaskablePPO_CNN/blue8_ft_vs_red8_plus10k.zip --previous-opponent models/MaskablePPO_CNN/blue7_ft_vs_red7_plus10k.zip --output-model models/MaskablePPO_CNN/red9_ft_vs_blue8_plus10k.zip --report-dir reports/red9_vs_blue8_overnight_20260830 --timesteps 10000 --episodes 500 --seed 190000
+Timestep counter: 92160 -> 102400
+Update counter: 900 -> 1000
+Optimizer state entries: 18 -> 18
+
+## [Confirmed evaluations]
+
+Condition | Red wins | Blue wins | Draws | Learner win rate | Red suicide | Blue suicide | Mask | Mean length | Terminal reasons
+--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---
+PRE parent vs latest | 97 | 403 | 0 | 0.194 | 13 | 15 | 0 | 29.384 | capture=471, suicide=28, score/no-playable=1, other=0
+POST child vs latest | 216 | 284 | 0 | 0.432 | 21 | 40 | 0 | 29.314 | capture=438, suicide=61, score/no-playable=1, other=0
+Retention parent vs previous | 220 | 280 | 0 | 0.440 | 12 | 48 | 0 | 33.802 | capture=439, suicide=60, score/no-playable=1, other=0
+Retention child vs previous | 332 | 168 | 0 | 0.664 | 8 | 132 | 0 | 29.836 | capture=360, suicide=140, score/no-playable=0, other=0
+Child vs random | 453 | 47 | 0 | 0.906 | 5 | 15 | 0 | 32.388 | capture=478, suicide=20, score/no-playable=2, other=0
+
+Latest delta: +0.238
+Latest paired bootstrap 95% CI: [+0.188, +0.288]
+Retention delta: +0.224
+Retention paired bootstrap 95% CI: [+0.174, +0.276]
+
+## Generation cross-play (learner win rate)
+
+ | Previous opponent | Latest opponent
+--- | ---: | ---:
+Parent | 0.440 | 0.194
+Child | 0.664 | 0.432
+
+## [Learning result]
+
+Latest adaptation: PASS: clear positive latest-opponent improvement
+Forgetting/cycling: NONE in this matrix: previous-opponent estimate did not decrease
+Next recommendation: Use this runner for one explicitly invoked Blue3 generation; keep automatic looping disabled.

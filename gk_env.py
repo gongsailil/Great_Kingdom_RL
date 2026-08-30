@@ -5,6 +5,33 @@ import numpy as np
 from great_kingdom import GreatKingdomLogic, MoveResult, BOARD_SIZE
 
 
+def observation_for_player(logic, player):
+    """Return the canonical three-channel observation for ``player``.
+
+    Channel 0 is the requested player's stones, channel 1 is the other
+    player's stones, and channel 2 is empty space plus the neutral castle.
+    Keeping this helper here lets training, evaluation, and interactive play
+    use exactly the same player-perspective transform.
+    """
+    if player not in (1, 2):
+        raise ValueError("player must be Blue (1) or Red (2)")
+    board = np.asarray(logic.board)
+    my_stones = (board == player).astype(np.uint8)
+    opp_stones = (board == 3 - player).astype(np.uint8)
+    neutral = ((board == 0) | (board == 3)).astype(np.uint8)
+    return np.stack([my_stones, opp_stones, neutral], axis=0)
+
+
+def action_mask_for_logic(logic):
+    """Return the current selectable-action mask for a logic instance."""
+    mask = np.zeros(BOARD_SIZE * BOARD_SIZE, dtype=bool)
+    for action in range(mask.size):
+        x = action % BOARD_SIZE
+        y = action // BOARD_SIZE
+        mask[action] = not logic.is_impossible_action(x, y)
+    return mask
+
+
 class GreatKingdomEnv(gym.Env):
     """Minimal experiment environment.
 
@@ -53,12 +80,7 @@ class GreatKingdomEnv(gym.Env):
         Required directly on the env for MaskablePPO + SubprocVecEnv.
         True = selectable, False = impossible.
         """
-        mask = np.zeros(self.board_size * self.board_size, dtype=bool)
-        for action in range(self.board_size * self.board_size):
-            x = action % self.board_size
-            y = action // self.board_size
-            mask[action] = not self.logic.is_impossible_action(x, y)
-        return mask
+        return action_mask_for_logic(self.logic)
 
     def step(self, action):
         action = int(action)
@@ -124,13 +146,7 @@ class GreatKingdomEnv(gym.Env):
 
     def _get_obs_for(self, player):
         """Return the canonical observation from either player's view."""
-        if player not in (1, 2):
-            raise ValueError("player must be Blue (1) or Red (2)")
-        board = np.asarray(self.logic.board)
-        my_stones = (board == player).astype(np.uint8)
-        opp_stones = (board == 3 - player).astype(np.uint8)
-        neutral = ((board == 0) | (board == 3)).astype(np.uint8)
-        return np.stack([my_stones, opp_stones, neutral], axis=0)
+        return observation_for_player(self.logic, player)
 
     def _opponent_move_random(self):
         if self.logic.game_over:
