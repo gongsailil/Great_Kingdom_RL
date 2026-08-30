@@ -1,0 +1,19 @@
+# AlphaZero V2 Minimal E2E
+
+Result: PASS
+Device: cuda
+Network parameters: 244989
+MCTS simulations: 32
+Self-play games: 2
+Terminal reasons: CAPTURE_WIN=2
+Generated samples: 75
+Mean game length: 37.500
+PASS usage: 1
+Loss before: policy=4.399947, value=0.995544, total=5.395492
+Loss after: policy=4.124773, value=0.082313, total=4.207087
+Illegal probability violations: 0
+Checkpoint save/load: PASS
+Checkpoint: models/alphazero_v2/minimal_e2e.pt
+Elapsed seconds: 14.321
+
+This smoke validates pipeline correctness only; it is not a strength claim.

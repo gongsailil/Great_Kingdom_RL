@@ -1,0 +1,47 @@
+{
+  "checkpoint_path": "models/alphazero_v2/minimal_e2e.pt",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5070 Ti",
+  "elapsed_seconds": 14.320745285000157,
+  "games": [
+    {
+      "game_index": 0,
+      "game_length": 41,
+      "illegal_probability_violations": 0,
+      "pass_usage": 1,
+      "terminal_reason": "CAPTURE_WIN",
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "game_length": 34,
+      "illegal_probability_violations": 0,
+      "pass_usage": 0,
+      "terminal_reason": "CAPTURE_WIN",
+      "winner": 2
+    }
+  ],
+  "games_terminal_reason": {
+    "CAPTURE_WIN": 2
+  },
+  "generated_sample_count": 75,
+  "illegal_probability_violations": 0,
+  "loss_after": {
+    "policy": 4.124773025512695,
+    "total": 4.207086563110352,
+    "value": 0.08231335878372192
+  },
+  "loss_before": {
+    "policy": 4.399947166442871,
+    "total": 5.395491600036621,
+    "value": 0.99554443359375
+  },
+  "loss_decreased": true,
+  "mcts_simulations": 32,
+  "mean_game_length": 37.5,
+  "minimal_e2e_pass": true,
+  "network_params_count": 244989,
+  "pass_usage_count": 1,
+  "save_load_test": "PASS",
+  "self_play_games": 2
+}
