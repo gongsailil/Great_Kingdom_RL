@@ -1,4 +1,7 @@
-"""Play Great Kingdom against a trained MaskablePPO policy."""
+"""Play historical 81-action Rules V1 against a trained MaskablePPO policy.
+
+Rules V1 checkpoints are not compatible with the 82-action Rules V2 engine.
+"""
 
 import argparse
 from pathlib import Path
