@@ -200,7 +200,10 @@ def _checkpoint_payload(state, config):
         "last_metric": state.last_metric,
     }
     if torch.cuda.is_available():
-        payload["cuda_rng_state_all"] = torch.cuda.get_rng_state_all()
+        payload["cuda_rng_state_all"] = [
+            state.detach().cpu().to(dtype=torch.uint8)
+            for state in torch.cuda.get_rng_state_all()
+        ]
     return payload
 
 
@@ -300,7 +303,11 @@ def load_run(run_dir, device):
     rng.bit_generator.state = payload["numpy_rng_state"]
     torch.set_rng_state(payload["torch_rng_state"].cpu())
     if device.type == "cuda" and "cuda_rng_state_all" in payload:
-        torch.cuda.set_rng_state_all(payload["cuda_rng_state_all"])
+        cuda_rng_states = [
+            state.detach().cpu().to(dtype=torch.uint8)
+            for state in payload["cuda_rng_state_all"]
+        ]
+        torch.cuda.set_rng_state_all(cuda_rng_states)
     state = TrainingRunState(
         network=network,
         optimizer=optimizer,

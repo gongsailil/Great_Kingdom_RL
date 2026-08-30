@@ -191,6 +191,27 @@ def test_run_directory_checkpoint_resume_metrics_and_finite_budget():
         ) == 2
 
 
+def test_cuda_resume_normalizes_rng_states_to_cpu_byte_tensors():
+    if not torch.cuda.is_available():
+        return
+    device = torch.device("cuda")
+    config = tiny_config()
+    with tempfile.TemporaryDirectory() as temp_dir_name:
+        run_dir = Path(temp_dir_name) / "cuda-run"
+        initialize_run(run_dir, config, device)
+        mapped_payload = torch.load(
+            run_dir / "latest.pt", map_location=device, weights_only=False
+        )
+        mapped_states = mapped_payload["cuda_rng_state_all"]
+        assert mapped_states
+        assert all(state.device.type == "cuda" for state in mapped_states)
+
+        loaded_config, loaded = load_run(run_dir, device)
+        assert loaded_config == config
+        assert loaded.iteration == 0
+        assert next(loaded.network.parameters()).device.type == "cuda"
+
+
 def test_checkpoint_retention_keeps_recent_and_milestones():
     config = tiny_config()
     with tempfile.TemporaryDirectory() as temp_dir_name:
@@ -288,6 +309,7 @@ if __name__ == "__main__":
     test_training_defaults_are_fixed_initial_config()
     test_replay_fifo_append_sample_and_round_trip()
     test_run_directory_checkpoint_resume_metrics_and_finite_budget()
+    test_cuda_resume_normalizes_rng_states_to_cpu_byte_tensors()
     test_checkpoint_retention_keeps_recent_and_milestones()
     test_time_budget_cli_parser()
     test_unlimited_budget_does_not_stop_on_elapsed_time()
