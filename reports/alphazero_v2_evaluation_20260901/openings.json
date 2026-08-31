@@ -1,0 +1,95 @@
+{
+  "count": 10,
+  "openings": [
+    {
+      "actions": [
+        51,
+        67,
+        46,
+        63
+      ],
+      "opening_id": 0,
+      "resulting_turn": 1
+    },
+    {
+      "actions": [
+        76,
+        22,
+        2
+      ],
+      "opening_id": 1,
+      "resulting_turn": 2
+    },
+    {
+      "actions": [
+        29,
+        0
+      ],
+      "opening_id": 2,
+      "resulting_turn": 1
+    },
+    {
+      "actions": [
+        16,
+        65,
+        33
+      ],
+      "opening_id": 3,
+      "resulting_turn": 2
+    },
+    {
+      "actions": [
+        4,
+        59,
+        78
+      ],
+      "opening_id": 4,
+      "resulting_turn": 2
+    },
+    {
+      "actions": [
+        50,
+        78,
+        74,
+        37
+      ],
+      "opening_id": 5,
+      "resulting_turn": 1
+    },
+    {
+      "actions": [
+        5,
+        41
+      ],
+      "opening_id": 6,
+      "resulting_turn": 1
+    },
+    {
+      "actions": [
+        42,
+        79
+      ],
+      "opening_id": 7,
+      "resulting_turn": 1
+    },
+    {
+      "actions": [
+        16,
+        56,
+        47
+      ],
+      "opening_id": 8,
+      "resulting_turn": 2
+    },
+    {
+      "actions": [
+        49,
+        2,
+        21
+      ],
+      "opening_id": 9,
+      "resulting_turn": 2
+    }
+  ],
+  "seed": 20260901
+}

@@ -1,0 +1,367 @@
+{
+  "checkpoint_paths": {
+    "100": "runs/alphazero_v2/main_20260830/checkpoints/iteration_000100.pt",
+    "200": "runs/alphazero_v2/main_20260830/checkpoints/iteration_000200.pt",
+    "300": "runs/alphazero_v2/main_20260830/checkpoints/iteration_000300.pt",
+    "370": "runs/alphazero_v2/main_20260830/checkpoints/iteration_000370.pt",
+    "375": "runs/alphazero_v2/main_20260830/checkpoints/iteration_000375.pt",
+    "50": "runs/alphazero_v2/main_20260830/checkpoints/iteration_000050.pt"
+  },
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5070 Ti",
+  "elapsed_seconds": 1274.7691604850115,
+  "interpretation": {
+    "assessment": {
+      "collapse_assessment": "The strong historical win rate argues against broad collapse, while recent head-to-head regressions and capture-only endings show local non-monotonicity and a possible PASS/scoring blind spot.",
+      "color_dependence": "Blue won 103/180 games. Iteration 375 won 40 as Blue and 36 as Red, so its historical advantage is not solely a Blue-color artifact.",
+      "cyclic_behavior": "Observed majority-win cycles: [[300, 370, 375]]. These are possible non-transitive behavior under the small opening suite.",
+      "ending_behavior": "Capture ended 180/180 games; PASS scoring ended 0/180. This is a capture-heavy behavioral signal, not by itself a strength proof.",
+      "non_monotonicity": "Newer checkpoint regressions appeared in 2 ladder matchups: [{'older': 300, 'newer': 370, 'newer_wins': 9, 'games': 20}, {'older': 370, 'newer': 375, 'newer_wins': 9, 'games': 20}].",
+      "overall_strength": "Iteration 375 has the highest observed aggregate win rate; iteration 375 won 76/100 against historical checkpoints."
+    },
+    "color_dependence": {
+      "blue_win_rate": 0.5722222222222222,
+      "blue_wins": 103,
+      "red_wins": 77
+    },
+    "ending_behavior": {
+      "capture_endings": 180,
+      "capture_rate": 1.0,
+      "pass_score_endings": 0
+    },
+    "latest_375_games": 100,
+    "latest_375_win_rate": 0.76,
+    "latest_375_wins": 76,
+    "latest_375_wins_as_blue": 40,
+    "latest_375_wins_as_red": 36,
+    "non_monotonic_ladder_results": [
+      {
+        "games": 20,
+        "newer": 370,
+        "newer_wins": 9,
+        "older": 300
+      },
+      {
+        "games": 20,
+        "newer": 375,
+        "newer_wins": 9,
+        "older": 370
+      }
+    ],
+    "overall_strength_progression": {
+      "100": {
+        "games": 60,
+        "win_rate": 0.26666666666666666,
+        "wins": 16
+      },
+      "200": {
+        "games": 60,
+        "win_rate": 0.4166666666666667,
+        "wins": 25
+      },
+      "300": {
+        "games": 60,
+        "win_rate": 0.5666666666666667,
+        "wins": 34
+      },
+      "370": {
+        "games": 40,
+        "win_rate": 0.5,
+        "wins": 20
+      },
+      "375": {
+        "games": 100,
+        "win_rate": 0.76,
+        "wins": 76
+      },
+      "50": {
+        "games": 40,
+        "win_rate": 0.225,
+        "wins": 9
+      }
+    },
+    "possible_non_transitive_cycles": [
+      [
+        300,
+        370,
+        375
+      ]
+    ],
+    "sample_size_note": "Each matchup has only 20 paired-opening games and is diagnostic, not a promotion or strength proof.",
+    "strongest_checkpoint_candidate": 375,
+    "tactical_context": {
+      "assessment": "Iteration 375 found the immediate capture but did not choose the immediately winning scoring PASS in the constructed state.",
+      "immediate_capture_passed": true,
+      "winning_score_pass_passed": false
+    }
+  },
+  "iterations": [
+    50,
+    100,
+    200,
+    300,
+    370,
+    375
+  ],
+  "latest_vs_historical": [
+    {
+      "a_wins": 19,
+      "a_wins_as_blue": 10,
+      "a_wins_as_red": 9,
+      "b_wins": 1,
+      "b_wins_as_blue": 1,
+      "b_wins_as_red": 0,
+      "blue_total_wins": 11,
+      "capture_endings": 20,
+      "checkpoint_a": 375,
+      "checkpoint_b": 50,
+      "games": 20,
+      "mean_game_length": 19.95,
+      "mean_pass_usage": 0.4,
+      "pass_score_endings": 0,
+      "red_total_wins": 9
+    },
+    {
+      "a_wins": 18,
+      "a_wins_as_blue": 9,
+      "a_wins_as_red": 9,
+      "b_wins": 2,
+      "b_wins_as_blue": 1,
+      "b_wins_as_red": 1,
+      "blue_total_wins": 10,
+      "capture_endings": 20,
+      "checkpoint_a": 375,
+      "checkpoint_b": 100,
+      "games": 20,
+      "mean_game_length": 25.1,
+      "mean_pass_usage": 0.1,
+      "pass_score_endings": 0,
+      "red_total_wins": 10
+    },
+    {
+      "a_wins": 17,
+      "a_wins_as_blue": 9,
+      "a_wins_as_red": 8,
+      "b_wins": 3,
+      "b_wins_as_blue": 2,
+      "b_wins_as_red": 1,
+      "blue_total_wins": 11,
+      "capture_endings": 20,
+      "checkpoint_a": 375,
+      "checkpoint_b": 200,
+      "games": 20,
+      "mean_game_length": 21.05,
+      "mean_pass_usage": 0.15,
+      "pass_score_endings": 0,
+      "red_total_wins": 9
+    },
+    {
+      "a_wins": 13,
+      "a_wins_as_blue": 8,
+      "a_wins_as_red": 5,
+      "b_wins": 7,
+      "b_wins_as_blue": 5,
+      "b_wins_as_red": 2,
+      "blue_total_wins": 13,
+      "capture_endings": 20,
+      "checkpoint_a": 375,
+      "checkpoint_b": 300,
+      "games": 20,
+      "mean_game_length": 22.85,
+      "mean_pass_usage": 0.0,
+      "pass_score_endings": 0,
+      "red_total_wins": 7
+    },
+    {
+      "a_wins": 9,
+      "a_wins_as_blue": 4,
+      "a_wins_as_red": 5,
+      "b_wins": 11,
+      "b_wins_as_blue": 5,
+      "b_wins_as_red": 6,
+      "blue_total_wins": 9,
+      "capture_endings": 20,
+      "checkpoint_a": 375,
+      "checkpoint_b": 370,
+      "games": 20,
+      "mean_game_length": 19.35,
+      "mean_pass_usage": 0.0,
+      "pass_score_endings": 0,
+      "red_total_wins": 11
+    }
+  ],
+  "matrix": {
+    "100": {
+      "100": "-",
+      "200": "2/20",
+      "300": "",
+      "370": "",
+      "375": "2/20",
+      "50": "12/20"
+    },
+    "200": {
+      "100": "18/20",
+      "200": "-",
+      "300": "4/20",
+      "370": "",
+      "375": "3/20",
+      "50": ""
+    },
+    "300": {
+      "100": "",
+      "200": "16/20",
+      "300": "-",
+      "370": "11/20",
+      "375": "7/20",
+      "50": ""
+    },
+    "370": {
+      "100": "",
+      "200": "",
+      "300": "9/20",
+      "370": "-",
+      "375": "11/20",
+      "50": ""
+    },
+    "375": {
+      "100": "18/20",
+      "200": "17/20",
+      "300": "13/20",
+      "370": "9/20",
+      "375": "-",
+      "50": "19/20"
+    },
+    "50": {
+      "100": "8/20",
+      "200": "",
+      "300": "",
+      "370": "",
+      "375": "1/20",
+      "50": "-"
+    }
+  },
+  "mcts_simulations": 64,
+  "milestone_ladder": [
+    {
+      "a_wins": 8,
+      "a_wins_as_blue": 6,
+      "a_wins_as_red": 2,
+      "b_wins": 12,
+      "b_wins_as_blue": 8,
+      "b_wins_as_red": 4,
+      "blue_total_wins": 14,
+      "capture_endings": 20,
+      "checkpoint_a": 50,
+      "checkpoint_b": 100,
+      "games": 20,
+      "mean_game_length": 37.2,
+      "mean_pass_usage": 0.35,
+      "pass_score_endings": 0,
+      "red_total_wins": 6
+    },
+    {
+      "a_wins": 2,
+      "a_wins_as_blue": 2,
+      "a_wins_as_red": 0,
+      "b_wins": 18,
+      "b_wins_as_blue": 10,
+      "b_wins_as_red": 8,
+      "blue_total_wins": 12,
+      "capture_endings": 20,
+      "checkpoint_a": 100,
+      "checkpoint_b": 200,
+      "games": 20,
+      "mean_game_length": 26.0,
+      "mean_pass_usage": 0.2,
+      "pass_score_endings": 0,
+      "red_total_wins": 8
+    },
+    {
+      "a_wins": 4,
+      "a_wins_as_blue": 3,
+      "a_wins_as_red": 1,
+      "b_wins": 16,
+      "b_wins_as_blue": 9,
+      "b_wins_as_red": 7,
+      "blue_total_wins": 12,
+      "capture_endings": 20,
+      "checkpoint_a": 200,
+      "checkpoint_b": 300,
+      "games": 20,
+      "mean_game_length": 26.6,
+      "mean_pass_usage": 0.9,
+      "pass_score_endings": 0,
+      "red_total_wins": 8
+    },
+    {
+      "a_wins": 11,
+      "a_wins_as_blue": 6,
+      "a_wins_as_red": 5,
+      "b_wins": 9,
+      "b_wins_as_blue": 5,
+      "b_wins_as_red": 4,
+      "blue_total_wins": 11,
+      "capture_endings": 20,
+      "checkpoint_a": 300,
+      "checkpoint_b": 370,
+      "games": 20,
+      "mean_game_length": 22.45,
+      "mean_pass_usage": 0.05,
+      "pass_score_endings": 0,
+      "red_total_wins": 9
+    },
+    {
+      "a_wins": 11,
+      "a_wins_as_blue": 5,
+      "a_wins_as_red": 6,
+      "b_wins": 9,
+      "b_wins_as_blue": 4,
+      "b_wins_as_red": 5,
+      "blue_total_wins": 9,
+      "capture_endings": 20,
+      "checkpoint_a": 370,
+      "checkpoint_b": 375,
+      "games": 20,
+      "mean_game_length": 19.35,
+      "mean_pass_usage": 0.0,
+      "pass_score_endings": 0,
+      "red_total_wins": 11
+    }
+  ],
+  "opening_count": 10,
+  "opening_seed": 20260901,
+  "run_dir": "runs/alphazero_v2/main_20260830",
+  "tactical_sanity": {
+    "checkpoint_iteration": 375,
+    "defense_threat": {
+      "defense_action": 19,
+      "diagnostic_only": true,
+      "selected_action": 68,
+      "selected_defense": false
+    },
+    "immediate_capture": {
+      "expected_action": 19,
+      "pass": true,
+      "selected_action": 19
+    },
+    "mcts_simulations": 64,
+    "opponent_territory": {
+      "action": 0,
+      "excluded": true
+    },
+    "own_territory": {
+      "action": 0,
+      "legal_child": true
+    },
+    "pure_suicide": {
+      "action": 10,
+      "excluded": true
+    },
+    "winning_score_pass": {
+      "expected_action": 81,
+      "pass": false,
+      "selected_action": 70
+    }
+  },
+  "total_games": 180
+}

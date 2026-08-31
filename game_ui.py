@@ -153,9 +153,12 @@ class GreatKingdomRenderer:
         if logic.game_over:
             reason = logic.win_reason or "Game Over"
             reason_surface = self.large_font.render(reason, True, COLOR_HIGHLIGHT)
-            self.screen.blit(reason_surface, (30, ui_y + 15))
+            self.screen.blit(reason_surface, (30, ui_y + 8))
+            if message:
+                message_surface = self.font.render(message, True, COLOR_TEXT)
+                self.screen.blit(message_surface, (30, ui_y + 48))
             restart_surface = self.font.render("Restart: press R", True, COLOR_TEXT)
-            self.screen.blit(restart_surface, (30, ui_y + 60))
+            self.screen.blit(restart_surface, (30, ui_y + 73))
             return
 
         if headline is None:
