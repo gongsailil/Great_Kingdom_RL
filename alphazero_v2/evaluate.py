@@ -109,6 +109,112 @@ def select_evaluation_action(checkpoint, logic, simulations=64):
     return action
 
 
+def _root_child_record(root, logic, action, total_visits):
+    child = root.children[action]
+    child_value = child.value()
+    root_q_value = (
+        child_value if child.to_play == root.to_play else -child_value
+    )
+    if action == PASS_ACTION:
+        coordinate = None
+        simulated = logic.copy()
+        immediate_result = simulated.apply_action(action).name
+        immediate_winner = simulated.winner
+    else:
+        x, y = action % BOARD_SIZE, action // BOARD_SIZE
+        coordinate = [x, y]
+        immediate_result = logic.classify_placement(logic.turn, x, y).name
+        immediate_winner = logic.turn if immediate_result == "CAPTURE_WIN" else None
+    return {
+        "action": int(action),
+        "visit_count": child.visit_count,
+        "visit_fraction": child.visit_count / total_visits if total_visits else 0.0,
+        "prior": child.prior,
+        "q_value_root_player": root_q_value,
+        "is_pass": action == PASS_ACTION,
+        "coordinate": coordinate,
+        "immediate_result": immediate_result,
+        "immediate_winner": immediate_winner,
+    }
+
+
+def analyze_search_root(checkpoint, logic, simulations, top_k=10):
+    """Return deterministic root diagnostics using MCTS's exact Q convention."""
+    if int(top_k) <= 0:
+        raise ValueError("top_k must be positive")
+    root = evaluation_search_root(checkpoint, logic, simulations)
+    total_visits = sum(child.visit_count for child in root.children.values())
+    children = [
+        _root_child_record(root, logic, action, total_visits)
+        for action in root.children
+    ]
+    children.sort(key=lambda item: (-item["visit_count"], item["action"]))
+    selected_action = children[0]["action"]
+    by_action = {str(item["action"]): item for item in children}
+    return {
+        "simulations": int(simulations),
+        "root_player": root.to_play,
+        "selected_action": selected_action,
+        "total_child_visits": total_visits,
+        "top_actions": children[: int(top_k)],
+        "pass_action": by_action.get(str(PASS_ACTION)),
+        "children": children,
+    }
+
+
+def immediate_capture_actions(logic, player=None):
+    """List placement actions that immediately capture for ``player``."""
+    if player is None:
+        player = logic.turn
+    captures = []
+    mask = action_mask_for_logic(logic, player)
+    for action in np.flatnonzero(mask[:PASS_ACTION]):
+        action = int(action)
+        x, y = action % BOARD_SIZE, action // BOARD_SIZE
+        if logic.classify_placement(player, x, y) == MoveResultV2.CAPTURE_WIN:
+            captures.append(action)
+    return captures
+
+
+def analyze_safe_defense_actions(logic):
+    """Classify legal replies by whether they leave an opponent one-ply capture."""
+    if logic.game_over:
+        raise ValueError("defense analysis requires an active state")
+    player = logic.turn
+    opponent = 3 - player
+    threat_state = logic.copy()
+    threat_state.turn = opponent
+    original_threats = immediate_capture_actions(threat_state, opponent)
+    mask = action_mask_for_logic(logic, player)
+    safe_actions = []
+    opponent_captures_after = {}
+    for action in np.flatnonzero(mask):
+        action = int(action)
+        candidate = logic.copy()
+        result = candidate.apply_action(action)
+        if result not in (
+            MoveResultV2.NORMAL,
+            MoveResultV2.CAPTURE_WIN,
+            MoveResultV2.PASS,
+            MoveResultV2.PASS_SCORE_END,
+        ):
+            raise RuntimeError(f"legal defense candidate became {result.name}")
+        if candidate.game_over:
+            remaining = [] if candidate.winner == player else ["terminal_loss"]
+        else:
+            remaining = immediate_capture_actions(candidate, opponent)
+        opponent_captures_after[str(action)] = remaining
+        if not remaining:
+            safe_actions.append(action)
+    return {
+        "player": player,
+        "opponent": opponent,
+        "original_immediate_threat_actions": original_threats,
+        "safe_defense_actions": safe_actions,
+        "opponent_immediate_captures_after": opponent_captures_after,
+    }
+
+
 def apply_opening(actions):
     logic = GreatKingdomLogicV2()
     for ply, raw_action in enumerate(actions):
@@ -203,14 +309,31 @@ def play_arena_game(
     opening,
     simulations=64,
     max_moves=200,
+    blue_agent=None,
+    red_agent=None,
+    blue_simulations=None,
+    red_simulations=None,
 ):
     logic = apply_opening(opening["actions"])
+    if blue_agent is None:
+        blue_agent = f"iter{blue_checkpoint.iteration}"
+    if red_agent is None:
+        red_agent = f"iter{red_checkpoint.iteration}"
+    if blue_simulations is None:
+        blue_simulations = simulations
+    if red_simulations is None:
+        red_simulations = simulations
+    if int(blue_simulations) <= 0 or int(red_simulations) <= 0:
+        raise ValueError("color-specific MCTS simulations must be positive")
     evaluation_actions = []
     pass_usage = 0
     last_result = None
     for _ in range(max_moves):
         checkpoint = blue_checkpoint if logic.turn == BLUE else red_checkpoint
-        action = select_evaluation_action(checkpoint, logic, simulations)
+        action_simulations = (
+            blue_simulations if logic.turn == BLUE else red_simulations
+        )
+        action = select_evaluation_action(checkpoint, logic, action_simulations)
         legal_mask = action_mask_for_logic(logic, logic.turn)
         if not bool(legal_mask[action]):
             raise RuntimeError(f"arena selected illegal action {action}")
@@ -233,6 +356,7 @@ def play_arena_game(
     winner_checkpoint = (
         blue_checkpoint if logic.winner == BLUE else red_checkpoint
     )
+    winner_agent = blue_agent if logic.winner == BLUE else red_agent
     return {
         "opening_id": int(opening["opening_id"]),
         "opening_actions": list(opening["actions"]),
@@ -240,6 +364,11 @@ def play_arena_game(
         "red_iteration": red_checkpoint.iteration,
         "winner_color": logic.winner,
         "winner_iteration": winner_checkpoint.iteration,
+        "blue_agent": blue_agent,
+        "red_agent": red_agent,
+        "winner_agent": winner_agent,
+        "blue_mcts_simulations": int(blue_simulations),
+        "red_mcts_simulations": int(red_simulations),
         "terminal_reason": last_result.name,
         "game_length": len(opening["actions"]) + len(evaluation_actions),
         "evaluation_moves": len(evaluation_actions),
@@ -249,6 +378,24 @@ def play_arena_game(
         "actions": evaluation_actions,
         "mcts_simulations": int(simulations),
     }
+
+
+def play_search_budget_game(
+    checkpoint,
+    blue_simulations,
+    red_simulations,
+    opening,
+):
+    return play_arena_game(
+        checkpoint,
+        checkpoint,
+        opening,
+        simulations=blue_simulations,
+        blue_agent=f"iter{checkpoint.iteration}_mcts{blue_simulations}",
+        red_agent=f"iter{checkpoint.iteration}_mcts{red_simulations}",
+        blue_simulations=blue_simulations,
+        red_simulations=red_simulations,
+    )
 
 
 def play_paired_opening(

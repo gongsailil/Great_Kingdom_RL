@@ -1,0 +1,2616 @@
+{
+  "budgets": [
+    64,
+    128,
+    256,
+    512
+  ],
+  "checkpoint_iteration": 375,
+  "defense_analysis": {
+    "opponent": 2,
+    "opponent_immediate_captures_after": {
+      "12": [
+        19
+      ],
+      "13": [
+        19
+      ],
+      "14": [
+        19
+      ],
+      "15": [
+        19
+      ],
+      "16": [
+        19
+      ],
+      "17": [
+        19
+      ],
+      "18": [
+        19
+      ],
+      "19": [],
+      "2": [
+        3,
+        19
+      ],
+      "20": [
+        19
+      ],
+      "21": [
+        19
+      ],
+      "22": [
+        19
+      ],
+      "23": [
+        19
+      ],
+      "24": [
+        19
+      ],
+      "25": [
+        19
+      ],
+      "26": [
+        19
+      ],
+      "27": [
+        19
+      ],
+      "28": [
+        19
+      ],
+      "29": [
+        19
+      ],
+      "3": [
+        19
+      ],
+      "30": [
+        19
+      ],
+      "31": [
+        19
+      ],
+      "32": [
+        19
+      ],
+      "33": [
+        19
+      ],
+      "34": [
+        19
+      ],
+      "35": [
+        19
+      ],
+      "36": [
+        19
+      ],
+      "37": [
+        19
+      ],
+      "38": [
+        19
+      ],
+      "39": [
+        19
+      ],
+      "4": [
+        19
+      ],
+      "41": [
+        19
+      ],
+      "42": [
+        19
+      ],
+      "43": [
+        19
+      ],
+      "44": [
+        19
+      ],
+      "45": [
+        19
+      ],
+      "46": [
+        19
+      ],
+      "47": [
+        19
+      ],
+      "48": [
+        19
+      ],
+      "49": [
+        19
+      ],
+      "5": [
+        19
+      ],
+      "50": [
+        19
+      ],
+      "51": [
+        19
+      ],
+      "52": [
+        19
+      ],
+      "53": [
+        19
+      ],
+      "54": [
+        19
+      ],
+      "55": [
+        19
+      ],
+      "56": [
+        19
+      ],
+      "57": [
+        19
+      ],
+      "58": [
+        19
+      ],
+      "59": [
+        19
+      ],
+      "6": [
+        19
+      ],
+      "60": [
+        19
+      ],
+      "61": [
+        19
+      ],
+      "62": [
+        19
+      ],
+      "63": [
+        19
+      ],
+      "64": [
+        19
+      ],
+      "65": [
+        19
+      ],
+      "66": [
+        19
+      ],
+      "67": [
+        19
+      ],
+      "68": [
+        19
+      ],
+      "69": [
+        19
+      ],
+      "7": [
+        19
+      ],
+      "70": [
+        19
+      ],
+      "71": [
+        19
+      ],
+      "72": [
+        19
+      ],
+      "73": [
+        19
+      ],
+      "74": [
+        19
+      ],
+      "75": [
+        19
+      ],
+      "76": [
+        19
+      ],
+      "77": [
+        19
+      ],
+      "78": [
+        19
+      ],
+      "79": [
+        19
+      ],
+      "8": [
+        19
+      ],
+      "80": [
+        19
+      ],
+      "81": [
+        19
+      ]
+    },
+    "original_immediate_threat_actions": [
+      19
+    ],
+    "player": 1,
+    "safe_defense_actions": [
+      19
+    ]
+  },
+  "results": [
+    {
+      "capture": {
+        "expected_action": 19,
+        "expected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 64,
+          "visit_fraction": 1.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 1.94519827800832e-07,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 64,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "CAPTURE_WIN",
+              "immediate_winner": 1,
+              "is_pass": false,
+              "prior": 0.9992954134941101,
+              "q_value_root_player": 1.0,
+              "visit_count": 64,
+              "visit_fraction": 1.0
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.924882279766507e-09,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 2,
+              "coordinate": [
+                2,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 9.796021771535379e-08,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 3.530373578541912e-05,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 5.339621793609695e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.8931262957266881e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.037692633573897e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 7,
+              "coordinate": [
+                7,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.174753265331674e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 8,
+              "coordinate": [
+                8,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 2.9770689025099273e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 12,
+              "coordinate": [
+                3,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 7.905486540948914e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 64
+        },
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 64,
+          "visit_fraction": 1.0
+        },
+        "success": true
+      },
+      "defense": {
+        "best_safe_defense_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        "defense_success": false,
+        "opponent_immediate_captures_after_selected": [
+          19
+        ],
+        "original_immediate_threat_actions": [
+          19
+        ],
+        "reference_defense_action": 19,
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 0.0006631379364989698,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 68,
+          "simulations": 64,
+          "top_actions": [
+            {
+              "action": 68,
+              "coordinate": [
+                5,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.5430461764335632,
+              "q_value_root_player": -0.7641830667853355,
+              "visit_count": 8,
+              "visit_fraction": 0.125
+            },
+            {
+              "action": 15,
+              "coordinate": [
+                6,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007328815292567015,
+              "q_value_root_player": -0.06373211741447449,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 16,
+              "coordinate": [
+                7,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009203911758959293,
+              "q_value_root_player": -0.23085659742355347,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 17,
+              "coordinate": [
+                8,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007857372052967548,
+              "q_value_root_player": -0.20451664924621582,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 20,
+              "coordinate": [
+                2,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009160865098237991,
+              "q_value_root_player": -0.0206872820854187,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.06375894695520401,
+              "q_value_root_player": -0.5522638447582722,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 25,
+              "coordinate": [
+                7,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007207106798887253,
+              "q_value_root_player": -0.03488168120384216,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 35,
+              "coordinate": [
+                8,
+                3
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0033014295622706413,
+              "q_value_root_player": -0.08706441521644592,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 37,
+              "coordinate": [
+                1,
+                4
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.005638469476252794,
+              "q_value_root_player": -0.009721368551254272,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 48,
+              "coordinate": [
+                3,
+                5
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0029607692267745733,
+              "q_value_root_player": -0.20742285251617432,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            }
+          ],
+          "total_child_visits": 64
+        },
+        "safe_defense_actions": [
+          19
+        ],
+        "selected_action": 68,
+        "selected_action_stats": {
+          "action": 68,
+          "coordinate": [
+            5,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.5430461764335632,
+          "q_value_root_player": -0.7641830667853355,
+          "visit_count": 8,
+          "visit_fraction": 0.125
+        },
+        "success": false
+      },
+      "legality": {
+        "opponent_territory_excluded": true,
+        "own_territory_legal": true,
+        "pure_suicide_excluded": true
+      },
+      "simulations": 64,
+      "winning_pass": {
+        "fixture_terminal_result": "PASS_SCORE_END",
+        "fixture_winner": 1,
+        "original_player": 1,
+        "pass_action_stats": {
+          "action": 81,
+          "coordinate": null,
+          "immediate_result": "PASS_SCORE_END",
+          "immediate_winner": 1,
+          "is_pass": true,
+          "prior": 0.000785298238042742,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS_SCORE_END",
+            "immediate_winner": 1,
+            "is_pass": true,
+            "prior": 0.000785298238042742,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 70,
+          "simulations": 64,
+          "top_actions": [
+            {
+              "action": 70,
+              "coordinate": [
+                7,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.6431770324707031,
+              "q_value_root_player": 0.6561011888327137,
+              "visit_count": 62,
+              "visit_fraction": 0.96875
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.09752345085144043,
+              "q_value_root_player": 0.022183865308761597,
+              "visit_count": 2,
+              "visit_fraction": 0.03125
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0007124427938833833,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 1,
+              "coordinate": [
+                1,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.01683604158461094,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001383055467158556,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0003163166984450072,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00037905495264567435,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00016117418999783695,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 7,
+              "coordinate": [
+                7,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0008186751510947943,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 8,
+              "coordinate": [
+                8,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0002644631895236671,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 64
+        },
+        "selected_action": 70,
+        "selected_action_stats": {
+          "action": 70,
+          "coordinate": [
+            7,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.6431770324707031,
+          "q_value_root_player": 0.6561011888327137,
+          "visit_count": 62,
+          "visit_fraction": 0.96875
+        },
+        "success": false
+      }
+    },
+    {
+      "capture": {
+        "expected_action": 19,
+        "expected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 128,
+          "visit_fraction": 1.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 1.94519827800832e-07,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 128,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "CAPTURE_WIN",
+              "immediate_winner": 1,
+              "is_pass": false,
+              "prior": 0.9992954134941101,
+              "q_value_root_player": 1.0,
+              "visit_count": 128,
+              "visit_fraction": 1.0
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.924882279766507e-09,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 2,
+              "coordinate": [
+                2,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 9.796021771535379e-08,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 3.530373578541912e-05,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 5.339621793609695e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.8931262957266881e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.037692633573897e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 7,
+              "coordinate": [
+                7,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.174753265331674e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 8,
+              "coordinate": [
+                8,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 2.9770689025099273e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 12,
+              "coordinate": [
+                3,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 7.905486540948914e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 128
+        },
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 128,
+          "visit_fraction": 1.0
+        },
+        "success": true
+      },
+      "defense": {
+        "best_safe_defense_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": 0.2388265577017092,
+          "visit_count": 51,
+          "visit_fraction": 0.3984375
+        },
+        "defense_success": true,
+        "opponent_immediate_captures_after_selected": [],
+        "original_immediate_threat_actions": [
+          19
+        ],
+        "reference_defense_action": 19,
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 0.0006631379364989698,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 128,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001698206295259297,
+              "q_value_root_player": 0.2388265577017092,
+              "visit_count": 51,
+              "visit_fraction": 0.3984375
+            },
+            {
+              "action": 68,
+              "coordinate": [
+                5,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.5430461764335632,
+              "q_value_root_player": -0.7903849482536316,
+              "visit_count": 9,
+              "visit_fraction": 0.0703125
+            },
+            {
+              "action": 15,
+              "coordinate": [
+                6,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007328815292567015,
+              "q_value_root_player": -0.06373211741447449,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 16,
+              "coordinate": [
+                7,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009203911758959293,
+              "q_value_root_player": -0.23085659742355347,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 17,
+              "coordinate": [
+                8,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007857372052967548,
+              "q_value_root_player": -0.20451664924621582,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 20,
+              "coordinate": [
+                2,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009160865098237991,
+              "q_value_root_player": -0.0206872820854187,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.06375894695520401,
+              "q_value_root_player": -0.5522638447582722,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 25,
+              "coordinate": [
+                7,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007207106798887253,
+              "q_value_root_player": -0.03488168120384216,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 26,
+              "coordinate": [
+                8,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001749823335558176,
+              "q_value_root_player": -0.40064767748117447,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 35,
+              "coordinate": [
+                8,
+                3
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0033014295622706413,
+              "q_value_root_player": -0.08706441521644592,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            }
+          ],
+          "total_child_visits": 128
+        },
+        "safe_defense_actions": [
+          19
+        ],
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": 0.2388265577017092,
+          "visit_count": 51,
+          "visit_fraction": 0.3984375
+        },
+        "success": true
+      },
+      "legality": {
+        "opponent_territory_excluded": true,
+        "own_territory_legal": true,
+        "pure_suicide_excluded": true
+      },
+      "simulations": 128,
+      "winning_pass": {
+        "fixture_terminal_result": "PASS_SCORE_END",
+        "fixture_winner": 1,
+        "original_player": 1,
+        "pass_action_stats": {
+          "action": 81,
+          "coordinate": null,
+          "immediate_result": "PASS_SCORE_END",
+          "immediate_winner": 1,
+          "is_pass": true,
+          "prior": 0.000785298238042742,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS_SCORE_END",
+            "immediate_winner": 1,
+            "is_pass": true,
+            "prior": 0.000785298238042742,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 70,
+          "simulations": 128,
+          "top_actions": [
+            {
+              "action": 70,
+              "coordinate": [
+                7,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.6431770324707031,
+              "q_value_root_player": 0.6556821067913853,
+              "visit_count": 116,
+              "visit_fraction": 0.90625
+            },
+            {
+              "action": 79,
+              "coordinate": [
+                7,
+                8
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.05297338217496872,
+              "q_value_root_player": 0.6465734839439392,
+              "visit_count": 7,
+              "visit_fraction": 0.0546875
+            },
+            {
+              "action": 18,
+              "coordinate": [
+                0,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.04846528172492981,
+              "q_value_root_player": 0.45066330830256146,
+              "visit_count": 3,
+              "visit_fraction": 0.0234375
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.09752345085144043,
+              "q_value_root_player": 0.022183865308761597,
+              "visit_count": 2,
+              "visit_fraction": 0.015625
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0007124427938833833,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 1,
+              "coordinate": [
+                1,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.01683604158461094,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001383055467158556,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0003163166984450072,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00037905495264567435,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00016117418999783695,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 128
+        },
+        "selected_action": 70,
+        "selected_action_stats": {
+          "action": 70,
+          "coordinate": [
+            7,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.6431770324707031,
+          "q_value_root_player": 0.6556821067913853,
+          "visit_count": 116,
+          "visit_fraction": 0.90625
+        },
+        "success": false
+      }
+    },
+    {
+      "capture": {
+        "expected_action": 19,
+        "expected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 256,
+          "visit_fraction": 1.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 1.94519827800832e-07,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 256,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "CAPTURE_WIN",
+              "immediate_winner": 1,
+              "is_pass": false,
+              "prior": 0.9992954134941101,
+              "q_value_root_player": 1.0,
+              "visit_count": 256,
+              "visit_fraction": 1.0
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.924882279766507e-09,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 2,
+              "coordinate": [
+                2,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 9.796021771535379e-08,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 3.530373578541912e-05,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 5.339621793609695e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.8931262957266881e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.037692633573897e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 7,
+              "coordinate": [
+                7,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.174753265331674e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 8,
+              "coordinate": [
+                8,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 2.9770689025099273e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 12,
+              "coordinate": [
+                3,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 7.905486540948914e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 256
+        },
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 256,
+          "visit_fraction": 1.0
+        },
+        "success": true
+      },
+      "defense": {
+        "best_safe_defense_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": 0.01875005051301236,
+          "visit_count": 144,
+          "visit_fraction": 0.5625
+        },
+        "defense_success": true,
+        "opponent_immediate_captures_after_selected": [],
+        "original_immediate_threat_actions": [
+          19
+        ],
+        "reference_defense_action": 19,
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 0.0006631379364989698,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 256,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001698206295259297,
+              "q_value_root_player": 0.01875005051301236,
+              "visit_count": 144,
+              "visit_fraction": 0.5625
+            },
+            {
+              "action": 68,
+              "coordinate": [
+                5,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.5430461764335632,
+              "q_value_root_player": -0.8652474667344775,
+              "visit_count": 14,
+              "visit_fraction": 0.0546875
+            },
+            {
+              "action": 20,
+              "coordinate": [
+                2,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009160865098237991,
+              "q_value_root_player": -0.3471248547236125,
+              "visit_count": 3,
+              "visit_fraction": 0.01171875
+            },
+            {
+              "action": 25,
+              "coordinate": [
+                7,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007207106798887253,
+              "q_value_root_player": -0.3565877874692281,
+              "visit_count": 3,
+              "visit_fraction": 0.01171875
+            },
+            {
+              "action": 37,
+              "coordinate": [
+                1,
+                4
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.005638469476252794,
+              "q_value_root_player": -0.3398142457008362,
+              "visit_count": 3,
+              "visit_fraction": 0.01171875
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0015422088326886296,
+              "q_value_root_player": -0.39406605809926987,
+              "visit_count": 2,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 8,
+              "coordinate": [
+                8,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0012814889196306467,
+              "q_value_root_player": -0.3737930357456207,
+              "visit_count": 2,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 15,
+              "coordinate": [
+                6,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007328815292567015,
+              "q_value_root_player": -0.06373211741447449,
+              "visit_count": 2,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 16,
+              "coordinate": [
+                7,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009203911758959293,
+              "q_value_root_player": -0.23085659742355347,
+              "visit_count": 2,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 17,
+              "coordinate": [
+                8,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007857372052967548,
+              "q_value_root_player": -0.20451664924621582,
+              "visit_count": 2,
+              "visit_fraction": 0.0078125
+            }
+          ],
+          "total_child_visits": 256
+        },
+        "safe_defense_actions": [
+          19
+        ],
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": 0.01875005051301236,
+          "visit_count": 144,
+          "visit_fraction": 0.5625
+        },
+        "success": true
+      },
+      "legality": {
+        "opponent_territory_excluded": true,
+        "own_territory_legal": true,
+        "pure_suicide_excluded": true
+      },
+      "simulations": 256,
+      "winning_pass": {
+        "fixture_terminal_result": "PASS_SCORE_END",
+        "fixture_winner": 1,
+        "original_player": 1,
+        "pass_action_stats": {
+          "action": 81,
+          "coordinate": null,
+          "immediate_result": "PASS_SCORE_END",
+          "immediate_winner": 1,
+          "is_pass": true,
+          "prior": 0.000785298238042742,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS_SCORE_END",
+            "immediate_winner": 1,
+            "is_pass": true,
+            "prior": 0.000785298238042742,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 79,
+          "simulations": 256,
+          "top_actions": [
+            {
+              "action": 79,
+              "coordinate": [
+                7,
+                8
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.05297338217496872,
+              "q_value_root_player": 0.8837789761475645,
+              "visit_count": 130,
+              "visit_fraction": 0.5078125
+            },
+            {
+              "action": 70,
+              "coordinate": [
+                7,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.6431770324707031,
+              "q_value_root_player": 0.6529524684075482,
+              "visit_count": 121,
+              "visit_fraction": 0.47265625
+            },
+            {
+              "action": 18,
+              "coordinate": [
+                0,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.04846528172492981,
+              "q_value_root_player": 0.45066330830256146,
+              "visit_count": 3,
+              "visit_fraction": 0.01171875
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.09752345085144043,
+              "q_value_root_player": 0.022183865308761597,
+              "visit_count": 2,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0007124427938833833,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 1,
+              "coordinate": [
+                1,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.01683604158461094,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001383055467158556,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0003163166984450072,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00037905495264567435,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00016117418999783695,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 256
+        },
+        "selected_action": 79,
+        "selected_action_stats": {
+          "action": 79,
+          "coordinate": [
+            7,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05297338217496872,
+          "q_value_root_player": 0.8837789761475645,
+          "visit_count": 130,
+          "visit_fraction": 0.5078125
+        },
+        "success": false
+      }
+    },
+    {
+      "capture": {
+        "expected_action": 19,
+        "expected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 512,
+          "visit_fraction": 1.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 1.94519827800832e-07,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 512,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "CAPTURE_WIN",
+              "immediate_winner": 1,
+              "is_pass": false,
+              "prior": 0.9992954134941101,
+              "q_value_root_player": 1.0,
+              "visit_count": 512,
+              "visit_fraction": 1.0
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.924882279766507e-09,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 2,
+              "coordinate": [
+                2,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 9.796021771535379e-08,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 3.530373578541912e-05,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 5.339621793609695e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.8931262957266881e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 4.037692633573897e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 7,
+              "coordinate": [
+                7,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 1.174753265331674e-06,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 8,
+              "coordinate": [
+                8,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 2.9770689025099273e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 12,
+              "coordinate": [
+                3,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 7.905486540948914e-07,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 512
+        },
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.9992954134941101,
+          "q_value_root_player": 1.0,
+          "visit_count": 512,
+          "visit_fraction": 1.0
+        },
+        "success": true
+      },
+      "defense": {
+        "best_safe_defense_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": -0.40596359523041436,
+          "visit_count": 322,
+          "visit_fraction": 0.62890625
+        },
+        "defense_success": true,
+        "opponent_immediate_captures_after_selected": [],
+        "original_immediate_threat_actions": [
+          19
+        ],
+        "reference_defense_action": 19,
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS",
+            "immediate_winner": null,
+            "is_pass": true,
+            "prior": 0.0006631379364989698,
+            "q_value_root_player": -0.9999994039535522,
+            "visit_count": 1,
+            "visit_fraction": 0.001953125
+          },
+          "root_player": 1,
+          "selected_action": 19,
+          "simulations": 512,
+          "top_actions": [
+            {
+              "action": 19,
+              "coordinate": [
+                1,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001698206295259297,
+              "q_value_root_player": -0.40596359523041436,
+              "visit_count": 322,
+              "visit_fraction": 0.62890625
+            },
+            {
+              "action": 68,
+              "coordinate": [
+                5,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.5430461764335632,
+              "q_value_root_player": -0.9445136627730202,
+              "visit_count": 34,
+              "visit_fraction": 0.06640625
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.06375894695520401,
+              "q_value_root_player": -0.8209055379033089,
+              "visit_count": 5,
+              "visit_fraction": 0.009765625
+            },
+            {
+              "action": 15,
+              "coordinate": [
+                6,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007328815292567015,
+              "q_value_root_player": -0.5318660587072372,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 17,
+              "coordinate": [
+                8,
+                1
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007857372052967548,
+              "q_value_root_player": -0.6022583246231079,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 20,
+              "coordinate": [
+                2,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.009160865098237991,
+              "q_value_root_player": -0.5103436410427094,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 21,
+              "coordinate": [
+                3,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.07318311929702759,
+              "q_value_root_player": -0.9999660551548004,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 25,
+              "coordinate": [
+                7,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.007207106798887253,
+              "q_value_root_player": -0.5174408406019211,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 28,
+              "coordinate": [
+                1,
+                3
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0011455005733296275,
+              "q_value_root_player": -0.5015970021486282,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            },
+            {
+              "action": 35,
+              "coordinate": [
+                8,
+                3
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0033014295622706413,
+              "q_value_root_player": -0.543532207608223,
+              "visit_count": 4,
+              "visit_fraction": 0.0078125
+            }
+          ],
+          "total_child_visits": 512
+        },
+        "safe_defense_actions": [
+          19
+        ],
+        "selected_action": 19,
+        "selected_action_stats": {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.001698206295259297,
+          "q_value_root_player": -0.40596359523041436,
+          "visit_count": 322,
+          "visit_fraction": 0.62890625
+        },
+        "success": true
+      },
+      "legality": {
+        "opponent_territory_excluded": true,
+        "own_territory_legal": true,
+        "pure_suicide_excluded": true
+      },
+      "simulations": 512,
+      "winning_pass": {
+        "fixture_terminal_result": "PASS_SCORE_END",
+        "fixture_winner": 1,
+        "original_player": 1,
+        "pass_action_stats": {
+          "action": 81,
+          "coordinate": null,
+          "immediate_result": "PASS_SCORE_END",
+          "immediate_winner": 1,
+          "is_pass": true,
+          "prior": 0.000785298238042742,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        "root": {
+          "pass_action": {
+            "action": 81,
+            "coordinate": null,
+            "immediate_result": "PASS_SCORE_END",
+            "immediate_winner": 1,
+            "is_pass": true,
+            "prior": 0.000785298238042742,
+            "q_value_root_player": -0.0,
+            "visit_count": 0,
+            "visit_fraction": 0.0
+          },
+          "root_player": 1,
+          "selected_action": 79,
+          "simulations": 512,
+          "top_actions": [
+            {
+              "action": 79,
+              "coordinate": [
+                7,
+                8
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.05297338217496872,
+              "q_value_root_player": 0.9439577383851196,
+              "visit_count": 376,
+              "visit_fraction": 0.734375
+            },
+            {
+              "action": 70,
+              "coordinate": [
+                7,
+                7
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.6431770324707031,
+              "q_value_root_player": 0.6529524684075482,
+              "visit_count": 121,
+              "visit_fraction": 0.236328125
+            },
+            {
+              "action": 22,
+              "coordinate": [
+                4,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.09752345085144043,
+              "q_value_root_player": 0.6140686025222143,
+              "visit_count": 12,
+              "visit_fraction": 0.0234375
+            },
+            {
+              "action": 18,
+              "coordinate": [
+                0,
+                2
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.04846528172492981,
+              "q_value_root_player": 0.45066330830256146,
+              "visit_count": 3,
+              "visit_fraction": 0.005859375
+            },
+            {
+              "action": 0,
+              "coordinate": [
+                0,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0007124427938833833,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 1,
+              "coordinate": [
+                1,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.01683604158461094,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 3,
+              "coordinate": [
+                3,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.001383055467158556,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 4,
+              "coordinate": [
+                4,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.0003163166984450072,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 5,
+              "coordinate": [
+                5,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00037905495264567435,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            },
+            {
+              "action": 6,
+              "coordinate": [
+                6,
+                0
+              ],
+              "immediate_result": "NORMAL",
+              "immediate_winner": null,
+              "is_pass": false,
+              "prior": 0.00016117418999783695,
+              "q_value_root_player": -0.0,
+              "visit_count": 0,
+              "visit_fraction": 0.0
+            }
+          ],
+          "total_child_visits": 512
+        },
+        "selected_action": 79,
+        "selected_action_stats": {
+          "action": 79,
+          "coordinate": [
+            7,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05297338217496872,
+          "q_value_root_player": 0.9439577383851196,
+          "visit_count": 376,
+          "visit_fraction": 0.734375
+        },
+        "success": false
+      }
+    }
+  ]
+}
