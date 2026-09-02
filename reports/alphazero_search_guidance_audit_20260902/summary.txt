@@ -1,0 +1,64 @@
+AlphaZero V3 search-guidance audit (2026-09-02)
+============================================================
+
+No training or checkpoint mutation was performed.
+Rules: Great Kingdom Rules V2
+Encoder: V3 territory, 9 planes
+MCTS simulations: 256
+Available checkpoints: 10, 50
+Missing checkpoints: 0
+Missing checkpoints were not replaced with newly initialized networks.
+
+Four-mode results
+-----------------
+Checkpoint  Fixture                            Mode                                  Selected  Success  Prior      Rank  Visits  Q(root)
+        10  immediate_capture                  learned_policy_learned_value                66    False  0.006033     64       0  +0.000000
+        10  immediate_capture                  uniform_policy_learned_value                 0    False  0.012987     64       0  +0.000000
+        10  immediate_capture                  learned_policy_zero_value                   19     True  0.006033     64     124  +1.000000
+        10  immediate_capture                  uniform_policy_zero_value                   19     True  0.012987     64     241  +1.000000
+        10  immediate_capture_threat_defense   learned_policy_learned_value                22    False  0.006617     44       1  -0.770417
+        10  immediate_capture_threat_defense   uniform_policy_learned_value                66    False  0.013158     44       1  -0.770417
+        10  immediate_capture_threat_defense   learned_policy_zero_value                   22    False  0.006617     44       1  -0.000000
+        10  immediate_capture_threat_defense   uniform_policy_zero_value                    3    False  0.013158     44       4  -0.000000
+        10  immediate_winning_pass             learned_policy_learned_value                22    False  0.007075     46       0  -0.000000
+        10  immediate_winning_pass             uniform_policy_learned_value                 0    False  0.012987     46       0  -0.000000
+        10  immediate_winning_pass             learned_policy_zero_value                   81     True  0.007075     46     152  +1.000000
+        10  immediate_winning_pass             uniform_policy_zero_value                   81     True  0.012987     46     180  +1.000000
+        50  immediate_capture                  learned_policy_learned_value                66    False  0.008669     34       0  +0.000000
+        50  immediate_capture                  uniform_policy_learned_value                 3    False  0.012987     34       0  +0.000000
+        50  immediate_capture                  learned_policy_zero_value                   19     True  0.008669     34     183  +1.000000
+        50  immediate_capture                  uniform_policy_zero_value                   19     True  0.012987     34     241  +1.000000
+        50  immediate_capture_threat_defense   learned_policy_learned_value                66    False  0.007051     42       3  +0.084294
+        50  immediate_capture_threat_defense   uniform_policy_learned_value                34    False  0.013158     42       2  +0.034884
+        50  immediate_capture_threat_defense   learned_policy_zero_value                   22    False  0.007051     42       2  -0.000000
+        50  immediate_capture_threat_defense   uniform_policy_zero_value                    3    False  0.013158     42       4  -0.000000
+        50  immediate_winning_pass             learned_policy_learned_value                32    False  0.011079     21       0  -0.000000
+        50  immediate_winning_pass             uniform_policy_learned_value                 0    False  0.012987     21       0  -0.000000
+        50  immediate_winning_pass             learned_policy_zero_value                   81     True  0.011079     21     197  +1.000000
+        50  immediate_winning_pass             uniform_policy_zero_value                   81     True  0.012987     21     180  +1.000000
+
+Classifications
+---------------
+Iteration 10:
+  immediate_capture: VALUE
+  immediate_capture_threat_defense: SEARCH
+  immediate_winning_pass: VALUE
+Iteration 50:
+  immediate_capture: VALUE
+  immediate_capture_threat_defense: SEARCH
+  immediate_winning_pass: VALUE
+
+Learned policy/value progression
+--------------------------------
+immediate_capture:
+  iter 10: prior=0.00603274, rank=64, logit=-1.102081, entropy=4.036754, root_value=+0.785558, expected_child_root=+1.000000
+  iter 50: prior=0.00866875, rank=34, logit=-0.995665, entropy=3.912219, root_value=+0.079078, expected_child_root=+1.000000
+immediate_capture_threat_defense:
+  iter 10: prior=0.00661727, rank=44, logit=-0.951124, entropy=3.589021, root_value=-0.177390, expected_child_root=-0.770417
+  iter 50: prior=0.00705071, rank=42, logit=-1.415592, entropy=3.891439, root_value=+0.008462, expected_child_root=+0.789955
+immediate_winning_pass:
+  iter 10: prior=0.00707451, rank=46, logit=-1.317239, entropy=3.806218, root_value=+0.736644, expected_child_root=+1.000000
+  iter 50: prior=0.01107894, rank=21, logit=-1.342312, entropy=3.470927, root_value=+0.982201, expected_child_root=+1.000000
+
+Elapsed: 47.466 seconds
+Full root top-10 diagnostics are in root_diagnostics.json.

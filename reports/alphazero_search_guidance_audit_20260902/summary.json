@@ -1,0 +1,800 @@
+{
+  "available_checkpoint_iterations": [
+    10,
+    50
+  ],
+  "classifications": {
+    "10": {
+      "immediate_capture": "VALUE",
+      "immediate_capture_threat_defense": "SEARCH",
+      "immediate_winning_pass": "VALUE"
+    },
+    "50": {
+      "immediate_capture": "VALUE",
+      "immediate_capture_threat_defense": "SEARCH",
+      "immediate_winning_pass": "VALUE"
+    }
+  },
+  "elapsed_seconds": 47.46559408500616,
+  "fixed": {
+    "encoder": "V3 territory, 9 planes",
+    "mcts_simulations": 256,
+    "network_weights_unchanged": true,
+    "rules": "Great Kingdom Rules V2",
+    "terminal_value_source": "GreatKingdomLogicV2 winner",
+    "training_performed": false
+  },
+  "four_mode_table": [
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.006032736971974373,
+      "expected_network_rank": 64,
+      "expected_q_root_player": 0.0,
+      "expected_search_prior": 0.006032736971974373,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_capture",
+      "mode": "learned_policy_learned_value",
+      "root_network_value": 0.7855579853057861,
+      "safe_actions": null,
+      "selected_action": 66,
+      "selected_visit_count": 150,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.006032736971974373,
+      "expected_network_rank": 64,
+      "expected_q_root_player": 0.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_capture",
+      "mode": "uniform_policy_learned_value",
+      "root_network_value": 0.7855579853057861,
+      "safe_actions": null,
+      "selected_action": 0,
+      "selected_visit_count": 256,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.006032736971974373,
+      "expected_network_rank": 64,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.006032736971974373,
+      "expected_visit_count": 124,
+      "expected_visit_fraction": 0.484375,
+      "fixture": "immediate_capture",
+      "mode": "learned_policy_zero_value",
+      "root_network_value": 0.7855579853057861,
+      "safe_actions": null,
+      "selected_action": 19,
+      "selected_visit_count": 124,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.006032736971974373,
+      "expected_network_rank": 64,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 241,
+      "expected_visit_fraction": 0.94140625,
+      "fixture": "immediate_capture",
+      "mode": "uniform_policy_zero_value",
+      "root_network_value": 0.7855579853057861,
+      "safe_actions": null,
+      "selected_action": 19,
+      "selected_visit_count": 241,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": 0.7704167366027832,
+        "network_value_root_player": -0.7704167366027832,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.006617274601012468,
+      "expected_network_rank": 44,
+      "expected_q_root_player": -0.7704167366027832,
+      "expected_search_prior": 0.006617274601012468,
+      "expected_visit_count": 1,
+      "expected_visit_fraction": 0.00390625,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "learned_policy_learned_value",
+      "root_network_value": -0.17739015817642212,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 22,
+      "selected_visit_count": 92,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": 0.7704167366027832,
+        "network_value_root_player": -0.7704167366027832,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.006617274601012468,
+      "expected_network_rank": 44,
+      "expected_q_root_player": -0.7704167366027832,
+      "expected_search_prior": 0.01315789483487606,
+      "expected_visit_count": 1,
+      "expected_visit_fraction": 0.00390625,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "uniform_policy_learned_value",
+      "root_network_value": -0.17739015817642212,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 66,
+      "selected_visit_count": 28,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": 0.7704167366027832,
+        "network_value_root_player": -0.7704167366027832,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.006617274601012468,
+      "expected_network_rank": 44,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.006617274601012468,
+      "expected_visit_count": 1,
+      "expected_visit_fraction": 0.00390625,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "learned_policy_zero_value",
+      "root_network_value": -0.17739015817642212,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 22,
+      "selected_visit_count": 55,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": 0.7704167366027832,
+        "network_value_root_player": -0.7704167366027832,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.006617274601012468,
+      "expected_network_rank": 44,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.01315789483487606,
+      "expected_visit_count": 4,
+      "expected_visit_fraction": 0.015625,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "uniform_policy_zero_value",
+      "root_network_value": -0.17739015817642212,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 3,
+      "selected_visit_count": 4,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.00707450695335865,
+      "expected_network_rank": 46,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.00707450695335865,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_winning_pass",
+      "mode": "learned_policy_learned_value",
+      "root_network_value": 0.7366443276405334,
+      "safe_actions": null,
+      "selected_action": 22,
+      "selected_visit_count": 129,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.00707450695335865,
+      "expected_network_rank": 46,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_winning_pass",
+      "mode": "uniform_policy_learned_value",
+      "root_network_value": 0.7366443276405334,
+      "safe_actions": null,
+      "selected_action": 0,
+      "selected_visit_count": 256,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.00707450695335865,
+      "expected_network_rank": 46,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.00707450695335865,
+      "expected_visit_count": 152,
+      "expected_visit_fraction": 0.59375,
+      "fixture": "immediate_winning_pass",
+      "mode": "learned_policy_zero_value",
+      "root_network_value": 0.7366443276405334,
+      "safe_actions": null,
+      "selected_action": 81,
+      "selected_visit_count": 152,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 10,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.00707450695335865,
+      "expected_network_rank": 46,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 180,
+      "expected_visit_fraction": 0.703125,
+      "fixture": "immediate_winning_pass",
+      "mode": "uniform_policy_zero_value",
+      "root_network_value": 0.7366443276405334,
+      "safe_actions": null,
+      "selected_action": 81,
+      "selected_visit_count": 180,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.008668751455843449,
+      "expected_network_rank": 34,
+      "expected_q_root_player": 0.0,
+      "expected_search_prior": 0.008668751455843449,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_capture",
+      "mode": "learned_policy_learned_value",
+      "root_network_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 66,
+      "selected_visit_count": 139,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.008668751455843449,
+      "expected_network_rank": 34,
+      "expected_q_root_player": 0.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_capture",
+      "mode": "uniform_policy_learned_value",
+      "root_network_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 3,
+      "selected_visit_count": 201,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.008668751455843449,
+      "expected_network_rank": 34,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.008668751455843449,
+      "expected_visit_count": 183,
+      "expected_visit_fraction": 0.71484375,
+      "fixture": "immediate_capture",
+      "mode": "learned_policy_zero_value",
+      "root_network_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 19,
+      "selected_visit_count": 183,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.008668751455843449,
+      "expected_network_rank": 34,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 241,
+      "expected_visit_fraction": 0.94140625,
+      "fixture": "immediate_capture",
+      "mode": "uniform_policy_zero_value",
+      "root_network_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 19,
+      "selected_visit_count": 241,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.007050711661577225,
+      "expected_network_rank": 42,
+      "expected_q_root_player": 0.08429419994354248,
+      "expected_search_prior": 0.007050711661577225,
+      "expected_visit_count": 3,
+      "expected_visit_fraction": 0.01171875,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "learned_policy_learned_value",
+      "root_network_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 66,
+      "selected_visit_count": 34,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.007050711661577225,
+      "expected_network_rank": 42,
+      "expected_q_root_player": 0.034883975982666016,
+      "expected_search_prior": 0.01315789483487606,
+      "expected_visit_count": 2,
+      "expected_visit_fraction": 0.0078125,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "uniform_policy_learned_value",
+      "root_network_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 34,
+      "selected_visit_count": 26,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.007050711661577225,
+      "expected_network_rank": 42,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.007050711661577225,
+      "expected_visit_count": 2,
+      "expected_visit_fraction": 0.0078125,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "learned_policy_zero_value",
+      "root_network_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 22,
+      "selected_visit_count": 26,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "expected_network_prior": 0.007050711661577225,
+      "expected_network_rank": 42,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.01315789483487606,
+      "expected_visit_count": 4,
+      "expected_visit_fraction": 0.015625,
+      "fixture": "immediate_capture_threat_defense",
+      "mode": "uniform_policy_zero_value",
+      "root_network_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 3,
+      "selected_visit_count": 4,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.011078937910497189,
+      "expected_network_rank": 21,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.011078937910497189,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_winning_pass",
+      "mode": "learned_policy_learned_value",
+      "root_network_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 32,
+      "selected_visit_count": 94,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.011078937910497189,
+      "expected_network_rank": 21,
+      "expected_q_root_player": -0.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 0,
+      "expected_visit_fraction": 0.0,
+      "fixture": "immediate_winning_pass",
+      "mode": "uniform_policy_learned_value",
+      "root_network_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 0,
+      "selected_visit_count": 256,
+      "success": false
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.011078937910497189,
+      "expected_network_rank": 21,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.011078937910497189,
+      "expected_visit_count": 197,
+      "expected_visit_fraction": 0.76953125,
+      "fixture": "immediate_winning_pass",
+      "mode": "learned_policy_zero_value",
+      "root_network_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 81,
+      "selected_visit_count": 197,
+      "success": true
+    },
+    {
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "expected_network_prior": 0.011078937910497189,
+      "expected_network_rank": 21,
+      "expected_q_root_player": 1.0,
+      "expected_search_prior": 0.012987012974917889,
+      "expected_visit_count": 180,
+      "expected_visit_fraction": 0.703125,
+      "fixture": "immediate_winning_pass",
+      "mode": "uniform_policy_zero_value",
+      "root_network_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 81,
+      "selected_visit_count": 180,
+      "success": true
+    }
+  ],
+  "missing_checkpoint_iterations": [
+    0
+  ],
+  "missing_checkpoint_policy": "not replaced with a random network",
+  "modes": [
+    "learned_policy_learned_value",
+    "uniform_policy_learned_value",
+    "learned_policy_zero_value",
+    "uniform_policy_zero_value"
+  ],
+  "policy_value_progression": {
+    "immediate_capture": [
+      {
+        "checkpoint_iteration": 10,
+        "expected_action_legal_probability": 0.006032736971974373,
+        "expected_action_legal_rank": 64,
+        "expected_action_raw_logit": -1.1020809412002563,
+        "expected_child_value": {
+          "child_to_play": 1,
+          "exact_terminal_value_root_player": 1.0,
+          "move_result": "CAPTURE_WIN",
+          "network_value_child_player": null,
+          "network_value_root_player": null,
+          "terminal": true,
+          "winner": 1
+        },
+        "legal_action_count": 77,
+        "legal_policy_entropy": 4.0367535844817795,
+        "root_network_value": 0.7855579853057861
+      },
+      {
+        "checkpoint_iteration": 50,
+        "expected_action_legal_probability": 0.008668751455843449,
+        "expected_action_legal_rank": 34,
+        "expected_action_raw_logit": -0.9956654906272888,
+        "expected_child_value": {
+          "child_to_play": 1,
+          "exact_terminal_value_root_player": 1.0,
+          "move_result": "CAPTURE_WIN",
+          "network_value_child_player": null,
+          "network_value_root_player": null,
+          "terminal": true,
+          "winner": 1
+        },
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.912218751016185,
+        "root_network_value": 0.07907770574092865
+      }
+    ],
+    "immediate_capture_threat_defense": [
+      {
+        "checkpoint_iteration": 10,
+        "expected_action_legal_probability": 0.006617274601012468,
+        "expected_action_legal_rank": 44,
+        "expected_action_raw_logit": -0.9511235952377319,
+        "expected_child_value": {
+          "child_to_play": 2,
+          "exact_terminal_value_root_player": null,
+          "move_result": "NORMAL",
+          "network_value_child_player": 0.7704167366027832,
+          "network_value_root_player": -0.7704167366027832,
+          "terminal": false,
+          "winner": null
+        },
+        "legal_action_count": 76,
+        "legal_policy_entropy": 3.5890211492150472,
+        "root_network_value": -0.17739015817642212
+      },
+      {
+        "checkpoint_iteration": 50,
+        "expected_action_legal_probability": 0.007050711661577225,
+        "expected_action_legal_rank": 42,
+        "expected_action_raw_logit": -1.4155919551849365,
+        "expected_child_value": {
+          "child_to_play": 2,
+          "exact_terminal_value_root_player": null,
+          "move_result": "NORMAL",
+          "network_value_child_player": -0.7899551391601562,
+          "network_value_root_player": 0.7899551391601562,
+          "terminal": false,
+          "winner": null
+        },
+        "legal_action_count": 76,
+        "legal_policy_entropy": 3.8914390866980058,
+        "root_network_value": 0.008462253026664257
+      }
+    ],
+    "immediate_winning_pass": [
+      {
+        "checkpoint_iteration": 10,
+        "expected_action_legal_probability": 0.00707450695335865,
+        "expected_action_legal_rank": 46,
+        "expected_action_raw_logit": -1.3172389268875122,
+        "expected_child_value": {
+          "child_to_play": 2,
+          "exact_terminal_value_root_player": 1.0,
+          "move_result": "PASS_SCORE_END",
+          "network_value_child_player": null,
+          "network_value_root_player": null,
+          "terminal": true,
+          "winner": 1
+        },
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.806217625283771,
+        "root_network_value": 0.7366443276405334
+      },
+      {
+        "checkpoint_iteration": 50,
+        "expected_action_legal_probability": 0.011078937910497189,
+        "expected_action_legal_rank": 21,
+        "expected_action_raw_logit": -1.3423124551773071,
+        "expected_child_value": {
+          "child_to_play": 2,
+          "exact_terminal_value_root_player": 1.0,
+          "move_result": "PASS_SCORE_END",
+          "network_value_child_player": null,
+          "network_value_root_player": null,
+          "terminal": true,
+          "winner": 1
+        },
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.4709268147009444,
+        "root_network_value": 0.9822007417678833
+      }
+    ]
+  },
+  "requested_checkpoint_iterations": [
+    0,
+    10,
+    50
+  ]
+}
