@@ -1,7 +1,7 @@
 """Rules V2 engine for the documented Great Kingdom board game.
 
-This module is intentionally independent from ``great_kingdom.py``.  The V1
-engine and its 81-action checkpoints remain a historical baseline.
+The former V1 engine and its 81-action checkpoints are preserved in the
+``ppo-v1-final`` Git tag as a historical baseline.
 """
 
 from enum import Enum, auto

@@ -1,65 +1,137 @@
-# 📘 Great Kingdom RL — Reinforcement Learning Agent for a Custom Strategy Game
+# Great Kingdom RL
 
-This repository contains **Great Kingdom**, a custom 9×9 strategic board game, along with a **Reinforcement Learning (RL) agent** trained using **PPO + a custom CNN** in parallel environments.
+## Rules V2 + AlphaZero/MCTS
 
-It includes:
+This repository implements the audited 9×9 Great Kingdom rules and explores a
+shared policy-value network guided by PUCT MCTS. PPO V1 is retained only as a
+historical baseline; it does not implement the current rules.
 
-- A full Pygame-based board game implementation  
-- A Gymnasium-compatible environment  
-- A custom CNN feature extractor for board states  
-- A parallel PPO training pipeline using Stable-Baselines3  
-- An interactive UI for playing against the trained AI
+Current research status:
 
----
+- Exact Rules V2 engine with player-dependent 82-action legality masks.
+- Minimal and resumable AlphaZero self-play/training pipelines.
+- A completed 375-iteration V2 run and deterministic milestone evaluation.
+- MCTS search-budget, policy/value-guidance, and PUCT diagnostics.
+- A completed V3 pilot adding current/opponent territory planes.
+- Primary unresolved issue: one-ply defensive threat recognition and
+  search-learning stability. More search improves coverage, but learned-value
+  guidance can still starve immediate terminal wins.
 
-## 🏰 Game Overview
+## Rules V2
 
-Great Kingdom is a deterministic, turn-based strategy game played on a **9×9 grid**.
+- 9×9 board, Blue first, 40 castles per player, one central neutral castle.
+- Actions `0..80` place a castle; action `81` is PASS.
+- Opponent territory is blocked; own territory remains playable.
+- Pure suicide is illegal, while a simultaneous capture has priority.
+- Capturing any opposing group wins immediately.
+- Two consecutive passes trigger territory scoring.
+- Blue wins when `Blue territory >= Red territory + 2`; otherwise Red wins.
+- No draw and no ko rule.
 
-Two players, **Blue (1)** and **Red (2)**, take turns placing stones on the board:
+See [RULES_AUDIT.md](RULES_AUDIT.md) for evidence and the V1/V2 comparison.
 
-- The board starts with a **neutral tile** in the center (value `3`).
-- Placement rules and captures are based on **liberties** (similar to the game of Go).
-- The game tracks:
-  - Legal/illegal moves  
-  - Captures  
-  - Territory  
-  - Game-over conditions  
-  - Final scoring with **komi** (default: 3.0 for Red)
+## Install
 
-The game ends when:
-
-- A capture immediately determines the winner, or  
-- No legal moves remain, or  
-- The board is full and final territory scoring is applied.
-
-The final winner is decided by comparing **Blue territory** vs **Red territory + komi**.
-
----
-
-## 📂 Project Structure
-
-```text
-Great_Kingdom_RL/
-│
-├── great_kingdom.py          # Core game logic + base Pygame UI
-├── gk_env.py                 # Gymnasium environment wrapper
-├── custom_cnn.py             # Custom CNN feature extractor for PPO
-├── train_cnn_parallel.py     # Parallel PPO training script
-├── play_rl.py                # UI for playing against the trained AI
-│
-└── models/
-    └── PPO_CNN/              # Trained PPO model checkpoints (auto-saved)
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-minimal.txt
 ```
 
-## Current RL pipeline
+Install the appropriate CUDA-enabled PyTorch build separately when GPU use is
+required. Model checkpoints and run state are local artifacts excluded from
+Git.
 
-- MaskablePPO with occupied/territory action masking
-- Canonical observations for both Red and Blue player perspectives
-- Alternating continuation training against one explicitly frozen policy
-- One generation per explicit `run_alternating_generation.py` invocation
+## Play
 
-See [PROJECT_STATE_20260822.md](PROJECT_STATE_20260822.md) for the validated
-state and next GPU step. Checkpoint paths, hashes, and counters are recorded in
-[CHECKPOINT_MANIFEST.md](CHECKPOINT_MANIFEST.md). Model ZIP files are local
-artifacts and are intentionally excluded from Git.
+Human versus human under Rules V2:
+
+```bash
+python play_human_v2.py
+```
+
+Human versus an AlphaZero V2 checkpoint:
+
+```bash
+python play_vs_alphazero_v2.py \
+  --checkpoint runs/alphazero_v2/main_20260830/latest.pt \
+  --human-player blue \
+  --mcts-simulations 64
+```
+
+Use `--human-player red` for an AI Blue opening. Press `P` to pass and `R` to
+restart. V1 PPO checkpoints are incompatible with the 82-action Rules V2 UI.
+
+## Active entrypoints
+
+Training runners:
+
+```bash
+# Resumable V2 runner; omit --hours for unlimited iteration-boundary execution.
+python train_alphazero_v2.py --run-dir runs/alphazero_v2/<run_id>
+
+# Bounded territory-representation pilot runner.
+python train_alphazero_v3.py \
+  --run-dir runs/alphazero_v3/<run_id> \
+  --max-iterations 50
+```
+
+Evaluation and diagnostics:
+
+```bash
+python evaluate_alphazero_v2.py
+python run_alphazero_v2_mcts_ablation.py
+python run_alphazero_search_guidance_audit.py
+python run_alphazero_puct_ablation.py
+```
+
+These scripts use Rules V2 transitions and legal masks. Evaluation runs with
+root noise disabled and deterministic maximum-visit action selection.
+
+## Active structure
+
+```text
+great_kingdom_v2.py              Rules V2 source of truth
+gk_env_v2.py                     Gymnasium wrapper and legal action mask
+game_ui.py                       Shared Rules V2 Pygame renderer
+play_human_v2.py                 Human versus human
+play_vs_alphazero_v2.py          Human versus AlphaZero V2
+alphazero_v2/                    Encoder, network, MCTS, self-play, training
+alphazero_v3/                    Territory encoder and diagnostic extensions
+reports/                         Curated AlphaZero experiment reports
+docs/                            Experiment chronology and project history
+legacy/202601_ui/                Historical UI reference only
+```
+
+## Curated reports
+
+- [Minimal AlphaZero V2 E2E](reports/alphazero_v2_minimal_e2e_20260830/summary.txt)
+- [V2 milestone evaluation](reports/alphazero_v2_evaluation_20260901/summary.txt)
+- [MCTS simulation-budget ablation](reports/alphazero_v2_mcts_ablation_20260901/summary.txt)
+- [V3 territory pilot](reports/alphazero_v3_territory_pilot_20260901/summary.txt)
+- [Policy/value guidance audit](reports/alphazero_search_guidance_audit_20260902/summary.txt)
+- [PUCT exploration ablation](reports/alphazero_puct_ablation_20260902/summary.txt)
+
+See [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) for the chronological index.
+
+## Milestone tags
+
+| Tag | Commit | Meaning |
+|---|---|---|
+| `ppo-v1-final` | `31074b2` | Final historical PPO V1 baseline |
+| `rules-v2` | `ad7d194` | Audited Rules V2 engine |
+| `alphazero-v2-minimal` | `e4a6203` | Minimal AlphaZero E2E |
+| `alphazero-v2-training` | `cb40bd3` | Resumable V2 training runner |
+| `alphazero-v2-evaluation` | `9361ecf` | V2 milestone evaluation |
+| `alphazero-v2-mcts-ablation` | `bea5d60` | MCTS budget diagnosis |
+| `alphazero-v3-territory-pilot` | `8eb9c19` | Nine-plane territory pilot |
+| `alphazero-search-guidance-audit` | `711d1e5` | Policy/value guidance separation |
+| `alphazero-puct-ablation` | `01db29b` | PUCT exploration diagnosis |
+
+## Historical PPO V1
+
+PPO V1 used an incompatible 81-action engine and rules that differed from the
+physical game, including selectable suicide and no PASS action. Its current
+role is historical context only. See [docs/history/ppo_v1.md](docs/history/ppo_v1.md),
+or check out the `ppo-v1-final` tag to recover its exact code, tests, reports,
+and checkpoint documentation.

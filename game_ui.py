@@ -2,17 +2,13 @@
 
 import pygame
 
-from great_kingdom import (
-    BOARD_SIZE,
-    GRID_SIZE,
-    MARGIN,
-    GreatKingdomLogic,
-    MoveResult,
-)
+from great_kingdom_v2 import BOARD_SIZE, player_name
 
 
 SCREEN_WIDTH = 720
 SCREEN_HEIGHT = 780
+GRID_SIZE = 70
+MARGIN = 45
 
 COLOR_BOARD_BASE = (245, 245, 245)
 COLOR_BOARD_INSET = (255, 255, 255)
@@ -25,30 +21,6 @@ COLOR_NEUTRAL_BASE = (220, 220, 220, 255)
 COLOR_NEUTRAL_TOP = (255, 255, 255, 255)
 COLOR_TEXT = (50, 50, 50)
 COLOR_HIGHLIGHT = (220, 50, 50)
-
-
-def player_name(player):
-    if player == 1:
-        return "Blue"
-    if player == 2:
-        return "Red"
-    return "Draw"
-
-
-def apply_move(logic, x, y):
-    """Apply one move through the current rule API and run score termination."""
-    result = logic.place_stone_detailed(x, y)
-    if result == MoveResult.NORMAL:
-        logic.check_game_end_simple()
-    return result
-
-
-def impossible_move_message(result):
-    if result == MoveResult.IMPOSSIBLE_OCCUPIED:
-        return "Cannot play: that square is occupied."
-    if result == MoveResult.IMPOSSIBLE_TERRITORY:
-        return "Cannot play: that square is established territory."
-    raise ValueError(f"not an impossible move result: {result}")
 
 
 class GreatKingdomRenderer:
@@ -200,8 +172,3 @@ class GreatKingdomRenderer:
 
     def close(self):
         pygame.quit()
-
-
-def new_game():
-    """One named construction point used by both restart flows."""
-    return GreatKingdomLogic()
