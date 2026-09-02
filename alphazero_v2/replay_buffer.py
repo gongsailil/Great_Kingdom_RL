@@ -9,10 +9,15 @@ from .self_play import TrainingExample
 
 
 class ReplayBuffer:
-    def __init__(self, max_positions):
+    def __init__(self, max_positions, encoded_shape=ENCODED_SHAPE):
         if int(max_positions) <= 0:
             raise ValueError("max_positions must be positive")
         self.max_positions = int(max_positions)
+        self.encoded_shape = tuple(int(value) for value in encoded_shape)
+        if len(self.encoded_shape) != 3 or any(
+            value <= 0 for value in self.encoded_shape
+        ):
+            raise ValueError("encoded_shape must contain three positive dimensions")
         self.samples = []
         self.total_samples_seen = 0
         self.generation_metadata = {
@@ -24,14 +29,15 @@ class ReplayBuffer:
     def __len__(self):
         return len(self.samples)
 
-    @staticmethod
-    def _validated_copy(example):
+    def _validated_copy(self, example):
         state = np.asarray(example.state, dtype=np.float32)
         policy = np.asarray(example.policy, dtype=np.float32)
         value = float(example.value)
         player = int(example.player)
-        if state.shape != ENCODED_SHAPE:
-            raise ValueError(f"replay state must have shape {ENCODED_SHAPE}")
+        if state.shape != self.encoded_shape:
+            raise ValueError(
+                f"replay state must have shape {self.encoded_shape}"
+            )
         if policy.shape != (NUM_ACTIONS,):
             raise ValueError("replay policy must have shape (82,)")
         if not np.isclose(policy.sum(), 1.0):
@@ -80,12 +86,13 @@ class ReplayBuffer:
                 [sample.player for sample in self.samples], dtype=np.int8
             )
         else:
-            states = np.empty((0, *ENCODED_SHAPE), dtype=np.float32)
+            states = np.empty((0, *self.encoded_shape), dtype=np.float32)
             policies = np.empty((0, NUM_ACTIONS), dtype=np.float32)
             values = np.empty((0,), dtype=np.float32)
             players = np.empty((0,), dtype=np.int8)
         return {
             "max_positions": self.max_positions,
+            "encoded_shape": self.encoded_shape,
             "total_samples_seen": self.total_samples_seen,
             "generation_metadata": dict(self.generation_metadata),
             "states": states,
@@ -96,8 +103,11 @@ class ReplayBuffer:
 
     @classmethod
     def from_state_dict(cls, payload):
-        buffer = cls(payload["max_positions"])
         states = np.asarray(payload["states"], dtype=np.float32)
+        encoded_shape = tuple(
+            payload.get("encoded_shape", states.shape[1:])
+        )
+        buffer = cls(payload["max_positions"], encoded_shape=encoded_shape)
         policies = np.asarray(payload["policies"], dtype=np.float32)
         values = np.asarray(payload["values"], dtype=np.float32)
         players = np.asarray(payload["players"], dtype=np.int8)

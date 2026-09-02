@@ -11,6 +11,7 @@ import numpy as np
 import torch
 
 from .config import AlphaZeroConfig
+from .encoder import ENCODED_SHAPE, encode_state
 from .network import PolicyValueNetwork
 from .replay_buffer import ReplayBuffer
 from .self_play import generate_self_play
@@ -184,6 +185,11 @@ def _optimizer_for(network, config):
     )
 
 
+def _encoded_shape_for_config(config):
+    input_planes = int(getattr(config, "input_planes", ENCODED_SHAPE[0]))
+    return (input_planes, *ENCODED_SHAPE[1:])
+
+
 def _checkpoint_payload(state, config):
     payload = {
         "format_version": CHECKPOINT_FORMAT_VERSION,
@@ -259,11 +265,15 @@ def initialize_run(run_dir, config, device):
     network = PolicyValueNetwork(
         channels=config.channels,
         residual_blocks=config.residual_blocks,
+        input_planes=_encoded_shape_for_config(config)[0],
     ).to(device)
     state = TrainingRunState(
         network=network,
         optimizer=_optimizer_for(network, config),
-        replay=ReplayBuffer(config.replay_max_positions),
+        replay=ReplayBuffer(
+            config.replay_max_positions,
+            encoded_shape=_encoded_shape_for_config(config),
+        ),
         rng=np.random.default_rng(config.seed),
     )
     save_run_checkpoint(run_dir, state, config, iteration_checkpoint=False)
@@ -271,10 +281,10 @@ def initialize_run(run_dir, config, device):
     return state
 
 
-def load_run(run_dir, device):
+def load_run(run_dir, device, config_class=TrainingRunConfig):
     run_dir = Path(run_dir)
     with (run_dir / "config.json").open(encoding="utf-8") as handle:
-        config = TrainingRunConfig.from_dict(json.load(handle))
+        config = config_class.from_dict(json.load(handle))
     payload = torch.load(
         run_dir / "latest.pt", map_location=device, weights_only=False
     )
@@ -288,6 +298,8 @@ def load_run(run_dir, device):
     replay = ReplayBuffer.from_state_dict(replay_payload)
     if replay.max_positions != config.replay_max_positions:
         raise ValueError("replay buffer capacity disagrees with training config")
+    if replay.encoded_shape != _encoded_shape_for_config(config):
+        raise ValueError("replay state shape disagrees with training config")
     replay_iteration = int(replay.generation_metadata["iteration"])
     if replay_iteration < int(payload["iteration"]):
         raise RuntimeError("replay buffer is older than latest network checkpoint")
@@ -295,6 +307,7 @@ def load_run(run_dir, device):
     network = PolicyValueNetwork(
         channels=config.channels,
         residual_blocks=config.residual_blocks,
+        input_planes=_encoded_shape_for_config(config)[0],
     ).to(device)
     optimizer = _optimizer_for(network, config)
     network.load_state_dict(payload["network_state_dict"])
@@ -376,6 +389,7 @@ def _write_summary(run_dir, state, config, device):
         "total_self_play_games": state.total_self_play_games,
         "total_samples_generated": state.total_samples_generated,
         "replay_size": len(state.replay),
+        "network_parameters": state.network.parameter_count(),
         "elapsed_seconds": state.elapsed_seconds,
         "config": config.to_dict(),
         "last_metric": state.last_metric,
@@ -383,15 +397,33 @@ def _write_summary(run_dir, state, config, device):
     _atomic_json_save(summary, Path(run_dir) / "summary.json")
 
 
-def run_iteration(run_dir, state, config, device):
+def run_iteration(
+    run_dir,
+    state,
+    config,
+    device,
+    *,
+    state_encoder=encode_state,
+    metric_enricher=None,
+):
     iteration_started = time.perf_counter()
     self_play_started = time.perf_counter()
-    examples, games = generate_self_play(
-        state.network,
-        config.self_play_config(),
-        device,
-        state.rng,
-    )
+    self_play_config = config.self_play_config()
+    if state_encoder is encode_state:
+        examples, games = generate_self_play(
+            state.network,
+            self_play_config,
+            device,
+            state.rng,
+        )
+    else:
+        examples, games = generate_self_play(
+            state.network,
+            self_play_config,
+            device,
+            state.rng,
+            state_encoder=state_encoder,
+        )
     self_play_seconds = time.perf_counter() - self_play_started
     if not examples:
         raise RuntimeError("self-play iteration generated no samples")
@@ -405,6 +437,19 @@ def run_iteration(run_dir, state, config, device):
     state.iteration += 1
     state.total_self_play_games += len(games)
     state.total_samples_generated += len(examples)
+    extra_metrics = {}
+    if metric_enricher is not None:
+        extra_metrics = metric_enricher(
+            state,
+            config,
+            device,
+            examples,
+            games,
+        )
+        if extra_metrics is None:
+            extra_metrics = {}
+        if not isinstance(extra_metrics, dict):
+            raise TypeError("metric_enricher must return a dict or None")
     iteration_seconds = time.perf_counter() - iteration_started
     state.elapsed_seconds += iteration_seconds
 
@@ -434,6 +479,7 @@ def run_iteration(run_dir, state, config, device):
             torch.cuda.get_device_name(device) if device.type == "cuda" else "CPU"
         ),
         "games": games,
+        **extra_metrics,
     }
     state.last_metric = metric
     save_run_checkpoint(run_dir, state, config)
@@ -442,7 +488,17 @@ def run_iteration(run_dir, state, config, device):
     return metric
 
 
-def run_until_budget(run_dir, state, config, device, hours=None):
+def run_until_budget(
+    run_dir,
+    state,
+    config,
+    device,
+    hours=None,
+    *,
+    max_iterations=None,
+    state_encoder=encode_state,
+    metric_enricher=None,
+):
     if hours is not None:
         hours = float(hours)
         if hours < 0:
@@ -450,9 +506,26 @@ def run_until_budget(run_dir, state, config, device, hours=None):
         if hours == 0:
             hours = None
     budget_seconds = None if hours is None else hours * 3600.0
+    if max_iterations is not None:
+        max_iterations = int(max_iterations)
+        if max_iterations < 0:
+            raise ValueError("max_iterations must be non-negative")
     completed = []
-    while budget_seconds is None or state.elapsed_seconds < budget_seconds:
-        metric = run_iteration(run_dir, state, config, device)
+    while (
+        (budget_seconds is None or state.elapsed_seconds < budget_seconds)
+        and (max_iterations is None or state.iteration < max_iterations)
+    ):
+        if state_encoder is encode_state and metric_enricher is None:
+            metric = run_iteration(run_dir, state, config, device)
+        else:
+            metric = run_iteration(
+                run_dir,
+                state,
+                config,
+                device,
+                state_encoder=state_encoder,
+                metric_enricher=metric_enricher,
+            )
         completed.append(metric)
         print(json.dumps(metric, sort_keys=True), flush=True)
     # The last iteration always completes and checkpoints before this boundary.

@@ -22,6 +22,7 @@ from great_kingdom_v2 import (
 )
 
 from .config import AlphaZeroConfig
+from .encoder import NUM_PLANES, encode_state
 from .mcts import MCTS, visit_count_policy
 from .network import PolicyValueNetwork
 
@@ -33,6 +34,7 @@ class EvaluationCheckpoint:
     config: dict
     network: PolicyValueNetwork
     device: torch.device
+    state_encoder: object = encode_state
 
 
 def choose_evaluation_device(requested="auto"):
@@ -44,7 +46,12 @@ def choose_evaluation_device(requested="auto"):
     return device
 
 
-def load_evaluation_checkpoint(path, device="auto", expected_iteration=None):
+def load_evaluation_checkpoint(
+    path,
+    device="auto",
+    expected_iteration=None,
+    state_encoder=encode_state,
+):
     path = Path(path)
     if not path.is_file():
         raise FileNotFoundError(f"evaluation checkpoint does not exist: {path}")
@@ -68,10 +75,18 @@ def load_evaluation_checkpoint(path, device="auto", expected_iteration=None):
     network = PolicyValueNetwork(
         channels=int(config["channels"]),
         residual_blocks=int(config["residual_blocks"]),
+        input_planes=int(config.get("input_planes", NUM_PLANES)),
     ).to(device)
     network.load_state_dict(payload["network_state_dict"])
     network.eval()
-    return EvaluationCheckpoint(path, iteration, config, network, device)
+    return EvaluationCheckpoint(
+        path,
+        iteration,
+        config,
+        network,
+        device,
+        state_encoder,
+    )
 
 
 def _mcts_config(checkpoint, simulations):
@@ -92,6 +107,7 @@ def evaluation_search_root(checkpoint, logic, simulations=64):
         checkpoint.network,
         _mcts_config(checkpoint, simulations),
         checkpoint.device,
+        state_encoder=checkpoint.state_encoder,
     )
     return search.run(logic, add_root_noise=False)
 

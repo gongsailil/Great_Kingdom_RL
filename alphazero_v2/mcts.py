@@ -65,13 +65,18 @@ def masked_policy(logits, legal_mask):
 
 
 class MCTS:
-    def __init__(self, network, config, device):
+    def __init__(self, network, config, device, state_encoder=encode_state):
         self.network = network
         self.config = config
         self.device = torch.device(device)
+        self.state_encoder = state_encoder
 
     def _network_evaluate(self, logic):
-        encoded = torch.from_numpy(encode_state(logic)).unsqueeze(0).to(self.device)
+        encoded = (
+            torch.from_numpy(self.state_encoder(logic))
+            .unsqueeze(0)
+            .to(self.device)
+        )
         was_training = self.network.training
         self.network.eval()
         with torch.no_grad():

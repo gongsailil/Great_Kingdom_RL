@@ -25,12 +25,21 @@ class ResidualBlock(nn.Module):
 
 
 class PolicyValueNetwork(nn.Module):
-    def __init__(self, channels=64, residual_blocks=3):
+    def __init__(self, channels=64, residual_blocks=3, input_planes=NUM_PLANES):
         super().__init__()
         self.channels = int(channels)
         self.residual_blocks = int(residual_blocks)
+        self.input_planes = int(input_planes)
+        if self.input_planes <= 0:
+            raise ValueError("input_planes must be positive")
         self.stem = nn.Sequential(
-            nn.Conv2d(NUM_PLANES, self.channels, 3, padding=1, bias=False),
+            nn.Conv2d(
+                self.input_planes,
+                self.channels,
+                3,
+                padding=1,
+                bias=False,
+            ),
             nn.BatchNorm2d(self.channels),
             nn.ReLU(inplace=True),
         )

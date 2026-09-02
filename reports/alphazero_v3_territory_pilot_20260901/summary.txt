@@ -1,0 +1,61 @@
+AlphaZero V3 territory pilot (2026-09-01)
+============================================================
+
+Outcome: FAIL under the pilot success criteria.
+
+The bounded CUDA run completed exactly 50 iterations without illegal action
+probability violations. It generated 1,600 self-play games and 48,045 samples
+using a 9-plane territory-aware encoder, a 246,141-parameter network, and 256
+MCTS simulations. No V2 checkpoint was overwritten.
+
+Configuration
+-------------
+Device: NVIDIA GeForce RTX 5070 Ti (CUDA)
+MCTS: 256 simulations, c_puct 1.5
+Self-play: 32 games per iteration
+Replay maximum: 50,000 positions
+Training: batch 256, 64 updates per iteration
+Completed iterations: 50
+Elapsed: 87,255.87 seconds (24h 14m 15.87s)
+
+Totals
+------
+Self-play games: 1,600
+Samples generated / final replay size: 48,045 / 48,045
+CAPTURE_WIN: 1,540
+PASS_SCORE_END: 60
+PASS actions: 343
+Illegal action probability violations: 0
+
+Ten-iteration trends
+--------------------
+Block   Samples  Capture  Score  PASS  Mean pi(PASS)  pi(PASS)>0  Territory states
+1-10       9589      304     16   113       0.011176       0.6542            0.1908
+11-20     10215      311      9    53       0.007122       0.5623            0.1729
+21-30      9534      306     14    58       0.006175       0.5331            0.1879
+31-40      9350      306     14    75       0.006748       0.5305            0.2244
+41-50      9357      313      7    44       0.004498       0.5117            0.2285
+
+Tactical diagnostics at fixed 256-simulation search
+----------------------------------------------------
+Iter  Capture  Defense safe  Winning PASS  PASS prior  PASS visits
+0     PASS     FAIL          PASS             0.013832          231
+10    FAIL     FAIL          FAIL             0.007075            0
+20    FAIL     FAIL          FAIL             0.029309            0
+30    FAIL     FAIL          FAIL             0.003179            0
+40    FAIL     FAIL          FAIL             0.005585            0
+50    FAIL     FAIL          FAIL             0.011079            0
+
+Loss trend
+----------
+Iteration 1:  policy 4.233068, value 0.178293, total 4.411361
+Iteration 50: policy 3.202658, value 0.226486, total 3.429144
+
+Interpretation
+--------------
+Territory-aware states were present and 60 games reached score termination,
+so the territory/PASS signal was not completely absent. However, mean PASS
+target probability declined across the pilot, defense sanity never passed,
+and the fresh-network capture and winning-PASS successes both disappeared by
+iteration 10 and did not recover. Loss reduction alone therefore does not
+satisfy this pilot's success criteria; tactical generalization regressed.

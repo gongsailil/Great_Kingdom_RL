@@ -1,0 +1,116 @@
+{
+  "status": "FAIL",
+  "status_reason": "The bounded pipeline completed without illegal actions and produced repeated PASS-score endings, but all three tactical diagnostics regressed after training and defense sanity never passed.",
+  "run_dir": "runs/alphazero_v3/territory_pilot_20260901",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5070 Ti",
+  "encoder_shape": [9, 9, 9],
+  "network_parameters": 246141,
+  "config": {
+    "mcts_simulations": 256,
+    "c_puct": 1.5,
+    "self_play_games_per_iteration": 32,
+    "replay_max_positions": 50000,
+    "batch_size": 256,
+    "training_updates_per_iteration": 64,
+    "completed_iterations": 50,
+    "seed": 20260830
+  },
+  "totals": {
+    "elapsed_seconds": 87255.87088740092,
+    "self_play_games": 1600,
+    "samples_generated": 48045,
+    "replay_size": 48045,
+    "capture_endings": 1540,
+    "pass_score_endings": 60,
+    "pass_actions": 343,
+    "illegal_action_probability_violations": 0
+  },
+  "ten_iteration_blocks": [
+    {
+      "iterations": "1-10",
+      "samples": 9589,
+      "capture_endings": 304,
+      "pass_score_endings": 16,
+      "pass_actions": 113,
+      "mean_pass_target_probability": 0.011176319466903806,
+      "pass_target_nonzero_fraction": 0.6542351283238002,
+      "territory_state_fraction": 0.19078818157270347,
+      "policy_loss": 3.477581075951457,
+      "value_loss": 0.17761748837074265,
+      "total_loss": 3.6551985684782267
+    },
+    {
+      "iterations": "11-20",
+      "samples": 10215,
+      "capture_endings": 311,
+      "pass_score_endings": 9,
+      "pass_actions": 53,
+      "mean_pass_target_probability": 0.007121601374819875,
+      "pass_target_nonzero_fraction": 0.5622700470727634,
+      "territory_state_fraction": 0.1729209529560721,
+      "policy_loss": 3.1374911766499283,
+      "value_loss": 0.19560362537158654,
+      "total_loss": 3.3330948047339914
+    },
+    {
+      "iterations": "21-30",
+      "samples": 9534,
+      "capture_endings": 306,
+      "pass_score_endings": 14,
+      "pass_actions": 58,
+      "mean_pass_target_probability": 0.006174756120890379,
+      "pass_target_nonzero_fraction": 0.5330527308434456,
+      "territory_state_fraction": 0.1878821894157099,
+      "policy_loss": 3.1552474953234197,
+      "value_loss": 0.2092255668132566,
+      "total_loss": 3.3644730605185034
+    },
+    {
+      "iterations": "31-40",
+      "samples": 9350,
+      "capture_endings": 306,
+      "pass_score_endings": 14,
+      "pass_actions": 75,
+      "mean_pass_target_probability": 0.006748236040584743,
+      "pass_target_nonzero_fraction": 0.530542442946916,
+      "territory_state_fraction": 0.22438152191361044,
+      "policy_loss": 3.1631666969507934,
+      "value_loss": 0.23207350403536112,
+      "total_loss": 3.3952402018010615
+    },
+    {
+      "iterations": "41-50",
+      "samples": 9357,
+      "capture_endings": 313,
+      "pass_score_endings": 7,
+      "pass_actions": 44,
+      "mean_pass_target_probability": 0.0044980687787756326,
+      "pass_target_nonzero_fraction": 0.5116989915971663,
+      "territory_state_fraction": 0.22852320376091848,
+      "policy_loss": 3.201870971545577,
+      "value_loss": 0.23419956533471123,
+      "total_loss": 3.4360705349594354
+    }
+  ],
+  "loss": {
+    "iteration_1": {
+      "policy": 4.23306804895401,
+      "value": 0.17829256842378527,
+      "total": 4.411360651254654
+    },
+    "iteration_50": {
+      "policy": 3.2026580460369587,
+      "value": 0.22648607403971255,
+      "total": 3.4291441068053246
+    }
+  },
+  "tactical_diagnostics": [
+    {"iteration": 0, "capture": true, "defense": false, "winning_pass": true, "winning_pass_prior": 0.013831514865159988, "winning_pass_visits": 231},
+    {"iteration": 10, "capture": false, "defense": false, "winning_pass": false, "winning_pass_prior": 0.00707450695335865, "winning_pass_visits": 0},
+    {"iteration": 20, "capture": false, "defense": false, "winning_pass": false, "winning_pass_prior": 0.02930925413966179, "winning_pass_visits": 0},
+    {"iteration": 30, "capture": false, "defense": false, "winning_pass": false, "winning_pass_prior": 0.003178957849740982, "winning_pass_visits": 0},
+    {"iteration": 40, "capture": false, "defense": false, "winning_pass": false, "winning_pass_prior": 0.005584786180406809, "winning_pass_visits": 0},
+    {"iteration": 50, "capture": false, "defense": false, "winning_pass": false, "winning_pass_prior": 0.011078937910497189, "winning_pass_visits": 0}
+  ]
+}

@@ -24,7 +24,13 @@ class TrainingExample:
     player: int
 
 
-def play_self_play_game(network, config, device, rng):
+def play_self_play_game(
+    network,
+    config,
+    device,
+    rng,
+    state_encoder=encode_state,
+):
     logic = GreatKingdomLogicV2()
     history = []
     pass_usage = 0
@@ -33,7 +39,7 @@ def play_self_play_game(network, config, device, rng):
 
     for _ in range(config.max_game_moves):
         player = logic.turn
-        search = MCTS(network, config, device)
+        search = MCTS(network, config, device, state_encoder=state_encoder)
         root = search.run(logic, add_root_noise=True, rng=rng)
         policy = visit_count_policy(root, config.temperature)
         legal_mask = action_mask_for_logic(logic, player)
@@ -46,7 +52,7 @@ def play_self_play_game(network, config, device, rng):
         if policy.shape != (NUM_ACTIONS,) or not np.isclose(policy.sum(), 1.0):
             raise RuntimeError("self-play MCTS policy is not a normalized 82-vector")
 
-        history.append((encode_state(logic), policy.copy(), player))
+        history.append((state_encoder(logic), policy.copy(), player))
         action = int(rng.choice(NUM_ACTIONS, p=policy.astype(np.float64)))
         if action == PASS_ACTION:
             pass_usage += 1
@@ -85,11 +91,23 @@ def play_self_play_game(network, config, device, rng):
     return examples, stats
 
 
-def generate_self_play(network, config, device, rng):
+def generate_self_play(
+    network,
+    config,
+    device,
+    rng,
+    state_encoder=encode_state,
+):
     all_examples = []
     game_stats = []
     for game_index in range(config.self_play_games):
-        examples, stats = play_self_play_game(network, config, device, rng)
+        examples, stats = play_self_play_game(
+            network,
+            config,
+            device,
+            rng,
+            state_encoder=state_encoder,
+        )
         stats["game_index"] = game_index
         all_examples.extend(examples)
         game_stats.append(stats)
