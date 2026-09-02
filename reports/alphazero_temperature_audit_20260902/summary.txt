@@ -1,0 +1,67 @@
+AlphaZero V3 self-play temperature stability audit (2026-09-02)
+====================================================================
+
+Behavior diagnostic only: no training, optimizer, replay, network,
+encoder, Rules V2, or MCTS algorithm changes were made.
+Checkpoint: runs/alphazero_v3/territory_pilot_20260901/checkpoints/iteration_000050.pt (iteration 50)
+Checkpoint SHA-256: c087dbf211f99c1dd6419d2c4a2d4f520cfc282ec50d9cf0581585082c2517f1
+Device: cuda
+Fixed search: 256 simulations, c_puct 1.5, learned policy/value,
+root Dirichlet alpha 0.3/fraction 0.25.
+Paired seed block: 20260902; 32 games per schedule.
+
+Schedule totals
+---------------
+Schedule  W(B/R)  End(capture/score)  Len  PASS  Argmax  Capture miss  Safe defense  Win-PASS
+all_hot   20/12    30/2              29.94  0.19   47.91%        60.53%        22.06%  2/2
+early8    20/12    31/1              26.06  0.16   84.41%        49.18%        16.36%  1/1
+greedy    20/12    32/0              31.06  0.03  100.00%        55.56%        24.29%  0/0
+
+Early/mid/late split
+--------------------
+all_hot:
+  early moves= 252; argmax=48.41%; capture misses=0/0; unsafe defense=0/0; PASS choices=2; entropy=1.907587
+  mid   moves= 244; argmax=48.77%; capture misses=4/6; unsafe defense=6/6; PASS choices=0; entropy=1.961035
+  late  moves= 462; argmax=47.19%; capture misses=42/70; unsafe defense=47/62; PASS choices=4; entropy=1.900033
+early8:
+  early moves= 252; argmax=48.41%; capture misses=0/0; unsafe defense=0/0; PASS choices=2; entropy=1.907587
+  mid   moves= 243; argmax=100.00%; capture misses=8/12; unsafe defense=12/13; PASS choices=0; entropy=2.035557
+  late  moves= 339; argmax=100.00%; capture misses=22/49; unsafe defense=34/42; PASS choices=3; entropy=1.902392
+greedy:
+  early moves= 256; argmax=100.00%; capture misses=0/0; unsafe defense=3/3; PASS choices=0; entropy=1.957868
+  mid   moves= 246; argmax=100.00%; capture misses=11/15; unsafe defense=14/14; PASS choices=0; entropy=1.974802
+  late  moves= 492; argmax=100.00%; capture misses=29/57; unsafe defense=36/53; PASS choices=1; entropy=1.863010
+
+Value-vs-final-z trajectory proxy
+---------------------------------
+all_hot: MAE=1.003307, MSE=1.618180
+  early: MAE=0.8796606196888855, MSE=1.1403890482355659
+  mid: MAE=0.9625368973099031, MSE=1.5723621705567148
+  late: MAE=1.0922827215374395, MSE=1.9029906954345008
+early8: MAE=0.897967, MSE=1.306914
+  early: MAE=0.8379404661873917, MSE=1.0569487412325782
+  mid: MAE=0.8467376801799006, MSE=1.289091818510105
+  late: MAE=0.9793108429822928, MSE=1.5055042598501593
+greedy: MAE=0.970445, MSE=1.402965
+  early: MAE=0.9385604897906887, MSE=1.1346332626026339
+  mid: MAE=0.9431946695729242, MSE=1.4200828810614163
+  late: MAE=1.000659783244203, MSE=1.5340256629915023
+
+Diversity and endings
+---------------------
+all_hot: unique trajectories 32/32, unique first-8 32/32, selected-action entropy 4.242714, capture/score 30/2
+early8: unique trajectories 32/32, unique first-8 32/32, selected-action entropy 4.148127, capture/score 31/1
+greedy: unique trajectories 32/32, unique first-8 21/32, selected-action entropy 4.167289, capture/score 32/0
+
+Interpretation
+--------------
+Classification: CASE_NO_EFFECT
+- early8 lowered capture misses from 0.605263 to 0.491803 and value MAE from 1.003307 to 0.897967.
+- early8 did not improve the key defense metric: safe-defense rate changed from 0.220588 to 0.163636.
+- greedy safe-defense rate was 0.242857; neither exploitation schedule produced a consistent defense improvement.
+- All schedules retained 32/32 unique complete trajectories; early8 did not show trajectory collapse.
+The value error is an on-policy trajectory difficulty/noise proxy,
+not an independent held-out calibration or generalization metric.
+Network state unchanged: True
+Checkpoint file unchanged: True
+Total measured game time: 5280.830 seconds
