@@ -1,0 +1,776 @@
+{
+  "audited_indices_sha256": "e5385a12fee6e5bebd61bca3c0793ec8d186c5ed611fb473de42b49894a3e26f",
+  "audited_player_counts": {
+    "blue": 5114,
+    "blue_fraction": 0.5114,
+    "red": 4886,
+    "red_fraction": 0.4886
+  },
+  "audited_states": 10000,
+  "checkpoint_paths": {
+    "10": "runs/alphazero_v3/territory_pilot_20260901/checkpoints/iteration_000010.pt",
+    "50": "runs/alphazero_v3/territory_pilot_20260901/checkpoints/iteration_000050.pt"
+  },
+  "checkpoint_sha256": {
+    "10": "fe291df6c3ef99e68d8bb7c4d5796314fd7fced14d36c85228b76db843fe244a",
+    "50": "c087dbf211f99c1dd6419d2c4a2d4f520cfc282ec50d9cf0581585082c2517f1"
+  },
+  "checkpoints_unchanged": true,
+  "classification": {
+    "color_asymmetry_flag": false,
+    "color_gap": 0.06985715085072863,
+    "primary": "CASE_VALUE_CALIBRATION",
+    "regression_signal_count": 0,
+    "value_miscalibration_flag": true
+  },
+  "device": "cuda",
+  "elapsed_seconds": 1454.1616643600137,
+  "maximum_audited_states": 10000,
+  "network_state_digests_after": {
+    "10": "33cde3da570cf075423ec69bba217ac22b9d1d6053b67bc9d5aece53ae1ad5c3",
+    "50": "cf4e4c65282eca91a985593f1dc7e88fae1d955b366a5fd5479a7ef320f04e65"
+  },
+  "network_state_digests_before": {
+    "10": "33cde3da570cf075423ec69bba217ac22b9d1d6053b67bc9d5aece53ae1ad5c3",
+    "50": "cf4e4c65282eca91a985593f1dc7e88fae1d955b366a5fd5479a7ef320f04e65"
+  },
+  "network_unchanged": true,
+  "networks": {
+    "10": {
+      "defense": {
+        "mean_unsafe_minus_safe_max_q": 0.4584409555023605,
+        "opportunity_states": 720,
+        "rankable_states": 675,
+        "ranking_failure_fraction": 0.9259259259259259,
+        "ranking_failures": 625
+      },
+      "exact_loss": {
+        "at_least_0_5_count": 13640,
+        "at_least_0_5_fraction": 0.22708732206775992,
+        "count": 60065,
+        "mae": 0.6457287374136474,
+        "mean": -0.35427126258635255,
+        "median": -0.7970498204231262,
+        "mse": 0.9887488419481026,
+        "p10": -0.9986538410186767,
+        "p50": -0.7970498204231262,
+        "p90": 0.946671187877655,
+        "positive_count": 18550,
+        "positive_fraction": 0.30883209855989346
+      },
+      "exact_loss_by_action_type": {
+        "pass": {
+          "at_least_0_5_count": 968,
+          "at_least_0_5_fraction": 0.17425742574257425,
+          "count": 5555,
+          "mae": 0.5088862898457556,
+          "mean": -0.49111371015424443,
+          "median": -0.935135006904602,
+          "mse": 0.7630098267737537,
+          "p10": -0.99928138256073,
+          "p50": -0.935135006904602,
+          "p90": 0.8821000814437867,
+          "positive_count": 1333,
+          "positive_fraction": 0.23996399639963997
+        },
+        "placement": {
+          "at_least_0_5_count": 12672,
+          "at_least_0_5_fraction": 0.23247110621904238,
+          "count": 54510,
+          "mae": 0.6596740648075134,
+          "mean": -0.3403259351924865,
+          "median": -0.7742029130458832,
+          "mse": 1.011753432468989,
+          "p10": -0.9985525667667389,
+          "p50": -0.7742029130458832,
+          "p90": 0.9505029201507568,
+          "positive_count": 17217,
+          "positive_fraction": 0.3158503026967529
+        }
+      },
+      "exact_loss_by_root_player": {
+        "blue": {
+          "at_least_0_5_count": 7833,
+          "at_least_0_5_fraction": 0.2639328795740953,
+          "count": 29678,
+          "mae": 0.7078869996685082,
+          "mean": -0.2921130003314918,
+          "median": -0.7451508343219757,
+          "mse": 1.1268116836276456,
+          "p10": -0.9990158438682556,
+          "p50": -0.7451508343219757,
+          "p90": 0.9770227134227752,
+          "positive_count": 10227,
+          "positive_fraction": 0.34459869263427456
+        },
+        "red": {
+          "at_least_0_5_count": 5807,
+          "at_least_0_5_fraction": 0.1911014578602692,
+          "count": 30387,
+          "mae": 0.5850207732447674,
+          "mean": -0.41497922675523263,
+          "median": -0.8290449380874634,
+          "mse": 0.8539073302699022,
+          "p10": -0.9982016921043396,
+          "p50": -0.8290449380874634,
+          "p90": 0.8802740812301637,
+          "positive_count": 8323,
+          "positive_fraction": 0.2739000230361668
+        }
+      },
+      "immediate_win_alternatives": {
+        "at_least_0_95_count": 10446,
+        "at_least_0_95_fraction": 0.24732455724973956,
+        "at_least_0_99_count": 6166,
+        "at_least_0_99_fraction": 0.14598920352306088,
+        "at_least_0_9_count": 12727,
+        "at_least_0_9_fraction": 0.30133061842977554,
+        "immediate_win_state_count": 809,
+        "max_alternative_predicted_q": 0.9999893307685852,
+        "mean_alternative_predicted_q": 0.08594931563449311,
+        "nonterminal_alternative_count": 42236,
+        "states_with_max_at_least_0_9": 429,
+        "states_with_max_at_least_0_95": 375,
+        "states_with_max_at_least_0_99": 252
+      },
+      "iteration": 10,
+      "saturation": {
+        "predicted_root_q": {
+          "buckets": {
+            "[-0.4,0)": {
+              "count": 72653,
+              "fraction": 0.1127738903134876
+            },
+            "[-0.8,-0.4)": {
+              "count": 101345,
+              "fraction": 0.15731036452480146
+            },
+            "[-1,-0.8)": {
+              "count": 220412,
+              "fraction": 0.34212928181598046
+            },
+            "[0,0.4)": {
+              "count": 56047,
+              "fraction": 0.08699762198945728
+            },
+            "[0.4,0.8)": {
+              "count": 65547,
+              "fraction": 0.10174377091624809
+            },
+            "[0.8,0.95)": {
+              "count": 49878,
+              "fraction": 0.07742193854426017
+            },
+            "[0.95,0.99)": {
+              "count": 36527,
+              "fraction": 0.05669816651040923
+            },
+            "[0.99,1]": {
+              "count": 41827,
+              "fraction": 0.06492496538535568
+            }
+          },
+          "count": 644236
+        },
+        "predicted_root_q_by_root_player": {
+          "blue": {
+            "buckets": {
+              "[-0.4,0)": {
+                "count": 39257,
+                "fraction": 0.1187364460427738
+              },
+              "[-0.8,-0.4)": {
+                "count": 48507,
+                "fraction": 0.14671393097273935
+              },
+              "[-1,-0.8)": {
+                "count": 105627,
+                "fraction": 0.31947868115648337
+              },
+              "[0,0.4)": {
+                "count": 27434,
+                "fraction": 0.08297668341282972
+              },
+              "[0.4,0.8)": {
+                "count": 33697,
+                "fraction": 0.10191970915514045
+              },
+              "[0.8,0.95)": {
+                "count": 27478,
+                "fraction": 0.0831097655033074
+              },
+              "[0.95,0.99)": {
+                "count": 21415,
+                "fraction": 0.064771658354077
+              },
+              "[0.99,1]": {
+                "count": 27208,
+                "fraction": 0.08229312540264894
+              }
+            },
+            "count": 330623
+          },
+          "red": {
+            "buckets": {
+              "[-0.4,0)": {
+                "count": 33396,
+                "fraction": 0.10648793257932547
+              },
+              "[-0.8,-0.4)": {
+                "count": 52838,
+                "fraction": 0.16848153616080966
+              },
+              "[-1,-0.8)": {
+                "count": 114785,
+                "fraction": 0.3660084243956724
+              },
+              "[0,0.4)": {
+                "count": 28613,
+                "fraction": 0.09123665154186848
+              },
+              "[0.4,0.8)": {
+                "count": 31850,
+                "fraction": 0.10155828999435611
+              },
+              "[0.8,0.95)": {
+                "count": 22400,
+                "fraction": 0.07142561054548122
+              },
+              "[0.95,0.99)": {
+                "count": 15112,
+                "fraction": 0.04818677797157643
+              },
+              "[0.99,1]": {
+                "count": 14619,
+                "fraction": 0.04661477681091026
+              }
+            },
+            "count": 313613
+          }
+        },
+        "raw_child_current_player_value": {
+          "buckets": {
+            "[-0.4,0)": {
+              "count": 56047,
+              "fraction": 0.08699762198945728
+            },
+            "[-0.8,-0.4)": {
+              "count": 65547,
+              "fraction": 0.10174377091624809
+            },
+            "[-1,-0.8)": {
+              "count": 128232,
+              "fraction": 0.1990450704400251
+            },
+            "[0,0.4)": {
+              "count": 72653,
+              "fraction": 0.1127738903134876
+            },
+            "[0.4,0.8)": {
+              "count": 101345,
+              "fraction": 0.15731036452480146
+            },
+            "[0.8,0.95)": {
+              "count": 83271,
+              "fraction": 0.12925542813503127
+            },
+            "[0.95,0.99)": {
+              "count": 62438,
+              "fraction": 0.09691789965168043
+            },
+            "[0.99,1]": {
+              "count": 74703,
+              "fraction": 0.11595595402926878
+            }
+          },
+          "count": 644236
+        }
+      },
+      "worst_exact_loss_examples": [
+        {
+          "action": 81,
+          "action_type": "pass",
+          "opponent_winning_actions": [
+            81
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999950528144836,
+          "replay_index": 25567
+        },
+        {
+          "action": 81,
+          "action_type": "pass",
+          "opponent_winning_actions": [
+            81
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999948143959045,
+          "replay_index": 24001
+        },
+        {
+          "action": 81,
+          "action_type": "pass",
+          "opponent_winning_actions": [
+            81
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999918341636658,
+          "replay_index": 36900
+        },
+        {
+          "action": 48,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            47
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999867081642151,
+          "replay_index": 1377
+        },
+        {
+          "action": 72,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            73
+          ],
+          "player": 1,
+          "predicted_root_q": 0.999984860420227,
+          "replay_index": 1377
+        },
+        {
+          "action": 81,
+          "action_type": "pass",
+          "opponent_winning_actions": [
+            81
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999841451644897,
+          "replay_index": 1379
+        },
+        {
+          "action": 36,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            27
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999839663505554,
+          "replay_index": 1377
+        },
+        {
+          "action": 81,
+          "action_type": "pass",
+          "opponent_winning_actions": [
+            81
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999838471412659,
+          "replay_index": 32726
+        },
+        {
+          "action": 81,
+          "action_type": "pass",
+          "opponent_winning_actions": [
+            44
+          ],
+          "player": 2,
+          "predicted_root_q": 0.9999833106994629,
+          "replay_index": 3677
+        },
+        {
+          "action": 48,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            47
+          ],
+          "player": 1,
+          "predicted_root_q": 0.99997878074646,
+          "replay_index": 1379
+        }
+      ]
+    },
+    "50": {
+      "defense": {
+        "mean_unsafe_minus_safe_max_q": 0.30431868084154473,
+        "opportunity_states": 720,
+        "rankable_states": 675,
+        "ranking_failure_fraction": 0.914074074074074,
+        "ranking_failures": 617
+      },
+      "exact_loss": {
+        "at_least_0_5_count": 14466,
+        "at_least_0_5_fraction": 0.2408390909847665,
+        "count": 60065,
+        "mae": 0.5369429625340366,
+        "mean": -0.4630570374659634,
+        "median": -0.9968969225883484,
+        "mse": 0.9721974949117393,
+        "p10": -0.9999962449073792,
+        "p50": -0.9968969225883484,
+        "p90": 0.9975675582885742,
+        "positive_count": 16036,
+        "positive_fraction": 0.26697744110546906
+      },
+      "exact_loss_by_action_type": {
+        "pass": {
+          "at_least_0_5_count": 935,
+          "at_least_0_5_fraction": 0.16831683168316833,
+          "count": 5555,
+          "mae": 0.41977862150502215,
+          "mean": -0.5802213784949779,
+          "median": -0.9980785846710205,
+          "mse": 0.703141803473075,
+          "p10": -0.9999995827674866,
+          "p50": -0.9980785846710205,
+          "p90": 0.9517415285110473,
+          "positive_count": 1138,
+          "positive_fraction": 0.20486048604860485
+        },
+        "placement": {
+          "at_least_0_5_count": 13531,
+          "at_least_0_5_fraction": 0.2482296826270409,
+          "count": 54510,
+          "mae": 0.5488829352806185,
+          "mean": -0.45111706471938157,
+          "median": -0.9967671036720276,
+          "mse": 0.9996163972405189,
+          "p10": -0.9999955296516418,
+          "p50": -0.9967671036720276,
+          "p90": 0.9980009019374847,
+          "positive_count": 14898,
+          "positive_fraction": 0.27330764997248214
+        }
+      },
+      "exact_loss_by_root_player": {
+        "blue": {
+          "at_least_0_5_count": 7644,
+          "at_least_0_5_fraction": 0.25756452591144957,
+          "count": 29678,
+          "mae": 0.5722838306419379,
+          "mean": -0.4277161693580621,
+          "median": -0.9961683750152588,
+          "mse": 1.0405765804112794,
+          "p10": -0.9999978542327881,
+          "p50": -0.9961683750152588,
+          "p90": 0.9985900700092316,
+          "positive_count": 8418,
+          "positive_fraction": 0.2836444504346654
+        },
+        "red": {
+          "at_least_0_5_count": 6822,
+          "at_least_0_5_fraction": 0.22450389969394807,
+          "count": 30387,
+          "mae": 0.5024266797912093,
+          "mean": -0.4975733202087907,
+          "median": -0.9973248243331909,
+          "mse": 0.9054138538989592,
+          "p10": -0.9999939799308777,
+          "p50": -0.9973248243331909,
+          "p90": 0.9956329345703125,
+          "positive_count": 7618,
+          "positive_fraction": 0.2506993122058775
+        }
+      },
+      "immediate_win_alternatives": {
+        "at_least_0_95_count": 24797,
+        "at_least_0_95_fraction": 0.5871057865328156,
+        "at_least_0_99_count": 20008,
+        "at_least_0_99_fraction": 0.4737191021877072,
+        "at_least_0_9_count": 26614,
+        "at_least_0_9_fraction": 0.6301259588976229,
+        "immediate_win_state_count": 809,
+        "max_alternative_predicted_q": 1.0,
+        "mean_alternative_predicted_q": 0.5008178897758245,
+        "nonterminal_alternative_count": 42236,
+        "states_with_max_at_least_0_9": 668,
+        "states_with_max_at_least_0_95": 650,
+        "states_with_max_at_least_0_99": 601
+      },
+      "iteration": 50,
+      "saturation": {
+        "predicted_root_q": {
+          "buckets": {
+            "[-0.4,0)": {
+              "count": 53956,
+              "fraction": 0.08375191699936048
+            },
+            "[-0.8,-0.4)": {
+              "count": 56847,
+              "fraction": 0.08823940295171334
+            },
+            "[-1,-0.8)": {
+              "count": 262952,
+              "fraction": 0.4081609844839469
+            },
+            "[0,0.4)": {
+              "count": 39064,
+              "fraction": 0.06063616438696379
+            },
+            "[0.4,0.8)": {
+              "count": 41677,
+              "fraction": 0.06469213145493266
+            },
+            "[0.8,0.95)": {
+              "count": 42135,
+              "fraction": 0.06540305105582427
+            },
+            "[0.95,0.99)": {
+              "count": 43601,
+              "fraction": 0.0676786146691585
+            },
+            "[0.99,1]": {
+              "count": 104004,
+              "fraction": 0.16143773399810007
+            }
+          },
+          "count": 644236
+        },
+        "predicted_root_q_by_root_player": {
+          "blue": {
+            "buckets": {
+              "[-0.4,0)": {
+                "count": 30694,
+                "fraction": 0.0928368564800392
+              },
+              "[-0.8,-0.4)": {
+                "count": 26051,
+                "fraction": 0.0787936713416792
+              },
+              "[-1,-0.8)": {
+                "count": 120379,
+                "fraction": 0.36409747658208896
+              },
+              "[0,0.4)": {
+                "count": 22343,
+                "fraction": 0.06757848062596976
+              },
+              "[0.4,0.8)": {
+                "count": 21618,
+                "fraction": 0.06538565072605354
+              },
+              "[0.8,0.95)": {
+                "count": 21709,
+                "fraction": 0.0656608886859051
+              },
+              "[0.95,0.99)": {
+                "count": 23162,
+                "fraction": 0.07005562226463374
+              },
+              "[0.99,1]": {
+                "count": 64667,
+                "fraction": 0.1955913532936305
+              }
+            },
+            "count": 330623
+          },
+          "red": {
+            "buckets": {
+              "[-0.4,0)": {
+                "count": 23262,
+                "fraction": 0.07417422109415107
+              },
+              "[-0.8,-0.4)": {
+                "count": 30796,
+                "fraction": 0.09819745992672498
+              },
+              "[-1,-0.8)": {
+                "count": 142573,
+                "fraction": 0.45461444519200417
+              },
+              "[0,0.4)": {
+                "count": 16721,
+                "fraction": 0.05331730508620497
+              },
+              "[0.4,0.8)": {
+                "count": 20059,
+                "fraction": 0.06396099651481284
+              },
+              "[0.8,0.95)": {
+                "count": 20426,
+                "fraction": 0.06513122861616068
+              },
+              "[0.95,0.99)": {
+                "count": 20439,
+                "fraction": 0.06517268097942368
+              },
+              "[0.99,1]": {
+                "count": 39337,
+                "fraction": 0.1254316625905176
+              }
+            },
+            "count": 313613
+          }
+        },
+        "raw_child_current_player_value": {
+          "buckets": {
+            "[-0.4,0)": {
+              "count": 39064,
+              "fraction": 0.06063616438696379
+            },
+            "[-0.8,-0.4)": {
+              "count": 41677,
+              "fraction": 0.06469213145493266
+            },
+            "[-1,-0.8)": {
+              "count": 189740,
+              "fraction": 0.29451939972308283
+            },
+            "[0,0.4)": {
+              "count": 53956,
+              "fraction": 0.08375191699936048
+            },
+            "[0.4,0.8)": {
+              "count": 56847,
+              "fraction": 0.08823940295171334
+            },
+            "[0.8,0.95)": {
+              "count": 47051,
+              "fraction": 0.0730337950688878
+            },
+            "[0.95,0.99)": {
+              "count": 45197,
+              "fraction": 0.07015596768885936
+            },
+            "[0.99,1]": {
+              "count": 170704,
+              "fraction": 0.2649712217261997
+            }
+          },
+          "count": 644236
+        }
+      },
+      "worst_exact_loss_examples": [
+        {
+          "action": 1,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            26
+          ],
+          "player": 2,
+          "predicted_root_q": 1.0,
+          "replay_index": 37999
+        },
+        {
+          "action": 80,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            79
+          ],
+          "player": 1,
+          "predicted_root_q": 1.0,
+          "replay_index": 39723
+        },
+        {
+          "action": 59,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            68
+          ],
+          "player": 2,
+          "predicted_root_q": 1.0,
+          "replay_index": 44841
+        },
+        {
+          "action": 26,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            17
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 5311
+        },
+        {
+          "action": 26,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            25
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 24547
+        },
+        {
+          "action": 8,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            7
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 25216
+        },
+        {
+          "action": 12,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            11
+          ],
+          "player": 1,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 25216
+        },
+        {
+          "action": 0,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            26
+          ],
+          "player": 2,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 37999
+        },
+        {
+          "action": 10,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            26
+          ],
+          "player": 2,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 37999
+        },
+        {
+          "action": 11,
+          "action_type": "placement",
+          "opponent_winning_actions": [
+            26
+          ],
+          "player": 2,
+          "predicted_root_q": 0.9999999403953552,
+          "replay_index": 37999
+        }
+      ]
+    }
+  },
+  "oracle_and_inference_seconds": 1360.4654181539954,
+  "replay_path": "runs/alphazero_v3/territory_pilot_20260901/replay_buffer.pt",
+  "replay_sha256": "d6935a6c8a1ffc6d4bdae82b4772d3f8a48c519bd517ad1d2df8fa41cb64814b",
+  "replay_unchanged": true,
+  "replay_validation": {
+    "blue_turn_fraction": 0.5089187220314288,
+    "blue_turn_states": 24451,
+    "contradictory_z_sample_count": 4774,
+    "contradictory_z_unique_state_count": 422,
+    "duplicate_extra_sample_count": 4628,
+    "duplicate_unique_state_count": 639,
+    "invalid_targets": 0,
+    "player_mismatches": 0,
+    "red_turn_fraction": 0.49108127796857115,
+    "red_turn_states": 23594,
+    "roundtrip_failures": 0,
+    "total_states": 48045
+  },
+  "same_state_action_subset_for_both_networks": true,
+  "seed": 20260902,
+  "state_class_counts": {
+    "defense_opportunity_states": 720,
+    "exact_loss_actions": 60065,
+    "immediate_win_states": 809,
+    "nonterminal_child_actions": 644236,
+    "terminal_loss_actions": 39,
+    "unresolved_actions": 584171
+  },
+  "total_replay_states": 48045,
+  "validation_seconds": 92.96629544001189
+}

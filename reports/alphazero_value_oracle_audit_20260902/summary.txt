@@ -1,0 +1,45 @@
+AlphaZero V3 exact one-ply value-oracle audit (2026-09-02)
+================================================================
+
+No training, self-play, MCTS, or checkpoint mutation was performed.
+Replay states: 48045
+Audited states: 10000 (seed 20260902)
+Audited turns Blue/Red: 5114/4886
+Exact -1 actions: 60065
+Device: cuda
+
+Exact -1 calibration
+--------------------
+Iter  Count  Mean Q  Median  p10  p90  MAE  MSE  Q>0  Q>=0.5
+  10  60065  -0.3543  -0.7970  -0.9987  +0.9467  0.6457  0.9887   30.88%   22.71%
+  50  60065  -0.4631  -0.9969  -1.0000  +0.9976  0.5369  0.9722   26.70%   24.08%
+
+Defense value ranking
+---------------------
+iter 10: opportunities=720, rankable=675, failures=625 (92.59%), mean(max unsafe - max safe)=+0.458441
+iter 50: opportunities=720, rankable=675, failures=617 (91.41%), mean(max unsafe - max safe)=+0.304319
+
+Immediate-win alternative saturation
+------------------------------------
+iter 10: win states=809, alternatives=42236, mean/max Q=+0.085949/+0.999989; >=0.9/0.95/0.99=12727/10446/6166
+iter 50: win states=809, alternatives=42236, mean/max Q=+0.500818/+1.000000; >=0.9/0.95/0.99=26614/24797/20008
+
+Color split for exact -1 actions
+--------------------------------
+iter 10: Blue count/mean/MAE/Q>0=29678/-0.292113/0.707887/34.46%; Red=30387/-0.414979/0.585021/27.39%
+iter 50: Blue count/mean/MAE/Q>0=29678/-0.427716/0.572284/28.36%; Red=30387/-0.497573/0.502427/25.07%
+
+Replay target audit
+-------------------
+Exact duplicate states: 639 unique keys (4628 extra samples)
+Contradictory-z duplicate states: 422 unique keys / 4774 samples
+Roundtrip failures/player mismatches/invalid targets: 0/0/0
+
+Interpretation
+--------------
+Primary classification: CASE_VALUE_CALIBRATION
+Regression signals: 0/3
+Color-asymmetry flag: False
+Rules-exact terminal actions were never passed through the network.
+Network/checkpoint/replay unchanged: True/True/True
+Elapsed seconds: 1454.162
