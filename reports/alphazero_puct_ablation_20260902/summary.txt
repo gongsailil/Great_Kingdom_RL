@@ -1,0 +1,46 @@
+AlphaZero V3 c_puct ablation (2026-09-02)
+============================================================
+
+No training or checkpoint mutation was performed.
+Checkpoint: runs/alphazero_v3/territory_pilot_20260901/checkpoints/iteration_000050.pt (iteration 50)
+Network parameters: 246141
+Device: cuda
+Fixed search: learned policy + learned value, 256 simulations, temperature 0, root noise off
+c_puct values: 1.5, 3.0, 6.0, 12.0
+
+Tactical sweep
+--------------
+c_puct  Capture  Defense  Winning PASS  Capture action  Defense action  PASS action
+   1.5    False    False         False              66              66           32
+     3    False    False         False              32              66           71
+     6    False    False         False              32              66           60
+    12    False    False         False              71              66           60
+
+Search coverage
+---------------
+c_puct 1.5:
+  immediate_capture: expected visits=0 (0.000000), Q=+0.000000; visited=12/77 (0.155844), visit entropy=1.298770
+  immediate_capture_threat_defense: expected visits=3 (0.011719), Q=+0.084294; visited=44/76 (0.578947), visit entropy=3.198281
+  immediate_winning_pass: expected visits=0 (0.000000), Q=-0.000000; visited=5/77 (0.064935), visit entropy=1.354202
+c_puct 3:
+  immediate_capture: expected visits=0 (0.000000), Q=+0.000000; visited=15/77 (0.194805), visit entropy=1.297364
+  immediate_capture_threat_defense: expected visits=3 (0.011719), Q=+0.084294; visited=53/76 (0.697368), visit entropy=3.450315
+  immediate_winning_pass: expected visits=0 (0.000000), Q=-0.000000; visited=9/77 (0.116883), visit entropy=1.852437
+c_puct 6:
+  immediate_capture: expected visits=0 (0.000000), Q=+0.000000; visited=31/77 (0.402597), visit entropy=2.461949
+  immediate_capture_threat_defense: expected visits=2 (0.007812), Q=+0.197437; visited=61/76 (0.802632), visit entropy=3.671738
+  immediate_winning_pass: expected visits=0 (0.000000), Q=-0.000000; visited=16/77 (0.207792), visit entropy=2.333813
+c_puct 12:
+  immediate_capture: expected visits=18 (0.070312), Q=+1.000000; visited=51/77 (0.662338), visit entropy=3.585954
+  immediate_capture_threat_defense: expected visits=2 (0.007812), Q=+0.197437; visited=62/76 (0.815789), visit entropy=3.718465
+  immediate_winning_pass: expected visits=4 (0.015625), Q=+1.000000; visited=28/77 (0.363636), visit entropy=2.814932
+
+Small paired-opening arena
+--------------------------
+c_puct 1.5 vs 12: 12-8; candidate Blue/Red wins 7/1; color Blue/Red 16/4; capture/score 20/0; PASS actions 4; mean length 30.200
+
+Interpretation
+--------------
+Classification: CASE_VALUE
+Each 20-game arena matchup is diagnostic, not statistical proof.
+Elapsed seconds: 995.749

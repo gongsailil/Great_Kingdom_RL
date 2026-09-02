@@ -120,12 +120,16 @@ def _network_output(checkpoint, logic):
     return logits[0].detach().cpu().numpy(), float(value[0].item())
 
 
-def _search_config(checkpoint, simulations):
+def _search_config(checkpoint, simulations, c_puct=None):
+    if c_puct is None:
+        c_puct = checkpoint.config.get("c_puct", 1.5)
+    if float(c_puct) <= 0.0:
+        raise ValueError("c_puct must be positive")
     return AlphaZeroConfig(
         channels=int(checkpoint.config["channels"]),
         residual_blocks=int(checkpoint.config["residual_blocks"]),
         mcts_simulations=int(simulations),
-        c_puct=float(checkpoint.config.get("c_puct", 1.5)),
+        c_puct=float(c_puct),
         dirichlet_fraction=0.0,
         temperature=0.0,
     )
@@ -197,6 +201,7 @@ def analyze_guidance_mode(
     mode,
     *,
     simulations=256,
+    c_puct=None,
     safe_actions=None,
     top_k=10,
 ):
@@ -211,7 +216,7 @@ def analyze_guidance_mode(
     policy = policy_statistics(logits, legal_mask, expected_action)
     search = GuidanceAuditMCTS(
         checkpoint.network,
-        _search_config(checkpoint, simulations),
+        _search_config(checkpoint, simulations, c_puct),
         checkpoint.device,
         state_encoder=checkpoint.state_encoder,
         mode=mode,
@@ -223,6 +228,15 @@ def analyze_guidance_mode(
         for action in root.children
     ]
     records.sort(key=lambda item: (-item["visit_count"], item["action"]))
+    visited_records = [item for item in records if item["visit_count"] > 0]
+    visit_probabilities = [
+        item["visit_fraction"] for item in visited_records
+    ]
+    visit_entropy = -sum(
+        probability * math.log(probability)
+        for probability in visit_probabilities
+        if probability > 0.0
+    )
     selected = records[0]
     by_action = {item["action"]: item for item in records}
     expected = by_action[expected_action]
@@ -236,6 +250,11 @@ def analyze_guidance_mode(
         "learned_policy": mode.learned_policy,
         "learned_value": mode.learned_value,
         "simulations": int(simulations),
+        "c_puct": float(
+            checkpoint.config.get("c_puct", 1.5)
+            if c_puct is None
+            else c_puct
+        ),
         "root_player": int(root.to_play),
         "selected_action": selected["action"],
         "expected_action": expected_action,
@@ -254,6 +273,10 @@ def analyze_guidance_mode(
             checkpoint, logic, expected_action
         ),
         "total_child_visits": int(total_visits),
+        "legal_child_count": len(records),
+        "visited_child_count": len(visited_records),
+        "visited_child_fraction": len(visited_records) / len(records),
+        "visit_entropy": float(visit_entropy),
         "top_actions": records[: int(top_k)],
     }
 

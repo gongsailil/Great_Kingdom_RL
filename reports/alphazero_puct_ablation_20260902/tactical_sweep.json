@@ -1,0 +1,2496 @@
+{
+  "c_puct_values": [
+    1.5,
+    3.0,
+    6.0,
+    12.0
+  ],
+  "checkpoint_iteration": 50,
+  "guidance_mode": "learned_policy_learned_value",
+  "records": [
+    {
+      "c_puct": 1.5,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "CAPTURE_WIN",
+        "immediate_winner": 1,
+        "is_pass": false,
+        "prior": 0.008668751455843449,
+        "q_value_root_player": 0.0,
+        "visit_count": 0,
+        "visit_fraction": 0.0
+      },
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_capture",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.008668751455843449,
+        "expected_action_legal_rank": 34,
+        "expected_action_raw_logit": -0.9956654906272888,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.912218751016185
+      },
+      "root_network_value": 0.07907770574092865,
+      "root_player": 1,
+      "root_search_leaf_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 66,
+      "selected_action_stats": {
+        "action": 66,
+        "coordinate": [
+          3,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.05438278615474701,
+        "q_value_root_player": 0.4310874633437438,
+        "visit_count": 139,
+        "visit_fraction": 0.54296875
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05438278615474701,
+          "q_value_root_player": 0.4310874633437438,
+          "visit_count": 139,
+          "visit_fraction": 0.54296875
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02197815664112568,
+          "q_value_root_player": 0.8523536839970399,
+          "visit_count": 79,
+          "visit_fraction": 0.30859375
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024728992953896523,
+          "q_value_root_player": 0.358793459004826,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0338280163705349,
+          "q_value_root_player": 0.2415607844789823,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 56,
+          "coordinate": [
+            2,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.023573243990540504,
+          "q_value_root_player": 0.34415808238554746,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.10115130245685577,
+          "q_value_root_player": -0.011469095945358276,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 75,
+          "coordinate": [
+            3,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05098166689276695,
+          "q_value_root_player": 0.20785583555698395,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 2,
+          "coordinate": [
+            2,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.029610255733132362,
+          "q_value_root_player": 0.10452119757731755,
+          "visit_count": 3,
+          "visit_fraction": 0.01171875
+        },
+        {
+          "action": 17,
+          "coordinate": [
+            8,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02984960936009884,
+          "q_value_root_player": 0.20952162146568298,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 22,
+          "coordinate": [
+            4,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03924200311303139,
+          "q_value_root_player": 0.11901617050170898,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 1.2987697034429306,
+      "visited_child_count": 12,
+      "visited_child_fraction": 0.15584415584415584
+    },
+    {
+      "c_puct": 1.5,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.007050711661577225,
+        "q_value_root_player": 0.08429419994354248,
+        "visit_count": 3,
+        "visit_fraction": 0.01171875
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "fixture": "immediate_capture_threat_defense",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 76,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.007050711661577225,
+        "expected_action_legal_rank": 42,
+        "expected_action_raw_logit": -1.4155919551849365,
+        "legal_action_count": 76,
+        "legal_policy_entropy": 3.8914390866980058
+      },
+      "root_network_value": 0.008462253026664257,
+      "root_player": 1,
+      "root_search_leaf_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 66,
+      "selected_action_stats": {
+        "action": 66,
+        "coordinate": [
+          3,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.024107931181788445,
+        "q_value_root_player": 0.11028407777056974,
+        "visit_count": 34,
+        "visit_fraction": 0.1328125
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024107931181788445,
+          "q_value_root_player": 0.11028407777056974,
+          "visit_count": 34,
+          "visit_fraction": 0.1328125
+        },
+        {
+          "action": 76,
+          "coordinate": [
+            4,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.008050957694649696,
+          "q_value_root_player": 0.13345834252734978,
+          "visit_count": 30,
+          "visit_fraction": 0.1171875
+        },
+        {
+          "action": 64,
+          "coordinate": [
+            1,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.010842369869351387,
+          "q_value_root_player": 0.13355969761808714,
+          "visit_count": 24,
+          "visit_fraction": 0.09375
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.01200664322823286,
+          "q_value_root_player": 0.12102591958828271,
+          "visit_count": 20,
+          "visit_fraction": 0.078125
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.027003224939107895,
+          "q_value_root_player": 0.03476195636072329,
+          "visit_count": 14,
+          "visit_fraction": 0.0546875
+        },
+        {
+          "action": 23,
+          "coordinate": [
+            5,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.008712037466466427,
+          "q_value_root_player": 0.08149611262174752,
+          "visit_count": 13,
+          "visit_fraction": 0.05078125
+        },
+        {
+          "action": 59,
+          "coordinate": [
+            5,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.013287888839840889,
+          "q_value_root_player": 0.0959767997264862,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 33,
+          "coordinate": [
+            6,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.012949158437550068,
+          "q_value_root_player": 0.12384587824344635,
+          "visit_count": 10,
+          "visit_fraction": 0.0390625
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.054538995027542114,
+          "q_value_root_player": -0.01628613637553321,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 18,
+          "coordinate": [
+            0,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07596094906330109,
+          "q_value_root_player": -0.14210372418165207,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 3.198281216165321,
+      "visited_child_count": 44,
+      "visited_child_fraction": 0.5789473684210527
+    },
+    {
+      "c_puct": 1.5,
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_action_stats": {
+        "action": 81,
+        "coordinate": null,
+        "immediate_result": "PASS_SCORE_END",
+        "immediate_winner": 1,
+        "is_pass": true,
+        "prior": 0.011078937910497189,
+        "q_value_root_player": -0.0,
+        "visit_count": 0,
+        "visit_fraction": 0.0
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_winning_pass",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.011078937910497189,
+        "expected_action_legal_rank": 21,
+        "expected_action_raw_logit": -1.3423124551773071,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.4709268147009444
+      },
+      "root_network_value": 0.9822007417678833,
+      "root_player": 1,
+      "root_search_leaf_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 32,
+      "selected_action_stats": {
+        "action": 32,
+        "coordinate": [
+          5,
+          3
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.0537710003554821,
+        "q_value_root_player": 0.9906491066547151,
+        "visit_count": 94,
+        "visit_fraction": 0.3671875
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0537710003554821,
+          "q_value_root_player": 0.9906491066547151,
+          "visit_count": 94,
+          "visit_fraction": 0.3671875
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.13254199922084808,
+          "q_value_root_player": 0.9588597422608962,
+          "visit_count": 78,
+          "visit_fraction": 0.3046875
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.15902277827262878,
+          "q_value_root_player": 0.917578564133755,
+          "visit_count": 43,
+          "visit_fraction": 0.16796875
+        },
+        {
+          "action": 77,
+          "coordinate": [
+            5,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07436234503984451,
+          "q_value_root_player": 0.9587158392637204,
+          "visit_count": 39,
+          "visit_fraction": 0.15234375
+        },
+        {
+          "action": 34,
+          "coordinate": [
+            7,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05266394093632698,
+          "q_value_root_player": 0.4610670395195484,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 0,
+          "coordinate": [
+            0,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.003198424819856882,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        {
+          "action": 1,
+          "coordinate": [
+            1,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.005536229349672794,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        {
+          "action": 3,
+          "coordinate": [
+            3,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0014979460975155234,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        {
+          "action": 4,
+          "coordinate": [
+            4,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.004365923348814249,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        },
+        {
+          "action": 5,
+          "coordinate": [
+            5,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0019810902886092663,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 1.3542016571742195,
+      "visited_child_count": 5,
+      "visited_child_fraction": 0.06493506493506493
+    },
+    {
+      "c_puct": 3.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "CAPTURE_WIN",
+        "immediate_winner": 1,
+        "is_pass": false,
+        "prior": 0.008668751455843449,
+        "q_value_root_player": 0.0,
+        "visit_count": 0,
+        "visit_fraction": 0.0
+      },
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_capture",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.008668751455843449,
+        "expected_action_legal_rank": 34,
+        "expected_action_raw_logit": -0.9956654906272888,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.912218751016185
+      },
+      "root_network_value": 0.07907770574092865,
+      "root_player": 1,
+      "root_search_leaf_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 32,
+      "selected_action_stats": {
+        "action": 32,
+        "coordinate": [
+          5,
+          3
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.02197815664112568,
+        "q_value_root_player": 0.8253222027492216,
+        "visit_count": 170,
+        "visit_fraction": 0.6640625
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02197815664112568,
+          "q_value_root_player": 0.8253222027492216,
+          "visit_count": 170,
+          "visit_fraction": 0.6640625
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05438278615474701,
+          "q_value_root_player": 0.5433256454610577,
+          "visit_count": 42,
+          "visit_fraction": 0.1640625
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024728992953896523,
+          "q_value_root_player": 0.42104431773935047,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.10115130245685577,
+          "q_value_root_player": -0.042770659923553465,
+          "visit_count": 5,
+          "visit_fraction": 0.01953125
+        },
+        {
+          "action": 50,
+          "coordinate": [
+            5,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.021294360980391502,
+          "q_value_root_player": 0.4453919976949692,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 56,
+          "coordinate": [
+            2,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.023573243990540504,
+          "q_value_root_player": 0.34415808238554746,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0338280163705349,
+          "q_value_root_player": 0.31370988115668297,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 75,
+          "coordinate": [
+            3,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05098166689276695,
+          "q_value_root_player": 0.20785583555698395,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 2,
+          "coordinate": [
+            2,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.029610255733132362,
+          "q_value_root_player": 0.10452119757731755,
+          "visit_count": 3,
+          "visit_fraction": 0.01171875
+        },
+        {
+          "action": 73,
+          "coordinate": [
+            1,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.017892448231577873,
+          "q_value_root_player": 0.39764925713340443,
+          "visit_count": 3,
+          "visit_fraction": 0.01171875
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 1.2973638734345232,
+      "visited_child_count": 15,
+      "visited_child_fraction": 0.19480519480519481
+    },
+    {
+      "c_puct": 3.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.007050711661577225,
+        "q_value_root_player": 0.08429419994354248,
+        "visit_count": 3,
+        "visit_fraction": 0.01171875
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "fixture": "immediate_capture_threat_defense",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 76,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.007050711661577225,
+        "expected_action_legal_rank": 42,
+        "expected_action_raw_logit": -1.4155919551849365,
+        "legal_action_count": 76,
+        "legal_policy_entropy": 3.8914390866980058
+      },
+      "root_network_value": 0.008462253026664257,
+      "root_player": 1,
+      "root_search_leaf_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 66,
+      "selected_action_stats": {
+        "action": 66,
+        "coordinate": [
+          3,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.024107931181788445,
+        "q_value_root_player": 0.1983258706150633,
+        "visit_count": 33,
+        "visit_fraction": 0.12890625
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024107931181788445,
+          "q_value_root_player": 0.1983258706150633,
+          "visit_count": 33,
+          "visit_fraction": 0.12890625
+        },
+        {
+          "action": 76,
+          "coordinate": [
+            4,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.008050957694649696,
+          "q_value_root_player": 0.3829216858291108,
+          "visit_count": 23,
+          "visit_fraction": 0.08984375
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.01200664322823286,
+          "q_value_root_player": 0.1804688279516995,
+          "visit_count": 18,
+          "visit_fraction": 0.0703125
+        },
+        {
+          "action": 64,
+          "coordinate": [
+            1,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.010842369869351387,
+          "q_value_root_player": 0.2279987784723441,
+          "visit_count": 15,
+          "visit_fraction": 0.05859375
+        },
+        {
+          "action": 23,
+          "coordinate": [
+            5,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.008712037466466427,
+          "q_value_root_player": 0.17162078867355982,
+          "visit_count": 12,
+          "visit_fraction": 0.046875
+        },
+        {
+          "action": 59,
+          "coordinate": [
+            5,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.013287888839840889,
+          "q_value_root_player": 0.20557447969913484,
+          "visit_count": 10,
+          "visit_fraction": 0.0390625
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.027003224939107895,
+          "q_value_root_player": 0.030296986736357213,
+          "visit_count": 10,
+          "visit_fraction": 0.0390625
+        },
+        {
+          "action": 18,
+          "coordinate": [
+            0,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07596094906330109,
+          "q_value_root_player": -0.10895322097672357,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 33,
+          "coordinate": [
+            6,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.012949158437550068,
+          "q_value_root_player": 0.16168894370396933,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 20,
+          "coordinate": [
+            2,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.006744488142430782,
+          "q_value_root_player": 0.18628037115558982,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 3.45031491402669,
+      "visited_child_count": 53,
+      "visited_child_fraction": 0.6973684210526315
+    },
+    {
+      "c_puct": 3.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_action_stats": {
+        "action": 81,
+        "coordinate": null,
+        "immediate_result": "PASS_SCORE_END",
+        "immediate_winner": 1,
+        "is_pass": true,
+        "prior": 0.011078937910497189,
+        "q_value_root_player": -0.0,
+        "visit_count": 0,
+        "visit_fraction": 0.0
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_winning_pass",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.011078937910497189,
+        "expected_action_legal_rank": 21,
+        "expected_action_raw_logit": -1.3423124551773071,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.4709268147009444
+      },
+      "root_network_value": 0.9822007417678833,
+      "root_player": 1,
+      "root_search_leaf_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 71,
+      "selected_action_stats": {
+        "action": 71,
+        "coordinate": [
+          8,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.13254199922084808,
+        "q_value_root_player": 0.9679607508911027,
+        "visit_count": 72,
+        "visit_fraction": 0.28125
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.13254199922084808,
+          "q_value_root_player": 0.9679607508911027,
+          "visit_count": 72,
+          "visit_fraction": 0.28125
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.15902277827262878,
+          "q_value_root_player": 0.9187481121583418,
+          "visit_count": 55,
+          "visit_fraction": 0.21484375
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0537710003554821,
+          "q_value_root_player": 0.9974699819629843,
+          "visit_count": 44,
+          "visit_fraction": 0.171875
+        },
+        {
+          "action": 77,
+          "coordinate": [
+            5,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07436234503984451,
+          "q_value_root_player": 0.9567716287242042,
+          "visit_count": 36,
+          "visit_fraction": 0.140625
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02470369078218937,
+          "q_value_root_player": 0.9890928373617285,
+          "visit_count": 17,
+          "visit_fraction": 0.06640625
+        },
+        {
+          "action": 34,
+          "coordinate": [
+            7,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05266394093632698,
+          "q_value_root_player": 0.8464471818162844,
+          "visit_count": 13,
+          "visit_fraction": 0.05078125
+        },
+        {
+          "action": 41,
+          "coordinate": [
+            5,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03625898063182831,
+          "q_value_root_player": 0.8062229617075487,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 43,
+          "coordinate": [
+            7,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.026479845866560936,
+          "q_value_root_player": 0.8846609336989266,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 18,
+          "coordinate": [
+            0,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.022736214101314545,
+          "q_value_root_player": 0.2604650557041168,
+          "visit_count": 1,
+          "visit_fraction": 0.00390625
+        },
+        {
+          "action": 0,
+          "coordinate": [
+            0,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.003198424819856882,
+          "q_value_root_player": -0.0,
+          "visit_count": 0,
+          "visit_fraction": 0.0
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 1.8524372141128036,
+      "visited_child_count": 9,
+      "visited_child_fraction": 0.11688311688311688
+    },
+    {
+      "c_puct": 6.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "CAPTURE_WIN",
+        "immediate_winner": 1,
+        "is_pass": false,
+        "prior": 0.008668751455843449,
+        "q_value_root_player": 0.0,
+        "visit_count": 0,
+        "visit_fraction": 0.0
+      },
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_capture",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.008668751455843449,
+        "expected_action_legal_rank": 34,
+        "expected_action_raw_logit": -0.9956654906272888,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.912218751016185
+      },
+      "root_network_value": 0.07907770574092865,
+      "root_player": 1,
+      "root_search_leaf_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 32,
+      "selected_action_stats": {
+        "action": 32,
+        "coordinate": [
+          5,
+          3
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.02197815664112568,
+        "q_value_root_player": 0.8664482339393415,
+        "visit_count": 112,
+        "visit_fraction": 0.4375
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02197815664112568,
+          "q_value_root_player": 0.8664482339393415,
+          "visit_count": 112,
+          "visit_fraction": 0.4375
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05438278615474701,
+          "q_value_root_player": 0.5749369006662164,
+          "visit_count": 16,
+          "visit_fraction": 0.0625
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.10115130245685577,
+          "q_value_root_player": 0.1409049743356613,
+          "visit_count": 13,
+          "visit_fraction": 0.05078125
+        },
+        {
+          "action": 33,
+          "coordinate": [
+            6,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.01326985377818346,
+          "q_value_root_player": 0.7817425305644671,
+          "visit_count": 12,
+          "visit_fraction": 0.046875
+        },
+        {
+          "action": 34,
+          "coordinate": [
+            7,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.048842862248420715,
+          "q_value_root_player": 0.43367143110795453,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024728992953896523,
+          "q_value_root_player": 0.42104431773935047,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 75,
+          "coordinate": [
+            3,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05098166689276695,
+          "q_value_root_player": 0.20282644193087304,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0338280163705349,
+          "q_value_root_player": 0.2804731105764707,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 17,
+          "coordinate": [
+            8,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02984960936009884,
+          "q_value_root_player": 0.16591021418571472,
+          "visit_count": 5,
+          "visit_fraction": 0.01953125
+        },
+        {
+          "action": 22,
+          "coordinate": [
+            4,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03924200311303139,
+          "q_value_root_player": 0.04846164584159851,
+          "visit_count": 5,
+          "visit_fraction": 0.01953125
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 2.461949467883897,
+      "visited_child_count": 31,
+      "visited_child_fraction": 0.4025974025974026
+    },
+    {
+      "c_puct": 6.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.007050711661577225,
+        "q_value_root_player": 0.19743666052818298,
+        "visit_count": 2,
+        "visit_fraction": 0.0078125
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "fixture": "immediate_capture_threat_defense",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 76,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.007050711661577225,
+        "expected_action_legal_rank": 42,
+        "expected_action_raw_logit": -1.4155919551849365,
+        "legal_action_count": 76,
+        "legal_policy_entropy": 3.8914390866980058
+      },
+      "root_network_value": 0.008462253026664257,
+      "root_player": 1,
+      "root_search_leaf_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 66,
+      "selected_action_stats": {
+        "action": 66,
+        "coordinate": [
+          3,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.024107931181788445,
+        "q_value_root_player": 0.36361219759645136,
+        "visit_count": 29,
+        "visit_fraction": 0.11328125
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024107931181788445,
+          "q_value_root_player": 0.36361219759645136,
+          "visit_count": 29,
+          "visit_fraction": 0.11328125
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.01200664322823286,
+          "q_value_root_player": 0.3675514499602072,
+          "visit_count": 17,
+          "visit_fraction": 0.06640625
+        },
+        {
+          "action": 18,
+          "coordinate": [
+            0,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07596094906330109,
+          "q_value_root_player": -0.03113449178636074,
+          "visit_count": 16,
+          "visit_fraction": 0.0625
+        },
+        {
+          "action": 22,
+          "coordinate": [
+            4,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.08325842022895813,
+          "q_value_root_player": -0.2256510303440419,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 23,
+          "coordinate": [
+            5,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.008712037466466427,
+          "q_value_root_player": 0.27813176946206525,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.054538995027542114,
+          "q_value_root_player": -0.08136222985657779,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 59,
+          "coordinate": [
+            5,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.013287888839840889,
+          "q_value_root_player": 0.20557447969913484,
+          "visit_count": 10,
+          "visit_fraction": 0.0390625
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.027003224939107895,
+          "q_value_root_player": 0.046608048387699656,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 33,
+          "coordinate": [
+            6,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.012949158437550068,
+          "q_value_root_player": 0.281042218208313,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        },
+        {
+          "action": 75,
+          "coordinate": [
+            3,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.051272809505462646,
+          "q_value_root_player": -0.13764528930187225,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 3.6717384653135543,
+      "visited_child_count": 61,
+      "visited_child_fraction": 0.8026315789473685
+    },
+    {
+      "c_puct": 6.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_action_stats": {
+        "action": 81,
+        "coordinate": null,
+        "immediate_result": "PASS_SCORE_END",
+        "immediate_winner": 1,
+        "is_pass": true,
+        "prior": 0.011078937910497189,
+        "q_value_root_player": -0.0,
+        "visit_count": 0,
+        "visit_fraction": 0.0
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_winning_pass",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.011078937910497189,
+        "expected_action_legal_rank": 21,
+        "expected_action_raw_logit": -1.3423124551773071,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.4709268147009444
+      },
+      "root_network_value": 0.9822007417678833,
+      "root_player": 1,
+      "root_search_leaf_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 60,
+      "selected_action_stats": {
+        "action": 60,
+        "coordinate": [
+          6,
+          6
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.15902277827262878,
+        "q_value_root_player": 0.9181992537096927,
+        "visit_count": 57,
+        "visit_fraction": 0.22265625
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.15902277827262878,
+          "q_value_root_player": 0.9181992537096927,
+          "visit_count": 57,
+          "visit_fraction": 0.22265625
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.13254199922084808,
+          "q_value_root_player": 0.9480831785886376,
+          "visit_count": 54,
+          "visit_fraction": 0.2109375
+        },
+        {
+          "action": 77,
+          "coordinate": [
+            5,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07436234503984451,
+          "q_value_root_player": 0.9526993612448375,
+          "visit_count": 30,
+          "visit_fraction": 0.1171875
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0537710003554821,
+          "q_value_root_player": 0.9973048435317146,
+          "visit_count": 27,
+          "visit_fraction": 0.10546875
+        },
+        {
+          "action": 34,
+          "coordinate": [
+            7,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05266394093632698,
+          "q_value_root_player": 0.8600378498435021,
+          "visit_count": 15,
+          "visit_fraction": 0.05859375
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02470369078218937,
+          "q_value_root_player": 0.9907346914211909,
+          "visit_count": 12,
+          "visit_fraction": 0.046875
+        },
+        {
+          "action": 41,
+          "coordinate": [
+            5,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03625898063182831,
+          "q_value_root_player": 0.8062229617075487,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 17,
+          "coordinate": [
+            8,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.019936729222536087,
+          "q_value_root_player": 0.9655459523200989,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        },
+        {
+          "action": 43,
+          "coordinate": [
+            7,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.026479845866560936,
+          "q_value_root_player": 0.8728633001446724,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        },
+        {
+          "action": 42,
+          "coordinate": [
+            6,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02064039371907711,
+          "q_value_root_player": 0.8441250870625178,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 2.3338133759927193,
+      "visited_child_count": 16,
+      "visited_child_fraction": 0.2077922077922078
+    },
+    {
+      "c_puct": 12.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "CAPTURE_WIN",
+        "immediate_winner": 1,
+        "is_pass": false,
+        "prior": 0.008668751455843449,
+        "q_value_root_player": 1.0,
+        "visit_count": 18,
+        "visit_fraction": 0.0703125
+      },
+      "expected_child_value": {
+        "child_to_play": 1,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "CAPTURE_WIN",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_capture",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.008668751455843449,
+        "expected_action_legal_rank": 34,
+        "expected_action_raw_logit": -0.9956654906272888,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.912218751016185
+      },
+      "root_network_value": 0.07907770574092865,
+      "root_player": 1,
+      "root_search_leaf_value": 0.07907770574092865,
+      "safe_actions": null,
+      "selected_action": 71,
+      "selected_action_stats": {
+        "action": 71,
+        "coordinate": [
+          8,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.10115130245685577,
+        "q_value_root_player": 0.184587709871786,
+        "visit_count": 21,
+        "visit_fraction": 0.08203125
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.10115130245685577,
+          "q_value_root_player": 0.184587709871786,
+          "visit_count": 21,
+          "visit_fraction": 0.08203125
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05438278615474701,
+          "q_value_root_player": 0.5749063390539959,
+          "visit_count": 20,
+          "visit_fraction": 0.078125
+        },
+        {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "CAPTURE_WIN",
+          "immediate_winner": 1,
+          "is_pass": false,
+          "prior": 0.008668751455843449,
+          "q_value_root_player": 1.0,
+          "visit_count": 18,
+          "visit_fraction": 0.0703125
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02197815664112568,
+          "q_value_root_player": 0.7892652809619903,
+          "visit_count": 15,
+          "visit_fraction": 0.05859375
+        },
+        {
+          "action": 34,
+          "coordinate": [
+            7,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.048842862248420715,
+          "q_value_root_player": 0.3942216531588481,
+          "visit_count": 13,
+          "visit_fraction": 0.05078125
+        },
+        {
+          "action": 75,
+          "coordinate": [
+            3,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05098166689276695,
+          "q_value_root_player": 0.32064804527908564,
+          "visit_count": 12,
+          "visit_fraction": 0.046875
+        },
+        {
+          "action": 50,
+          "coordinate": [
+            5,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.021294360980391502,
+          "q_value_root_player": 0.7177159070968628,
+          "visit_count": 10,
+          "visit_fraction": 0.0390625
+        },
+        {
+          "action": 33,
+          "coordinate": [
+            6,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.01326985377818346,
+          "q_value_root_player": 0.7470199353992939,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0338280163705349,
+          "q_value_root_player": 0.10877738467284612,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024728992953896523,
+          "q_value_root_player": 0.42104431773935047,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 3.5859540426634737,
+      "visited_child_count": 51,
+      "visited_child_fraction": 0.6623376623376623
+    },
+    {
+      "c_puct": 12.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 19,
+      "expected_action_stats": {
+        "action": 19,
+        "coordinate": [
+          1,
+          2
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.007050711661577225,
+        "q_value_root_player": 0.19743666052818298,
+        "visit_count": 2,
+        "visit_fraction": 0.0078125
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": null,
+        "move_result": "NORMAL",
+        "network_value_child_player": -0.7899551391601562,
+        "network_value_root_player": 0.7899551391601562,
+        "terminal": false,
+        "winner": null
+      },
+      "fixture": "immediate_capture_threat_defense",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 76,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.007050711661577225,
+        "expected_action_legal_rank": 42,
+        "expected_action_raw_logit": -1.4155919551849365,
+        "legal_action_count": 76,
+        "legal_policy_entropy": 3.8914390866980058
+      },
+      "root_network_value": 0.008462253026664257,
+      "root_player": 1,
+      "root_search_leaf_value": 0.008462253026664257,
+      "safe_actions": [
+        19
+      ],
+      "selected_action": 66,
+      "selected_action_stats": {
+        "action": 66,
+        "coordinate": [
+          3,
+          7
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.024107931181788445,
+        "q_value_root_player": 0.5451258913828776,
+        "visit_count": 26,
+        "visit_fraction": 0.1015625
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024107931181788445,
+          "q_value_root_player": 0.5451258913828776,
+          "visit_count": 26,
+          "visit_fraction": 0.1015625
+        },
+        {
+          "action": 18,
+          "coordinate": [
+            0,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07596094906330109,
+          "q_value_root_player": -0.03229929837915632,
+          "visit_count": 18,
+          "visit_fraction": 0.0703125
+        },
+        {
+          "action": 22,
+          "coordinate": [
+            4,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.08325842022895813,
+          "q_value_root_player": -0.17185166949296699,
+          "visit_count": 17,
+          "visit_fraction": 0.06640625
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.054538995027542114,
+          "q_value_root_player": -0.10965334149924191,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 67,
+          "coordinate": [
+            4,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.027003224939107895,
+          "q_value_root_player": 0.19794698748737574,
+          "visit_count": 10,
+          "visit_fraction": 0.0390625
+        },
+        {
+          "action": 59,
+          "coordinate": [
+            5,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.013287888839840889,
+          "q_value_root_player": 0.3395271996657054,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 75,
+          "coordinate": [
+            3,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.051272809505462646,
+          "q_value_root_player": -0.233462479379442,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 23,
+          "coordinate": [
+            5,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.008712037466466427,
+          "q_value_root_player": 0.5327063649892807,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.01200664322823286,
+          "q_value_root_player": 0.4741145877965859,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.036446649581193924,
+          "q_value_root_player": -0.1644755985055651,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 3.718464646818433,
+      "visited_child_count": 62,
+      "visited_child_fraction": 0.8157894736842105
+    },
+    {
+      "c_puct": 12.0,
+      "checkpoint_iteration": 50,
+      "expected_action": 81,
+      "expected_action_stats": {
+        "action": 81,
+        "coordinate": null,
+        "immediate_result": "PASS_SCORE_END",
+        "immediate_winner": 1,
+        "is_pass": true,
+        "prior": 0.011078937910497189,
+        "q_value_root_player": 1.0,
+        "visit_count": 4,
+        "visit_fraction": 0.015625
+      },
+      "expected_child_value": {
+        "child_to_play": 2,
+        "exact_terminal_value_root_player": 1.0,
+        "move_result": "PASS_SCORE_END",
+        "network_value_child_player": null,
+        "network_value_root_player": null,
+        "terminal": true,
+        "winner": 1
+      },
+      "fixture": "immediate_winning_pass",
+      "learned_policy": true,
+      "learned_value": true,
+      "legal_child_count": 77,
+      "mode": "learned_policy_learned_value",
+      "policy_diagnostics": {
+        "expected_action_legal_probability": 0.011078937910497189,
+        "expected_action_legal_rank": 21,
+        "expected_action_raw_logit": -1.3423124551773071,
+        "legal_action_count": 77,
+        "legal_policy_entropy": 3.4709268147009444
+      },
+      "root_network_value": 0.9822007417678833,
+      "root_player": 1,
+      "root_search_leaf_value": 0.9822007417678833,
+      "safe_actions": null,
+      "selected_action": 60,
+      "selected_action_stats": {
+        "action": 60,
+        "coordinate": [
+          6,
+          6
+        ],
+        "immediate_result": "NORMAL",
+        "immediate_winner": null,
+        "is_pass": false,
+        "prior": 0.15902277827262878,
+        "q_value_root_player": 0.8801474110223353,
+        "visit_count": 48,
+        "visit_fraction": 0.1875
+      },
+      "simulations": 256,
+      "success": false,
+      "top_actions": [
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.15902277827262878,
+          "q_value_root_player": 0.8801474110223353,
+          "visit_count": 48,
+          "visit_fraction": 0.1875
+        },
+        {
+          "action": 71,
+          "coordinate": [
+            8,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.13254199922084808,
+          "q_value_root_player": 0.9288993030786514,
+          "visit_count": 43,
+          "visit_fraction": 0.16796875
+        },
+        {
+          "action": 77,
+          "coordinate": [
+            5,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07436234503984451,
+          "q_value_root_player": 0.9583191537857055,
+          "visit_count": 25,
+          "visit_fraction": 0.09765625
+        },
+        {
+          "action": 32,
+          "coordinate": [
+            5,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0537710003554821,
+          "q_value_root_player": 0.9976137280464172,
+          "visit_count": 20,
+          "visit_fraction": 0.078125
+        },
+        {
+          "action": 34,
+          "coordinate": [
+            7,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05266394093632698,
+          "q_value_root_player": 0.860044760008653,
+          "visit_count": 15,
+          "visit_fraction": 0.05859375
+        },
+        {
+          "action": 41,
+          "coordinate": [
+            5,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03625898063182831,
+          "q_value_root_player": 0.8062229617075487,
+          "visit_count": 11,
+          "visit_fraction": 0.04296875
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02470369078218937,
+          "q_value_root_player": 0.9889314704471164,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 43,
+          "coordinate": [
+            7,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.026479845866560936,
+          "q_value_root_player": 0.8728633001446724,
+          "visit_count": 8,
+          "visit_fraction": 0.03125
+        },
+        {
+          "action": 17,
+          "coordinate": [
+            8,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.019936729222536087,
+          "q_value_root_player": 0.9589390257994334,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 42,
+          "coordinate": [
+            6,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.02064039371907711,
+          "q_value_root_player": 0.8441250870625178,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        }
+      ],
+      "total_child_visits": 256,
+      "visit_entropy": 2.8149315339418903,
+      "visited_child_count": 28,
+      "visited_child_fraction": 0.36363636363636365
+    }
+  ],
+  "safe_defense_actions": [
+    19
+  ],
+  "simulations": 256
+}

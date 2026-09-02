@@ -1,0 +1,244 @@
+{
+  "arena": [
+    {
+      "baseline_c_puct": 1.5,
+      "baseline_wins": 12,
+      "blue_total_wins": 16,
+      "candidate_c_puct": 12.0,
+      "candidate_wins": 8,
+      "candidate_wins_as_blue": 7,
+      "candidate_wins_as_red": 1,
+      "capture_endings": 20,
+      "games": 20,
+      "mean_game_length": 30.2,
+      "mean_pass_usage": 0.2,
+      "pass_action_count": 4,
+      "pass_score_endings": 0,
+      "red_total_wins": 4
+    }
+  ],
+  "arena_candidates": [
+    12.0
+  ],
+  "arena_games": 20,
+  "c_puct_values": [
+    1.5,
+    3.0,
+    6.0,
+    12.0
+  ],
+  "checkpoint_iteration": 50,
+  "checkpoint_path": "runs/alphazero_v3/territory_pilot_20260901/checkpoints/iteration_000050.pt",
+  "classification": "CASE_VALUE",
+  "device": "cuda",
+  "elapsed_seconds": 995.7487800569943,
+  "fixed": {
+    "encoder": "V3 territory, 9 planes",
+    "learned_policy": true,
+    "learned_value": true,
+    "mcts_simulations": 256,
+    "root_noise": false,
+    "rules": "Great Kingdom Rules V2",
+    "temperature": 0.0
+  },
+  "network_parameters": 246141,
+  "opening_suite": "reports/alphazero_v2_evaluation_20260901/openings.json",
+  "safe_defense_actions": [
+    19
+  ],
+  "tactical_table": [
+    {
+      "c_puct": 1.5,
+      "immediate_capture": {
+        "expected_action": 19,
+        "expected_prior": 0.008668751455843449,
+        "expected_q": 0.0,
+        "expected_visit_fraction": 0.0,
+        "expected_visits": 0,
+        "legal_child_count": 77,
+        "selected_action": 66,
+        "selected_q": 0.4310874633437438,
+        "selected_visits": 139,
+        "success": false,
+        "visit_entropy": 1.2987697034429306,
+        "visited_child_count": 12,
+        "visited_child_fraction": 0.15584415584415584
+      },
+      "immediate_capture_threat_defense": {
+        "expected_action": 19,
+        "expected_prior": 0.007050711661577225,
+        "expected_q": 0.08429419994354248,
+        "expected_visit_fraction": 0.01171875,
+        "expected_visits": 3,
+        "legal_child_count": 76,
+        "selected_action": 66,
+        "selected_q": 0.11028407777056974,
+        "selected_visits": 34,
+        "success": false,
+        "visit_entropy": 3.198281216165321,
+        "visited_child_count": 44,
+        "visited_child_fraction": 0.5789473684210527
+      },
+      "immediate_winning_pass": {
+        "expected_action": 81,
+        "expected_prior": 0.011078937910497189,
+        "expected_q": -0.0,
+        "expected_visit_fraction": 0.0,
+        "expected_visits": 0,
+        "legal_child_count": 77,
+        "selected_action": 32,
+        "selected_q": 0.9906491066547151,
+        "selected_visits": 94,
+        "success": false,
+        "visit_entropy": 1.3542016571742195,
+        "visited_child_count": 5,
+        "visited_child_fraction": 0.06493506493506493
+      }
+    },
+    {
+      "c_puct": 3.0,
+      "immediate_capture": {
+        "expected_action": 19,
+        "expected_prior": 0.008668751455843449,
+        "expected_q": 0.0,
+        "expected_visit_fraction": 0.0,
+        "expected_visits": 0,
+        "legal_child_count": 77,
+        "selected_action": 32,
+        "selected_q": 0.8253222027492216,
+        "selected_visits": 170,
+        "success": false,
+        "visit_entropy": 1.2973638734345232,
+        "visited_child_count": 15,
+        "visited_child_fraction": 0.19480519480519481
+      },
+      "immediate_capture_threat_defense": {
+        "expected_action": 19,
+        "expected_prior": 0.007050711661577225,
+        "expected_q": 0.08429419994354248,
+        "expected_visit_fraction": 0.01171875,
+        "expected_visits": 3,
+        "legal_child_count": 76,
+        "selected_action": 66,
+        "selected_q": 0.1983258706150633,
+        "selected_visits": 33,
+        "success": false,
+        "visit_entropy": 3.45031491402669,
+        "visited_child_count": 53,
+        "visited_child_fraction": 0.6973684210526315
+      },
+      "immediate_winning_pass": {
+        "expected_action": 81,
+        "expected_prior": 0.011078937910497189,
+        "expected_q": -0.0,
+        "expected_visit_fraction": 0.0,
+        "expected_visits": 0,
+        "legal_child_count": 77,
+        "selected_action": 71,
+        "selected_q": 0.9679607508911027,
+        "selected_visits": 72,
+        "success": false,
+        "visit_entropy": 1.8524372141128036,
+        "visited_child_count": 9,
+        "visited_child_fraction": 0.11688311688311688
+      }
+    },
+    {
+      "c_puct": 6.0,
+      "immediate_capture": {
+        "expected_action": 19,
+        "expected_prior": 0.008668751455843449,
+        "expected_q": 0.0,
+        "expected_visit_fraction": 0.0,
+        "expected_visits": 0,
+        "legal_child_count": 77,
+        "selected_action": 32,
+        "selected_q": 0.8664482339393415,
+        "selected_visits": 112,
+        "success": false,
+        "visit_entropy": 2.461949467883897,
+        "visited_child_count": 31,
+        "visited_child_fraction": 0.4025974025974026
+      },
+      "immediate_capture_threat_defense": {
+        "expected_action": 19,
+        "expected_prior": 0.007050711661577225,
+        "expected_q": 0.19743666052818298,
+        "expected_visit_fraction": 0.0078125,
+        "expected_visits": 2,
+        "legal_child_count": 76,
+        "selected_action": 66,
+        "selected_q": 0.36361219759645136,
+        "selected_visits": 29,
+        "success": false,
+        "visit_entropy": 3.6717384653135543,
+        "visited_child_count": 61,
+        "visited_child_fraction": 0.8026315789473685
+      },
+      "immediate_winning_pass": {
+        "expected_action": 81,
+        "expected_prior": 0.011078937910497189,
+        "expected_q": -0.0,
+        "expected_visit_fraction": 0.0,
+        "expected_visits": 0,
+        "legal_child_count": 77,
+        "selected_action": 60,
+        "selected_q": 0.9181992537096927,
+        "selected_visits": 57,
+        "success": false,
+        "visit_entropy": 2.3338133759927193,
+        "visited_child_count": 16,
+        "visited_child_fraction": 0.2077922077922078
+      }
+    },
+    {
+      "c_puct": 12.0,
+      "immediate_capture": {
+        "expected_action": 19,
+        "expected_prior": 0.008668751455843449,
+        "expected_q": 1.0,
+        "expected_visit_fraction": 0.0703125,
+        "expected_visits": 18,
+        "legal_child_count": 77,
+        "selected_action": 71,
+        "selected_q": 0.184587709871786,
+        "selected_visits": 21,
+        "success": false,
+        "visit_entropy": 3.5859540426634737,
+        "visited_child_count": 51,
+        "visited_child_fraction": 0.6623376623376623
+      },
+      "immediate_capture_threat_defense": {
+        "expected_action": 19,
+        "expected_prior": 0.007050711661577225,
+        "expected_q": 0.19743666052818298,
+        "expected_visit_fraction": 0.0078125,
+        "expected_visits": 2,
+        "legal_child_count": 76,
+        "selected_action": 66,
+        "selected_q": 0.5451258913828776,
+        "selected_visits": 26,
+        "success": false,
+        "visit_entropy": 3.718464646818433,
+        "visited_child_count": 62,
+        "visited_child_fraction": 0.8157894736842105
+      },
+      "immediate_winning_pass": {
+        "expected_action": 81,
+        "expected_prior": 0.011078937910497189,
+        "expected_q": 1.0,
+        "expected_visit_fraction": 0.015625,
+        "expected_visits": 4,
+        "legal_child_count": 77,
+        "selected_action": 60,
+        "selected_q": 0.8801474110223353,
+        "selected_visits": 48,
+        "success": false,
+        "visit_entropy": 2.8149315339418903,
+        "visited_child_count": 28,
+        "visited_child_fraction": 0.36363636363636365
+      }
+    }
+  ],
+  "training_performed": false
+}
