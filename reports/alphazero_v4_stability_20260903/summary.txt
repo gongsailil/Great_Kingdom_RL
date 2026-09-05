@@ -1,0 +1,38 @@
+AlphaZero V4 integrated stability run (2026-09-03)
+============================================================
+
+Result: PARTIAL SUCCESS
+Training elapsed: 116358.461 seconds
+Post-evaluation elapsed: 2283.550 seconds
+Games/samples: 1600/60747
+
+Ten-iteration ending blocks
+---------------------------
+01-10: capture/score=306/14, PASS actions=117, mean length=39.259
+11-20: capture/score=318/2, PASS actions=77, mean length=38.819
+21-30: capture/score=318/2, PASS actions=51, mean length=37.619
+31-40: capture/score=315/5, PASS actions=67, mean length=37.788
+41-50: capture/score=315/5, PASS actions=44, mean length=36.350
+
+Value-oracle monitors
+---------------------
+iter 10: Q mean/median=-0.182169/-0.540314, Q>0=40.21%, Q>=0.5=31.84%, MAE=0.817831, defense failure=94.29%, alt Q>=.99=12.01%
+iter 30: Q mean/median=-0.190993/-0.572808, Q>0=40.25%, Q>=0.5=32.09%, MAE=0.809007, defense failure=94.29%, alt Q>=.99=16.59%
+iter 50: Q mean/median=-0.158305/-0.551178, Q>0=41.63%, Q>=0.5=34.69%, MAE=0.841695, defense failure=92.86%, alt Q>=.99=17.62%
+
+Full 10,000-state final oracle
+------------------------------
+Exact -1 actions: 60065
+Q mean/median: -0.179251/-0.593734
+Q>0 / Q>=0.5: 40.61% / 33.43%
+MAE: 0.820749
+Defense ranking failure: 93.63%
+Immediate-win alternative Q>=.9/.99: 22.26%/11.71%
+
+V4 vs V3 iteration-50 arena
+----------------------------
+V4/V3 wins: 12/8
+V4 wins as Blue/Red: 8/4
+Color Blue/Red wins: 14/6
+Capture/score endings: 20/0
+Twenty games are diagnostic, not statistical proof.
