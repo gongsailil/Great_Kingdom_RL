@@ -1,0 +1,42 @@
+{
+  "classification": "REJECT",
+  "evaluation_only": true,
+  "games": 5,
+  "human_wins": 5,
+  "ai_wins": 0,
+  "human_as_blue": {
+    "games": 3,
+    "wins": 3
+  },
+  "human_as_red": {
+    "games": 2,
+    "wins": 2
+  },
+  "terminal_reasons": {
+    "CAPTURE_WIN": 5,
+    "PASS_SCORE_END": 0
+  },
+  "total_game_plies": 185,
+  "mean_game_length": 37.0,
+  "ai_moves": 91,
+  "ai_tactical_modes": {
+    "NORMAL": 76,
+    "IMMEDIATE_WIN": 0,
+    "SAFE_DEFENSE": 3,
+    "FORCED_LOSS": 12
+  },
+  "games_entering_forced_loss": 5,
+  "raw_logs_committed": false,
+  "raw_logs_location": "human_games/v4_20260906/",
+  "training_use": false,
+  "user_observations": [
+    "Human won all five games and placed moves faster than AI inference.",
+    "Opening and development lacked a visible strategic principle.",
+    "Some shapes were excessively heavy.",
+    "Some board-edge or first-line-like moves had unclear purpose.",
+    "Territory creation and disruption intent remained weak.",
+    "The exact tactical solver reduced immediate mistakes but the AI repeatedly entered forced-loss states.",
+    "Tactical play improved relative to V3 but remained insufficient."
+  ],
+  "interpretation": "V4 passed the automatic arena but is rejected as the final playing candidate based on direct human evaluation. The five games are evaluation evidence only and are not training labels or replay samples."
+}

@@ -1,0 +1,24 @@
+AlphaZero V4 human rejection (2026-09-08)
+============================================================
+
+Result: REJECT as final playing candidate
+Human/AI wins: 5/0
+Human Blue: 3/3; Human Red: 2/2
+Endings: 5 capture, 0 PASS-score
+Mean game length: 37.0 ply (185 total)
+
+The AI played 91 moves: NORMAL 76, SAFE_DEFENSE 3, FORCED_LOSS 12,
+IMMEDIATE_WIN 0. Every game entered FORCED_LOSS at least once.
+
+User findings:
+- Opening/development showed little visible strategic principle.
+- Some play formed excessively heavy shapes.
+- Some edge/first-line-like moves had unclear purpose.
+- Territory creation and disruption intent remained weak.
+- Exact one-ply tactics improved play relative to V3, but did not stop the
+  agent from entering forced-loss positions.
+- The human placed moves faster than the AI inference and still won all games.
+
+The raw files remain local in human_games/v4_20260906/ and are Git-ignored.
+They are evaluation evidence only. They are not training data, policy labels,
+value targets, or replay samples.
