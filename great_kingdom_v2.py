@@ -5,6 +5,7 @@ The former V1 engine and its 81-action checkpoints are preserved in the
 """
 
 from enum import Enum, auto
+import weakref
 
 
 BOARD_SIZE = 9
@@ -53,6 +54,8 @@ def determine_scoring_winner(blue_territory, red_territory):
 
 class GreatKingdomLogicV2:
     """Rules-only Great Kingdom state with PASS and finite inventories."""
+
+    _territory_cache = weakref.WeakKeyDictionary()
 
     def __init__(self):
         self.board = [[0] * BOARD_SIZE for _ in range(BOARD_SIZE)]
@@ -125,14 +128,13 @@ class GreatKingdomLogicV2:
             return RED
         return 0
 
-    def get_territory_owner(self, x, y):
-        if not self.is_on_board(x, y) or self.board[y][x] != 0:
-            return None
-        _, touched_players = self._empty_region_and_touched_players(x, y)
-        return self._territory_owner_from_touched_players(touched_players)
-
-    def territory_counts(self):
-        counts = {BLUE: 0, RED: 0}
+    def _territory_owner_map(self):
+        """Return derived empty-point owners, flooding each region only once."""
+        board_key = tuple(tuple(row) for row in self.board)
+        cached = self._territory_cache.get(self)
+        if cached is not None and board_key == cached[0]:
+            return cached[1]
+        owners = {}
         visited = set()
         for y in range(BOARD_SIZE):
             for x in range(BOARD_SIZE):
@@ -141,8 +143,21 @@ class GreatKingdomLogicV2:
                 region, touched_players = self._empty_region_and_touched_players(x, y)
                 visited.update(region)
                 owner = self._territory_owner_from_touched_players(touched_players)
-                if owner in (BLUE, RED):
-                    counts[owner] += len(region)
+                for point in region:
+                    owners[point] = owner
+        self._territory_cache[self] = (board_key, owners)
+        return owners
+
+    def get_territory_owner(self, x, y):
+        if not self.is_on_board(x, y) or self.board[y][x] != 0:
+            return None
+        return self._territory_owner_map()[(x, y)]
+
+    def territory_counts(self):
+        counts = {BLUE: 0, RED: 0}
+        for owner in self._territory_owner_map().values():
+            if owner in (BLUE, RED):
+                counts[owner] += 1
         return counts
 
     def count_territory(self, player):

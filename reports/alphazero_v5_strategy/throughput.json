@@ -42,20 +42,19 @@
   "device": "cuda",
   "device_name": "NVIDIA GeForce RTX 5070 Ti",
   "engineering_comparison": {
-    "concurrent_16_gate_games_per_second": 0.028344060206914653,
-    "concurrent_16_gate_seconds": 2257.9686725470237,
-    "concurrent_64_speedup_over_concurrent_16": 1.1580579243311113,
-    "observed_gpu_utilization_peak_snapshot_percent": 71,
+    "concurrent_64_pre_cache_games_per_second": 0.03282406327157505,
+    "optimized_speedup_over_concurrent_64_pre_cache": 6.680957691151255,
     "v4_sequential_games_per_second": 0.01385987285684204,
-    "v5_concurrent_64_speedup_over_v4_sequential": 2.368277365281596
+    "v5_optimized_speedup_over_v4_sequential": 15.82238020753613,
+    "streaming_refill_enabled_for_256_game_cycles": true
   },
-  "elapsed_seconds": 1949.7890760959708,
+  "elapsed_seconds": 291.8427516280208,
   "games": 64,
-  "games_per_second": 0.03282406327157505,
+  "games_per_second": 0.21929617796906473,
   "max_inference_batch_size": 64,
   "mean_inference_batch_size": 30.108285714285714,
   "network_inference_calls": 10500,
   "network_inference_positions": 316137,
   "positions": 1916,
-  "positions_per_second": 0.982670394192778
+  "positions_per_second": 6.565179327948876
 }
