@@ -1,0 +1,47 @@
+AlphaZero V4 acceptance, seed 20260906
+Automatic result: AUTO_PASS: V3 advantage with paired CI and competitive results in both colors
+Final project ACCEPT/REJECT: PENDING Human Blue 3 + Human Red 3 completed games.
+V4 MCTS256/c_puct1.5/no noise/temp0/exact tactical solver ON.
+V3 MCTS256; V2 MCTS64 (saved historical budget); historical solvers unchanged.
+50 unique legal opening positions, 2..6 placements, paired color swap.
+Bootstrap: 10,000 opening-level resamples, seed 20260906.
+Difference = V4 win rate minus opponent win rate; CI describes this opening suite.
+V2 comparison is a historical-agent comparison, not an equal-compute ablation.
+Operational classification thresholds were fixed before arena; see summary.json.
+
+V4 vs v3_iter50: 72-28 / 100 games
+Win rate 72.0%, paired 95% CI [0.63, 0.81]
+Win-rate difference +0.440, paired 95% CI [0.26, 0.6200000000000001]
+V4 Blue: {'games': 50, 'wins': 37}; Red: {'games': 50, 'wins': 35}
+Color Blue/Red wins: 52/48
+Capture/score endings 100/0; PASS actions 63; mean length 40.56
+V4 territory states 818/1824 (44.8%); games reaching territory 70; V4 PASS actions 14
+V4 tactical modes: {'NORMAL': 1501, 'IMMEDIATE_WIN': 72, 'SAFE_DEFENSE': 162, 'FORCED_LOSS': 89}
+Scoring distributions: {}
+
+V4 vs v2_iter375: 55-45 / 100 games
+Win rate 55.0%, paired 95% CI [0.44, 0.65]
+Win-rate difference +0.100, paired 95% CI [-0.12, 0.30000000000000004]
+V4 Blue: {'games': 50, 'wins': 28}; Red: {'games': 50, 'wins': 27}
+Color Blue/Red wins: 51/49
+Capture/score endings 100/0; PASS actions 31; mean length 37.29
+V4 territory states 798/1652 (48.3%); games reaching territory 78; V4 PASS actions 14
+V4 tactical modes: {'NORMAL': 1336, 'IMMEDIATE_WIN': 55, 'SAFE_DEFENSE': 165, 'FORCED_LOSS': 96}
+Scoring distributions: {}
+
+Strategic suite (D/E/F/G are diagnostic only):
+exact_capture_1: action=19 mode=IMMEDIATE_WIN success=True territory delta={'blue': 74, 'red': 0} allows immediate loss=False
+exact_capture_2: action=19 mode=IMMEDIATE_WIN success=True territory delta={'blue': 0, 'red': 74} allows immediate loss=False
+exact_defense_1: action=19 mode=SAFE_DEFENSE success=True territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+exact_defense_2: action=19 mode=SAFE_DEFENSE success=True territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+exact_winning_pass_blue: action=81 mode=IMMEDIATE_WIN success=True territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+exact_winning_pass_red: action=81 mode=IMMEDIATE_WIN success=True territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+D_established_territory: action=56 mode=NORMAL success=None territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+E_blue_needs_more_territory: action=12 mode=NORMAL success=None territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+F_red_scoring_advantage: action=15 mode=NORMAL success=None territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+G_own_territory_cost: action=21 mode=NORMAL success=None territory delta={'blue': 0, 'red': 0} allows immediate loss=False
+
+Capture endings alone are not a failure criterion. Territory counts show exposure, not proof of strategic understanding.
+Network/checkpoint unchanged: True/True
+Elapsed seconds: 7712.754
+Human instructions: docs/V4_HUMAN_ACCEPTANCE.md

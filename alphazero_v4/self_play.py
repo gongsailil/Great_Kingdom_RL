@@ -25,6 +25,8 @@ class RootSelection:
     policy: np.ndarray
     action: int
     tactical: object
+    # Optional diagnostics only; exact terminal shortcuts do not run MCTS.
+    root: object = None
 
 
 def select_root_action(
@@ -44,6 +46,7 @@ def select_root_action(
         if temperature_override is None
         else float(temperature_override)
     )
+    root = None
     if tactical.mode == "IMMEDIATE_WIN":
         policy = np.zeros(NUM_ACTIONS, dtype=np.float32)
         policy[list(tactical.immediate_win_actions)] = (
@@ -75,7 +78,7 @@ def select_root_action(
     illegal_probability = float(policy[~legal].sum())
     if illegal_probability > 1e-8 or not bool(legal[action]):
         raise RuntimeError("V4 root selection produced an illegal action/policy")
-    return RootSelection(policy=policy, action=action, tactical=tactical)
+    return RootSelection(policy=policy, action=action, tactical=tactical, root=root)
 
 
 def play_self_play_game(network, config, device, rng):

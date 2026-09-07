@@ -1,0 +1,2122 @@
+[
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": true,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [
+      {
+        "action": 0,
+        "territory_delta": -1
+      }
+    ],
+    "result": "CAPTURE_WIN",
+    "scenario": "exact_capture_1",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 19,
+      "coordinate": [
+        1,
+        2
+      ],
+      "immediate_win_actions": [
+        19
+      ],
+      "is_pass": false,
+      "mcts_executed": false,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "IMMEDIATE_WIN",
+      "top_actions": [
+        {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "exact_target_probability": 1.0,
+          "is_pass": false,
+          "prior": null,
+          "q_value_root_player": 1.0,
+          "visit_count": null,
+          "visit_fraction": null
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "castles_remaining": {
+        "1": 37,
+        "2": 39
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 1,
+      "opponent_territory": 0,
+      "player": 1,
+      "territory_blue": 1,
+      "territory_red": 0
+    },
+    "success": true,
+    "territory_delta": {
+      "blue": 74,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": true,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [
+      {
+        "action": 0,
+        "territory_delta": -1
+      }
+    ],
+    "result": "CAPTURE_WIN",
+    "scenario": "exact_capture_2",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 19,
+      "coordinate": [
+        1,
+        2
+      ],
+      "immediate_win_actions": [
+        19
+      ],
+      "is_pass": false,
+      "mcts_executed": false,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "IMMEDIATE_WIN",
+      "top_actions": [
+        {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "exact_target_probability": 1.0,
+          "is_pass": false,
+          "prior": null,
+          "q_value_root_player": 1.0,
+          "visit_count": null,
+          "visit_fraction": null
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "castles_remaining": {
+        "1": 39,
+        "2": 37
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 1,
+      "opponent_territory": 0,
+      "player": 2,
+      "territory_blue": 0,
+      "territory_red": 1
+    },
+    "success": true,
+    "territory_delta": {
+      "blue": 0,
+      "red": 74
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": true,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [],
+    "result": "NORMAL",
+    "scenario": "exact_defense_1",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 19,
+      "coordinate": [
+        1,
+        2
+      ],
+      "immediate_win_actions": [],
+      "is_pass": false,
+      "mcts_executed": true,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [
+        19
+      ],
+      "tactical_mode": "SAFE_DEFENSE",
+      "top_actions": [
+        {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 1.0,
+          "q_value_root_player": -0.21624717954546213,
+          "visit_count": 256,
+          "visit_fraction": 1.0
+        }
+      ],
+      "unsafe_actions_filtered": 75
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "castles_remaining": {
+        "1": 39,
+        "2": 37
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 0,
+      "opponent_territory": 1,
+      "player": 1,
+      "territory_blue": 0,
+      "territory_red": 1
+    },
+    "success": true,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": true,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [],
+    "result": "NORMAL",
+    "scenario": "exact_defense_2",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 19,
+      "coordinate": [
+        1,
+        2
+      ],
+      "immediate_win_actions": [],
+      "is_pass": false,
+      "mcts_executed": true,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [
+        19
+      ],
+      "tactical_mode": "SAFE_DEFENSE",
+      "top_actions": [
+        {
+          "action": 19,
+          "coordinate": [
+            1,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 1.0,
+          "q_value_root_player": 0.059838501270860434,
+          "visit_count": 256,
+          "visit_fraction": 1.0
+        }
+      ],
+      "unsafe_actions_filtered": 75
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "castles_remaining": {
+        "1": 37,
+        "2": 39
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 0,
+      "opponent_territory": 1,
+      "player": 2,
+      "territory_blue": 1,
+      "territory_red": 0
+    },
+    "success": true,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": true,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [
+      {
+        "action": 0,
+        "territory_delta": -1
+      },
+      {
+        "action": 1,
+        "territory_delta": -1
+      }
+    ],
+    "result": "PASS_SCORE_END",
+    "scenario": "exact_winning_pass_blue",
+    "scoring_winner_if_both_pass": 1,
+    "selection": {
+      "action": 81,
+      "coordinate": null,
+      "immediate_win_actions": [
+        81
+      ],
+      "is_pass": true,
+      "mcts_executed": false,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "IMMEDIATE_WIN",
+      "top_actions": [
+        {
+          "action": 81,
+          "coordinate": null,
+          "exact_target_probability": 1.0,
+          "is_pass": true,
+          "prior": null,
+          "q_value_root_player": 1.0,
+          "visit_count": null,
+          "visit_fraction": null
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "castles_remaining": {
+        "1": 37,
+        "2": 39
+      },
+      "consecutive_passes": 1,
+      "current_player_territory": 2,
+      "opponent_territory": 0,
+      "player": 1,
+      "territory_blue": 2,
+      "territory_red": 0
+    },
+    "success": true,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": true,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [],
+    "result": "PASS_SCORE_END",
+    "scenario": "exact_winning_pass_red",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 81,
+      "coordinate": null,
+      "immediate_win_actions": [
+        81
+      ],
+      "is_pass": true,
+      "mcts_executed": false,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "IMMEDIATE_WIN",
+      "top_actions": [
+        {
+          "action": 81,
+          "coordinate": null,
+          "exact_target_probability": 1.0,
+          "is_pass": true,
+          "prior": null,
+          "q_value_root_player": 1.0,
+          "visit_count": null,
+          "visit_fraction": null
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "castles_remaining": {
+        "1": 38,
+        "2": 39
+      },
+      "consecutive_passes": 1,
+      "current_player_territory": 0,
+      "opponent_territory": 1,
+      "player": 2,
+      "territory_blue": 1,
+      "territory_red": 0
+    },
+    "success": true,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": false,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [
+      {
+        "action": 0,
+        "territory_delta": -1
+      },
+      {
+        "action": 1,
+        "territory_delta": -1
+      },
+      {
+        "action": 9,
+        "territory_delta": -1
+      },
+      {
+        "action": 10,
+        "territory_delta": -1
+      }
+    ],
+    "result": "NORMAL",
+    "scenario": "D_established_territory",
+    "scoring_winner_if_both_pass": 1,
+    "selection": {
+      "action": 56,
+      "coordinate": [
+        2,
+        6
+      ],
+      "immediate_win_actions": [],
+      "is_pass": false,
+      "mcts_executed": true,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "NORMAL",
+      "top_actions": [
+        {
+          "action": 56,
+          "coordinate": [
+            2,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07406754190891474,
+          "q_value_root_player": -0.07356975890777923,
+          "visit_count": 91,
+          "visit_fraction": 0.35546875
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.3240091565752555,
+          "q_value_root_player": -0.2861699238419533,
+          "visit_count": 64,
+          "visit_fraction": 0.25
+        },
+        {
+          "action": 48,
+          "coordinate": [
+            3,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03268054936381777,
+          "q_value_root_player": -0.19994893471399944,
+          "visit_count": 30,
+          "visit_fraction": 0.1171875
+        },
+        {
+          "action": 50,
+          "coordinate": [
+            5,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0032465814779268987,
+          "q_value_root_player": -0.38346874713897705,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 61,
+          "coordinate": [
+            7,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.06821419431465026,
+          "q_value_root_player": -0.9487059414386749,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 66,
+          "coordinate": [
+            3,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.048966747730701296,
+          "q_value_root_player": -0.7840602099895477,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 0,
+          "coordinate": [
+            0,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0009548694546918753,
+          "q_value_root_player": -0.9945342540740967,
+          "visit_count": 1,
+          "visit_fraction": 0.00390625
+        },
+        {
+          "action": 1,
+          "coordinate": [
+            1,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.009229279302945008,
+          "q_value_root_player": -0.9309526681900024,
+          "visit_count": 1,
+          "visit_fraction": 0.00390625
+        },
+        {
+          "action": 3,
+          "coordinate": [
+            3,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.009641989321986063,
+          "q_value_root_player": -0.9949444532394409,
+          "visit_count": 1,
+          "visit_fraction": 0.00390625
+        },
+        {
+          "action": 4,
+          "coordinate": [
+            4,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.004238889169524682,
+          "q_value_root_player": -0.9654690027236938,
+          "visit_count": 1,
+          "visit_fraction": 0.00390625
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "castles_remaining": {
+        "1": 35,
+        "2": 35
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 4,
+      "opponent_territory": 0,
+      "player": 1,
+      "territory_blue": 4,
+      "territory_red": 0
+    },
+    "success": null,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": false,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [
+      {
+        "action": 0,
+        "territory_delta": -1
+      }
+    ],
+    "result": "NORMAL",
+    "scenario": "E_blue_needs_more_territory",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 12,
+      "coordinate": [
+        3,
+        1
+      ],
+      "immediate_win_actions": [],
+      "is_pass": false,
+      "mcts_executed": true,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "NORMAL",
+      "top_actions": [
+        {
+          "action": 12,
+          "coordinate": [
+            3,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.015116073909119707,
+          "q_value_root_player": 0.12149521423422772,
+          "visit_count": 115,
+          "visit_fraction": 0.44921875
+        },
+        {
+          "action": 59,
+          "coordinate": [
+            5,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.03912317325085346,
+          "q_value_root_player": 0.04731682049376624,
+          "visit_count": 56,
+          "visit_fraction": 0.21875
+        },
+        {
+          "action": 11,
+          "coordinate": [
+            2,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.2957341331222835,
+          "q_value_root_player": -0.20932703733444213,
+          "visit_count": 25,
+          "visit_fraction": 0.09765625
+        },
+        {
+          "action": 48,
+          "coordinate": [
+            3,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.042014944705377325,
+          "q_value_root_player": -0.07109811476298741,
+          "visit_count": 7,
+          "visit_fraction": 0.02734375
+        },
+        {
+          "action": 42,
+          "coordinate": [
+            6,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.14092884758864263,
+          "q_value_root_player": -0.4414307177066803,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 10,
+          "coordinate": [
+            1,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.06704345250862899,
+          "q_value_root_player": -0.29307653903961184,
+          "visit_count": 5,
+          "visit_fraction": 0.01953125
+        },
+        {
+          "action": 63,
+          "coordinate": [
+            0,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.005964876068378656,
+          "q_value_root_player": 0.0007651001214981079,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 4,
+          "coordinate": [
+            4,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.020670586905173413,
+          "q_value_root_player": -0.14968782663345337,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 15,
+          "coordinate": [
+            6,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.010199135025422424,
+          "q_value_root_player": -0.204351544380188,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        },
+        {
+          "action": 21,
+          "coordinate": [
+            3,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.007159998073690831,
+          "q_value_root_player": -0.03718885779380798,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2
+        ]
+      ],
+      "castles_remaining": {
+        "1": 38,
+        "2": 38
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 1,
+      "opponent_territory": 0,
+      "player": 1,
+      "territory_blue": 1,
+      "territory_red": 0
+    },
+    "success": null,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": false,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [],
+    "result": "NORMAL",
+    "scenario": "F_red_scoring_advantage",
+    "scoring_winner_if_both_pass": 2,
+    "selection": {
+      "action": 15,
+      "coordinate": [
+        6,
+        1
+      ],
+      "immediate_win_actions": [],
+      "is_pass": false,
+      "mcts_executed": true,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "NORMAL",
+      "top_actions": [
+        {
+          "action": 15,
+          "coordinate": [
+            6,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.019907362833274017,
+          "q_value_root_player": 0.4093968020545112,
+          "visit_count": 90,
+          "visit_fraction": 0.3515625
+        },
+        {
+          "action": 11,
+          "coordinate": [
+            2,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.06744456316323788,
+          "q_value_root_player": 0.330717220539,
+          "visit_count": 82,
+          "visit_fraction": 0.3203125
+        },
+        {
+          "action": 61,
+          "coordinate": [
+            7,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.027290281010010395,
+          "q_value_root_player": 0.28587422921107364,
+          "visit_count": 13,
+          "visit_fraction": 0.05078125
+        },
+        {
+          "action": 78,
+          "coordinate": [
+            6,
+            8
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.059166033041350666,
+          "q_value_root_player": 0.23278754491072434,
+          "visit_count": 13,
+          "visit_fraction": 0.05078125
+        },
+        {
+          "action": 14,
+          "coordinate": [
+            5,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.04802633467326438,
+          "q_value_root_player": 0.1875358521938324,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 31,
+          "coordinate": [
+            4,
+            3
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05024129171014313,
+          "q_value_root_player": 0.17452046275138855,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 22,
+          "coordinate": [
+            4,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024625133814756325,
+          "q_value_root_player": 0.191199791431427,
+          "visit_count": 5,
+          "visit_fraction": 0.01953125
+        },
+        {
+          "action": 69,
+          "coordinate": [
+            6,
+            7
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0181222391058588,
+          "q_value_root_player": 0.24603506326675414,
+          "visit_count": 5,
+          "visit_fraction": 0.01953125
+        },
+        {
+          "action": 17,
+          "coordinate": [
+            8,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.027242509749690107,
+          "q_value_root_player": 0.12806515395641327,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 20,
+          "coordinate": [
+            2,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.06200692453237967,
+          "q_value_root_player": 0.03630812466144562,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "castles_remaining": {
+        "1": 38,
+        "2": 39
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 0,
+      "opponent_territory": 1,
+      "player": 2,
+      "territory_blue": 1,
+      "territory_red": 0
+    },
+    "success": null,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  },
+  {
+    "allows_immediate_tactical_loss": false,
+    "exact_assertion": false,
+    "opponent_immediate_winning_actions": [],
+    "own_territory_placement_costs": [
+      {
+        "action": 0,
+        "territory_delta": -1
+      },
+      {
+        "action": 1,
+        "territory_delta": -1
+      }
+    ],
+    "result": "NORMAL",
+    "scenario": "G_own_territory_cost",
+    "scoring_winner_if_both_pass": 1,
+    "selection": {
+      "action": 21,
+      "coordinate": [
+        3,
+        2
+      ],
+      "immediate_win_actions": [],
+      "is_pass": false,
+      "mcts_executed": true,
+      "mcts_simulations": 256,
+      "safe_defense_actions": [],
+      "tactical_mode": "NORMAL",
+      "top_actions": [
+        {
+          "action": 21,
+          "coordinate": [
+            3,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.2522470688882915,
+          "q_value_root_player": -0.568980467688177,
+          "visit_count": 97,
+          "visit_fraction": 0.37890625
+        },
+        {
+          "action": 48,
+          "coordinate": [
+            3,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.05452086481400131,
+          "q_value_root_player": -0.5389360132671538,
+          "visit_count": 42,
+          "visit_fraction": 0.1640625
+        },
+        {
+          "action": 3,
+          "coordinate": [
+            3,
+            0
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07260046257372671,
+          "q_value_root_player": -0.6160909493764242,
+          "visit_count": 15,
+          "visit_fraction": 0.05859375
+        },
+        {
+          "action": 59,
+          "coordinate": [
+            5,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.024330588403196515,
+          "q_value_root_player": -0.6020038459036086,
+          "visit_count": 9,
+          "visit_fraction": 0.03515625
+        },
+        {
+          "action": 11,
+          "coordinate": [
+            2,
+            1
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.07227553529869943,
+          "q_value_root_player": -0.7772327065467834,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 42,
+          "coordinate": [
+            6,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.04100156633674529,
+          "q_value_root_player": -0.6755116681257883,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 60,
+          "coordinate": [
+            6,
+            6
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.10703340324783642,
+          "q_value_root_player": -0.9115435183048248,
+          "visit_count": 6,
+          "visit_fraction": 0.0234375
+        },
+        {
+          "action": 18,
+          "coordinate": [
+            0,
+            2
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.003904091715381852,
+          "q_value_root_player": 0.17274591326713562,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 47,
+          "coordinate": [
+            2,
+            5
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.04298345805657817,
+          "q_value_root_player": -0.7247171103954315,
+          "visit_count": 4,
+          "visit_fraction": 0.015625
+        },
+        {
+          "action": 43,
+          "coordinate": [
+            7,
+            4
+          ],
+          "immediate_result": "NORMAL",
+          "immediate_winner": null,
+          "is_pass": false,
+          "prior": 0.0072245389317853554,
+          "q_value_root_player": -0.5635519325733185,
+          "visit_count": 2,
+          "visit_fraction": 0.0078125
+        }
+      ],
+      "unsafe_actions_filtered": 0
+    },
+    "state": {
+      "board": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          2
+        ]
+      ],
+      "castles_remaining": {
+        "1": 37,
+        "2": 37
+      },
+      "consecutive_passes": 0,
+      "current_player_territory": 2,
+      "opponent_territory": 0,
+      "player": 1,
+      "territory_blue": 2,
+      "territory_red": 0
+    },
+    "success": null,
+    "territory_delta": {
+      "blue": 0,
+      "red": 0
+    }
+  }
+]

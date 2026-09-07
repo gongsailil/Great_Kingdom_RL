@@ -5,4 +5,5 @@ __pycache__/
 models/**/*.zip
 models/**/*.pt
 runs/
+human_games/
 overnight_*.log
