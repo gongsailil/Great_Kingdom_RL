@@ -3,20 +3,16 @@
 from dataclasses import dataclass, field
 
 import numpy as np
-import torch
-
-from alphazero_v2.mcts import visit_count_policy
-from alphazero_v2.self_play import TrainingExample
-from alphazero_v3.temperature_audit import temperature_for_ply
-from alphazero_v4.tactical import solve_tactical_root
 from gk_env_v2 import action_mask_for_logic
 from great_kingdom_v2 import (
     BLUE, BOARD_SIZE, NUM_ACTIONS, PASS_ACTION, GreatKingdomLogicV2, MoveResultV2,
 )
 from .batched_mcts import BatchedMCTS, BatchedNetworkEvaluator, SearchRequest
+from .common import TrainingExample, temperature_for_ply, visit_count_policy
 from .encoder import encode_state
 from .network import calibrated_scalar
 from .start_states import restore_logic
+from .tactical import solve_tactical_root
 
 
 LEGAL_RESULTS = (MoveResultV2.NORMAL, MoveResultV2.CAPTURE_WIN,

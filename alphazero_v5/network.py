@@ -3,8 +3,8 @@
 import torch
 from torch import nn
 
-from alphazero_v2.network import ResidualBlock
 from great_kingdom_v2 import BOARD_SIZE, NUM_ACTIONS
+from .common import ResidualBlock
 
 
 class PolicyValueAuxNetwork(nn.Module):

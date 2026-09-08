@@ -2,8 +2,9 @@
 
 import numpy as np
 
-from alphazero_v3.encoder import encode_state as encode_v3_state
-from great_kingdom_v2 import BLUE, RED, BOARD_SIZE
+from great_kingdom_v2 import (
+    BLUE, RED, BOARD_SIZE, CASTLES_PER_PLAYER, NEUTRAL,
+)
 
 
 NUM_PLANES = 12
@@ -41,8 +42,25 @@ def _liberty_planes(logic):
 def encode_state(logic):
     if logic.game_over:
         raise ValueError("V5 encoder expects an active Rules V2 state")
+    current, opponent = logic.turn, 3 - logic.turn
+    board = np.asarray(logic.board)
     encoded = np.zeros(ENCODED_SHAPE, dtype=np.float32)
-    encoded[:9] = encode_v3_state(logic)
+    encoded[0] = board == current
+    encoded[1] = board == opponent
+    encoded[2] = board == NEUTRAL
+    encoded[3].fill(logic.consecutive_passes / 2.0)
+    encoded[4].fill(logic.castles_remaining[current] / CASTLES_PER_PLAYER)
+    encoded[5].fill(logic.castles_remaining[opponent] / CASTLES_PER_PLAYER)
+    encoded[6].fill(1.0 if current == BLUE else 0.0)
+    for y in range(BOARD_SIZE):
+        for x in range(BOARD_SIZE):
+            if logic.board[y][x] != 0:
+                continue
+            owner = logic.get_territory_owner(x, y)
+            if owner == current:
+                encoded[7, y, x] = 1.0
+            elif owner == opponent:
+                encoded[8, y, x] = 1.0
     encoded[9:11] = _liberty_planes(logic)
     encoded[11].fill(scoring_margin(logic))
     return encoded
@@ -50,11 +68,11 @@ def encode_state(logic):
 
 def decode_state(state, atol=5e-4):
     """Diagnostic/start-pool decoder; derived V5 planes only validate state."""
-    from alphazero_v3.value_oracle_audit import decode_v3_state
+    from .legacy_state_loader import decode_legacy_state
     state = np.asarray(state, dtype=np.float32)
     if state.shape != ENCODED_SHAPE:
         raise ValueError("V5 state must have shape (12,9,9)")
-    logic = decode_v3_state(state[:9], atol=atol)
+    logic = decode_legacy_state(state[:9], atol=atol)
     rebuilt = encode_state(logic)
     if not np.allclose(rebuilt, state, rtol=0, atol=atol):
         raise ValueError("V5 decode/encode roundtrip mismatch")

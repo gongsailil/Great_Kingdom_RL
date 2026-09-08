@@ -6,9 +6,9 @@ import math
 import numpy as np
 import torch
 
-from alphazero_v2.mcts import Node, backup, masked_policy, terminal_value
 from gk_env_v2 import action_mask_for_logic
 from great_kingdom_v2 import BOARD_SIZE, PASS_ACTION, MoveResultV2
+from .common import Node, backup, masked_policy, terminal_value
 
 
 @dataclass

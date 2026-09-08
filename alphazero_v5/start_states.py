@@ -6,10 +6,9 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from alphazero_v3.value_oracle_audit import decode_v3_state
-from alphazero_v3.encoder import encode_state as encode_v3_state
 from great_kingdom_v2 import BLUE, RED, GreatKingdomLogicV2
-from alphazero_v4.tactical import solve_tactical_root
+from .legacy_state_loader import decode_legacy_state, encode_legacy_state
+from .tactical import solve_tactical_root
 
 
 @dataclass(frozen=True)
@@ -53,15 +52,16 @@ def validate_stored_logic(stored):
     return logic
 
 
-def load_v4_territory_pool(replay_path, maximum=4096, seed=20260830):
+def load_territory_pool(replay_path, maximum=4096, seed=20260830):
+    """Extract board-only starting positions from a compatible replay file."""
     replay_path = Path(replay_path)
     payload = torch.load(replay_path, map_location="cpu", weights_only=False)
     states = np.asarray(payload["states"], dtype=np.float32)
     order = np.random.default_rng(seed).permutation(len(states))
     pool, seen = [], set()
     for index in order:
-        logic = decode_v3_state(states[index])
-        if not np.allclose(encode_v3_state(logic), states[index], rtol=0, atol=1e-6):
+        logic = decode_legacy_state(states[index])
+        if not np.allclose(encode_legacy_state(logic), states[index], rtol=0, atol=1e-6):
             raise RuntimeError("historical V4 state failed roundtrip")
         if not all(any(cell == p for row in logic.board for cell in row) for p in (BLUE, RED)):
             continue

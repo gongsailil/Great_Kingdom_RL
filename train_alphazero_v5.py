@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from alphazero_v2.training_runner import _atomic_json_save
+from alphazero_v5.common import atomic_json_save
 from alphazero_v5.config import V5Config
 from alphazero_v5.training_runner import (
     choose_device,
@@ -20,7 +20,6 @@ from alphazero_v5.training_runner import (
 
 
 DEFAULT_RUN_DIR = Path("runs/alphazero_v5/strategy_20260908")
-DEFAULT_V4_REPLAY = Path("runs/alphazero_v4/stability_20260903/replay_buffer.pt")
 DEFAULT_REPORT_DIR = Path("reports/alphazero_v5_strategy")
 
 
@@ -30,7 +29,10 @@ def parse_args(argv=None):
     group.add_argument("--run-dir", type=Path, default=None)
     group.add_argument("--resume", type=Path, default=None)
     parser.add_argument("--device", choices=("auto", "cuda", "cpu"), default="auto")
-    parser.add_argument("--v4-replay", type=Path, default=DEFAULT_V4_REPLAY)
+    parser.add_argument(
+        "--territory-replay", type=Path, default=None,
+        help="compatible nine-plane replay used only as a source of board states",
+    )
     parser.add_argument("--report-dir", type=Path, default=DEFAULT_REPORT_DIR)
     parser.add_argument("--throughput-only", action="store_true")
     args = parser.parse_args(argv)
@@ -48,9 +50,11 @@ def main(argv=None):
     else:
         config = V5Config()
         state = initialize_run(run_dir, config, device)
-    start_pool, openings = prepare_run_assets(run_dir, config, args.v4_replay)
+    start_pool, openings = prepare_run_assets(
+        run_dir, config, args.territory_replay
+    )
     args.report_dir.mkdir(parents=True, exist_ok=True)
-    _atomic_json_save(config.to_dict(), args.report_dir / "config.json")
+    atomic_json_save(config.to_dict(), args.report_dir / "config.json")
     if args.throughput_only:
         # The gate must not advance the persisted training RNG or replay.
         gate_rng = np.random.default_rng()
@@ -58,7 +62,7 @@ def main(argv=None):
         report = run_throughput_measurement(
             state.best_network, state.calibration_temperature, config, device,
             gate_rng, start_pool, games=64)
-        _atomic_json_save(report, args.report_dir / "throughput.json")
+        atomic_json_save(report, args.report_dir / "throughput.json")
         print(json.dumps(report, sort_keys=True), flush=True)
         return
     try:

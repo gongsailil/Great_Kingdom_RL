@@ -4,7 +4,7 @@ Cycles: 31
 BEST version/promotions: 20 / 20
 Generated games/samples: 7936 / 219336
 Replay size: 200000
-Automatic classification: AUTO_PASS_PENDING_HUMAN
+Automatic classification: INTERNAL_REGRESSION_PASS_RESEARCH_FROZEN
 
 Final paired arenas (V5 wins / games):
 - v2_iter375: 100/100 (100.0%), paired 95% CI [100.0%, 100.0%]
@@ -21,3 +21,5 @@ Final calibration T: 1.3098
 Symmetry mean policy L1 first/final: 0.2094 / 0.4312
 Symmetry mean value |delta| first/final: 0.2275 / 0.1195
 Human game logs were evaluation-only and were never inserted into replay.
+Human evaluation found clear improvement over V4, but not fully solved human-level strategy.
+Known limitation: losing score positions may sacrifice territory to prolong play under the pure win/loss objective.

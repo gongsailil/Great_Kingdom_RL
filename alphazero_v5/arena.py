@@ -3,12 +3,11 @@
 from dataclasses import dataclass, field
 
 import numpy as np
-import torch
-
-from alphazero_v2.mcts import visit_count_policy
-from alphazero_v4.tactical import solve_tactical_root
 from great_kingdom_v2 import BLUE, RED, PASS_ACTION, MoveResultV2
 from .batched_mcts import BatchedMCTS, BatchedNetworkEvaluator, SearchRequest
+from .common import visit_count_policy
+from .openings import apply_opening
+from .tactical import solve_tactical_root
 
 
 LEGAL_RESULTS = (MoveResultV2.NORMAL, MoveResultV2.CAPTURE_WIN,
@@ -56,7 +55,6 @@ def _position(logic):
 
 
 def _play_cohort(assignments, openings, concurrent_games=16):
-    from alphazero_v2.evaluate import apply_opening
     contexts = [ArenaContext(opening, blue, red, apply_opening(opening["actions"]))
                 for opening, blue, red in assignments]
     agents = {agent.name: agent for _, blue, red in assignments for agent in (blue, red)}

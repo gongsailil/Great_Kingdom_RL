@@ -1,6 +1,6 @@
 {
   "architecture": "12-plane 128x6 policy/value/liberty/score network",
-  "automatic_classification": "AUTO_PASS_PENDING_HUMAN",
+  "automatic_classification": "INTERNAL_REGRESSION_PASS_RESEARCH_FROZEN",
   "behavior": {
     "blocks": [
       {
@@ -303,6 +303,11 @@
   },
   "human_challenge_states": 20,
   "human_logs_used_for_training": false,
+  "human_evaluation": {
+    "conclusion": "Clear qualitative improvement over V4; human-level strategic play was not fully solved.",
+    "known_endgame_limitation": "When already losing by immediate double-PASS scoring, the win/loss-only objective can prefer territory-reducing moves that prolong play.",
+    "research_status": "frozen"
+  },
   "parameter_count": 1820674,
   "strategic_exact_pass": true,
   "symmetry": {

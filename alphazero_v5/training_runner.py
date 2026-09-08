@@ -1,6 +1,6 @@
 """Crash-safe BEST/candidate AlphaZero V5 training cycles."""
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 import copy
 import json
 import os
@@ -11,11 +11,9 @@ import numpy as np
 import torch
 from torch.nn import functional as F
 
-from alphazero_v2.training_runner import _atomic_json_save, _atomic_torch_save, append_metric
-from alphazero_v4.acceptance import generate_acceptance_openings
-
 from .arena import ArenaAgent, play_paired_arena, summarize_arena
 from .calibration import fit_value_temperature
+from .common import append_metric, atomic_json_save, atomic_torch_save
 from .config import V5Config
 from .diagnostics import run_fixed_tactical_diagnostics, symmetry_consistency
 from .encoder import encode_state
@@ -25,9 +23,10 @@ from .network import (
     liberty_prediction,
     score_prediction,
 )
+from .openings import generate_openings
 from .replay import CompactReplayBuffer, DuplicateAwareSplitView
 from .self_play import generate_self_play
-from .start_states import load_v4_territory_pool
+from .start_states import StoredLogic, load_territory_pool, validate_stored_logic
 
 
 FORMAT_VERSION = 1
@@ -200,12 +199,12 @@ def save_run(run_dir, state, config, promoted=False):
         if previous_replay.exists():
             previous_replay.unlink()
         os.link(replay_path, previous_replay)
-    _atomic_torch_save(state.replay.state_dict(), replay_path)
+    atomic_torch_save(state.replay.state_dict(), replay_path)
     payload = _checkpoint_payload(state, config)
-    _atomic_torch_save(payload, run_dir / "latest.pt")
+    atomic_torch_save(payload, run_dir / "latest.pt")
     if promoted:
-        _atomic_torch_save(payload, run_dir / "checkpoints" / f"best_{state.best_version:03d}_cycle_{state.cycle:04d}.pt")
-    _atomic_json_save({
+        atomic_torch_save(payload, run_dir / "checkpoints" / f"best_{state.best_version:03d}_cycle_{state.cycle:04d}.pt")
+    atomic_json_save({
         "cycle": state.cycle, "best_version": state.best_version,
         "promotion_count": state.promotion_count,
         "total_self_play_games": state.total_self_play_games,
@@ -221,7 +220,7 @@ def initialize_run(run_dir, config, device):
     if (run_dir / "latest.pt").exists():
         raise FileExistsError(f"V5 run exists; use --resume {run_dir}")
     (run_dir / "checkpoints").mkdir(parents=True, exist_ok=True)
-    _atomic_json_save(config.to_dict(), run_dir / "config.json")
+    atomic_json_save(config.to_dict(), run_dir / "config.json")
     torch.manual_seed(config.seed)
     if device.type == "cuda":
         torch.cuda.manual_seed_all(config.seed)
@@ -344,13 +343,28 @@ def run_cycle(run_dir, state, config, device, start_pool, arena_openings):
     return metric
 
 
-def prepare_run_assets(run_dir, config, v4_replay_path):
+def prepare_run_assets(run_dir, config, territory_replay_path):
     run_dir = Path(run_dir)
     opening_path = run_dir / "promotion_openings.json"
     if not opening_path.exists():
-        _atomic_json_save(generate_acceptance_openings(config.candidate_arena_openings, config.seed), opening_path)
+        atomic_json_save(generate_openings(config.candidate_arena_openings, config.seed), opening_path)
     opening_payload = json.loads(opening_path.read_text())
-    start_pool = load_v4_territory_pool(v4_replay_path, config.territory_pool_max_states, config.seed)
+    pool_path = run_dir / "territory_start_pool.pt"
+    if pool_path.exists():
+        stored_rows = torch.load(pool_path, map_location="cpu", weights_only=False)
+        start_pool = [StoredLogic(**row) for row in stored_rows]
+        for stored in start_pool:
+            validate_stored_logic(stored)
+    else:
+        if territory_replay_path is None:
+            raise ValueError(
+                "--territory-replay is required once to build the board-only "
+                "midgame starting pool"
+            )
+        start_pool = load_territory_pool(
+            territory_replay_path, config.territory_pool_max_states, config.seed
+        )
+        atomic_torch_save([asdict(stored) for stored in start_pool], pool_path)
     return start_pool, opening_payload["openings"]
 
 

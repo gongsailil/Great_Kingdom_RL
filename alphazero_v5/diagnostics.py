@@ -5,20 +5,16 @@ from dataclasses import dataclass
 import numpy as np
 import torch
 
-from alphazero_v2.evaluate import (
-    apply_opening,
-    capture_tactical_position,
-    defense_tactical_position,
-    winning_pass_tactical_position,
-)
-from alphazero_v2.mcts import visit_count_policy
-from alphazero_v4.tactical import solve_tactical_root
-from great_kingdom_v2 import NUM_ACTIONS
-
 from .batched_mcts import BatchedMCTS, BatchedNetworkEvaluator, SearchRequest
+from .common import visit_count_policy
 from .encoder import encode_state
 from .network import calibrated_scalar
+from .openings import (
+    apply_opening, capture_tactical_position, defense_tactical_position,
+    winning_pass_tactical_position,
+)
 from .symmetry import inverse_policy, transform_state
+from .tactical import solve_tactical_root
 
 
 @dataclass(frozen=True)
