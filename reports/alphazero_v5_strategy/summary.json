@@ -1,0 +1,337 @@
+{
+  "architecture": "12-plane 128x6 policy/value/liberty/score network",
+  "automatic_classification": "AUTO_PASS_PENDING_HUMAN",
+  "behavior": {
+    "blocks": [
+      {
+        "capture_endings": 2518,
+        "cycles": [
+          1,
+          10
+        ],
+        "early_edge_fraction": 0.23785538858593847,
+        "forced_loss_entry_rate": 0.88203125,
+        "games": 2560,
+        "pass_score_endings": 42,
+        "promotions": 9,
+        "territory_state_fraction": 0.3602141747731546,
+        "value_abs_ge_0_9_fraction": 0.1681380964058966
+      },
+      {
+        "capture_endings": 2504,
+        "cycles": [
+          11,
+          20
+        ],
+        "early_edge_fraction": 0.1886761170521429,
+        "forced_loss_entry_rate": 0.979296875,
+        "games": 2560,
+        "pass_score_endings": 56,
+        "promotions": 6,
+        "territory_state_fraction": 0.3933598302602875,
+        "value_abs_ge_0_9_fraction": 0.12008785823147955
+      },
+      {
+        "capture_endings": 2436,
+        "cycles": [
+          21,
+          30
+        ],
+        "early_edge_fraction": 0.19932404239339063,
+        "forced_loss_entry_rate": 0.96328125,
+        "games": 2560,
+        "pass_score_endings": 124,
+        "promotions": 4,
+        "territory_state_fraction": 0.47003343549735305,
+        "value_abs_ge_0_9_fraction": 0.12137085539147395
+      },
+      {
+        "capture_endings": 244,
+        "cycles": [
+          31,
+          31
+        ],
+        "early_edge_fraction": 0.18538398018166805,
+        "forced_loss_entry_rate": 0.984375,
+        "games": 256,
+        "pass_score_endings": 12,
+        "promotions": 1,
+        "territory_state_fraction": 0.4785674778761062,
+        "value_abs_ge_0_9_fraction": 0.08310287610619468
+      }
+    ],
+    "capture_endings": 7702,
+    "early_edge_fraction": 0.20784308464252654,
+    "forced_loss_entry_rate": 0.9429183467741935,
+    "games": 7936,
+    "games_entering_forced_loss": 7483,
+    "immediate_win_opportunities": 7808,
+    "immediate_win_taken": 7808,
+    "initial_start_games": 6330,
+    "own_adjacent_fraction": 0.4987467747880575,
+    "pass_actions": 2296,
+    "pass_score_endings": 234,
+    "samples": 219336,
+    "territory_creation_delta": 21787,
+    "territory_disruption_delta": 0,
+    "territory_start_games": 1606,
+    "territory_state_fraction": 0.4101697851697852,
+    "unsafe_actions_filtered": 612750
+  },
+  "calibration": {
+    "final_temperature": 1.3097673558073468,
+    "last_candidate": {
+      "after_brier": 0.14259080588817596,
+      "after_nll": 0.4614412486553192,
+      "before_brier": 0.14453129470348358,
+      "before_nll": 0.46980318427085876,
+      "groups": 9157,
+      "raw_weight": 9611,
+      "temperature": 1.3097673558073468
+    },
+    "mean_after_brier": 0.1098995550024894,
+    "mean_after_nll": 0.36323312117207435,
+    "mean_before_brier": 0.11240814506046233,
+    "mean_before_nll": 0.3772655922559
+  },
+  "checkpoint": {
+    "best_version": 20,
+    "calibration_temperature": 1.3097673558073468,
+    "cycle": 31
+  },
+  "final_arenas": {
+    "v2_iter375": {
+      "by_color": {
+        "1": {
+          "games": 50,
+          "wins": 50
+        },
+        "2": {
+          "games": 50,
+          "wins": 50
+        }
+      },
+      "candidate_moves": 657,
+      "capture_endings": 100,
+      "forced_loss_entries": 3,
+      "games": 100,
+      "illegal_violations": 0,
+      "inference": {
+        "v2_iter375": {
+          "max_inference_batch_size": 32,
+          "mean_inference_batch_size": 8.713099163073801,
+          "network_inference_calls": 15772,
+          "network_inference_positions": 137423
+        },
+        "v5_best": {
+          "max_inference_batch_size": 32,
+          "mean_inference_batch_size": 8.534477048420216,
+          "network_inference_calls": 15097,
+          "network_inference_positions": 128845
+        }
+      },
+      "losses": 0,
+      "mean_game_length": 16.94,
+      "paired_bootstrap": {
+        "difference_from_50": 0.5,
+        "difference_from_50_ci95": [
+          0.5,
+          0.5
+        ],
+        "pairs": 50,
+        "replicates": 10000,
+        "seed": 20260908,
+        "win_rate": 1.0,
+        "win_rate_ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "pass_actions": 2,
+      "pass_score_endings": 0,
+      "tactical_failures": 0,
+      "territory_state_fraction": 0.2191780821917808,
+      "win_rate": 1.0,
+      "wins": 100
+    },
+    "v3_iter50": {
+      "by_color": {
+        "1": {
+          "games": 50,
+          "wins": 50
+        },
+        "2": {
+          "games": 50,
+          "wins": 50
+        }
+      },
+      "candidate_moves": 549,
+      "capture_endings": 100,
+      "forced_loss_entries": 0,
+      "games": 100,
+      "illegal_violations": 0,
+      "inference": {
+        "v3_iter50": {
+          "max_inference_batch_size": 32,
+          "mean_inference_batch_size": 9.708114558472554,
+          "network_inference_calls": 12570,
+          "network_inference_positions": 122031
+        },
+        "v5_best": {
+          "max_inference_batch_size": 32,
+          "mean_inference_batch_size": 8.79130505976748,
+          "network_inference_calls": 12214,
+          "network_inference_positions": 107377
+        }
+      },
+      "losses": 0,
+      "mean_game_length": 14.78,
+      "paired_bootstrap": {
+        "difference_from_50": 0.5,
+        "difference_from_50_ci95": [
+          0.5,
+          0.5
+        ],
+        "pairs": 50,
+        "replicates": 10000,
+        "seed": 20260908,
+        "win_rate": 1.0,
+        "win_rate_ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "pass_actions": 4,
+      "pass_score_endings": 0,
+      "tactical_failures": 0,
+      "territory_state_fraction": 0.07285974499089254,
+      "win_rate": 1.0,
+      "wins": 100
+    },
+    "v4_iter50": {
+      "by_color": {
+        "1": {
+          "games": 50,
+          "wins": 50
+        },
+        "2": {
+          "games": 50,
+          "wins": 50
+        }
+      },
+      "candidate_moves": 705,
+      "capture_endings": 100,
+      "forced_loss_entries": 0,
+      "games": 100,
+      "illegal_violations": 0,
+      "inference": {
+        "v4_iter50": {
+          "max_inference_batch_size": 32,
+          "mean_inference_batch_size": 12.569564546016059,
+          "network_inference_calls": 12952,
+          "network_inference_positions": 162801
+        },
+        "v5_best": {
+          "max_inference_batch_size": 32,
+          "mean_inference_batch_size": 11.31300173797898,
+          "network_inference_calls": 12083,
+          "network_inference_positions": 136695
+        }
+      },
+      "losses": 0,
+      "mean_game_length": 17.9,
+      "paired_bootstrap": {
+        "difference_from_50": 0.5,
+        "difference_from_50_ci95": [
+          0.5,
+          0.5
+        ],
+        "pairs": 50,
+        "replicates": 10000,
+        "seed": 20260908,
+        "win_rate": 1.0,
+        "win_rate_ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "pass_actions": 0,
+      "pass_score_endings": 0,
+      "tactical_failures": 0,
+      "territory_state_fraction": 0.18156028368794327,
+      "win_rate": 1.0,
+      "wins": 100
+    }
+  },
+  "final_losses": {
+    "liberty_loss": 0.0022328318858626517,
+    "policy_loss": 2.8225657790899277,
+    "score_loss": 7.945974744671958e-05,
+    "total_loss": 3.250038139289245,
+    "training_brier": 0.11911366515414556,
+    "training_updates": 1024,
+    "value_bce_loss": 0.4251600677962415
+  },
+  "final_replay_duplicates": {
+    "contradictory_z_group_count": 1268,
+    "duplicate_group_count": 2342,
+    "mixed_outcome_group_fraction": 0.0069385923631707395,
+    "raw_replay_size": 200000,
+    "samples_in_contradictory_groups": 17254,
+    "train_groups": 173589,
+    "unique_state_groups": 182746,
+    "validation_fraction_actual": 0.048055,
+    "validation_groups": 9157,
+    "validation_raw_weight": 9611
+  },
+  "final_replay_value_targets": {
+    "mean_z": 0.018279999494552612,
+    "samples": 200000,
+    "std_z": 0.9998329281806946,
+    "win_target_fraction": 0.50914
+  },
+  "human_challenge": {
+    "note": "Evaluation-only representative V4 human-game states; no human label is treated as correct.",
+    "states": 20,
+    "v5_action_differs_from_logged_v4": 18,
+    "v5_tactical_modes": {
+      "FORCED_LOSS": 12,
+      "IMMEDIATE_WIN": 0,
+      "NORMAL": 7,
+      "SAFE_DEFENSE": 1
+    }
+  },
+  "human_challenge_states": 20,
+  "human_logs_used_for_training": false,
+  "parameter_count": 1820674,
+  "strategic_exact_pass": true,
+  "symmetry": {
+    "final": {
+      "max_policy_l1": 0.5377135276794434,
+      "max_value_abs_difference": 0.4731673002243042,
+      "mean_policy_kl": 0.15084571857005358,
+      "mean_policy_l1": 0.4311708728117602,
+      "mean_value_abs_difference": 0.11948406270572118,
+      "states": 8,
+      "transformed_comparisons": 56
+    },
+    "first": {
+      "max_policy_l1": 0.37203988432884216,
+      "max_value_abs_difference": 0.9239189028739929,
+      "mean_policy_kl": 0.039293857324602346,
+      "mean_policy_l1": 0.20936124492436647,
+      "mean_value_abs_difference": 0.22747800924948283,
+      "states": 8,
+      "transformed_comparisons": 56
+    }
+  },
+  "training": {
+    "best_version": 20,
+    "cycles": 31,
+    "elapsed_seconds": 52004.825284308,
+    "games": 7936,
+    "promotions": 20,
+    "replay_size": 200000,
+    "samples": 219336
+  }
+}

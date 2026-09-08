@@ -1,0 +1,281 @@
+[
+  {
+    "max_policy_l1": 0.37203988432884216,
+    "max_value_abs_difference": 0.9239189028739929,
+    "mean_policy_kl": 0.039293857324602346,
+    "mean_policy_l1": 0.20936124492436647,
+    "mean_value_abs_difference": 0.22747800924948283,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.46274301409721375,
+    "max_value_abs_difference": 1.020676851272583,
+    "mean_policy_kl": 0.07970046225403037,
+    "mean_policy_l1": 0.3048625026962587,
+    "mean_value_abs_difference": 0.30764085054397583,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5688614249229431,
+    "max_value_abs_difference": 0.6643048524856567,
+    "mean_policy_kl": 0.13465744955465198,
+    "mean_policy_l1": 0.40337899699807167,
+    "mean_value_abs_difference": 0.22587284658636367,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5548760294914246,
+    "max_value_abs_difference": 0.5939949154853821,
+    "mean_policy_kl": 0.14310748702181236,
+    "mean_policy_l1": 0.41005491252456394,
+    "mean_value_abs_difference": 0.15721397953374044,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6056165099143982,
+    "max_value_abs_difference": 0.6479732394218445,
+    "mean_policy_kl": 0.16966639831662178,
+    "mean_policy_l1": 0.4553251697548798,
+    "mean_value_abs_difference": 0.19644157056297576,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6964277029037476,
+    "max_value_abs_difference": 0.7287028431892395,
+    "mean_policy_kl": 0.20907305074589594,
+    "mean_policy_l1": 0.4928071972514902,
+    "mean_value_abs_difference": 0.1917548647948674,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6964277029037476,
+    "max_value_abs_difference": 0.7287028431892395,
+    "mean_policy_kl": 0.20907305074589594,
+    "mean_policy_l1": 0.4928071972514902,
+    "mean_value_abs_difference": 0.1917548647948674,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.609704852104187,
+    "max_value_abs_difference": 0.809494137763977,
+    "mean_policy_kl": 0.16568177113575594,
+    "mean_policy_l1": 0.4529818519949913,
+    "mean_value_abs_difference": 0.18771820621831076,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6619906425476074,
+    "max_value_abs_difference": 0.4582546353340149,
+    "mean_policy_kl": 0.18004759959876537,
+    "mean_policy_l1": 0.45957389793225695,
+    "mean_value_abs_difference": 0.13602067210844584,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6461666226387024,
+    "max_value_abs_difference": 0.4332638382911682,
+    "mean_policy_kl": 0.1667038624041847,
+    "mean_policy_l1": 0.4514354978288923,
+    "mean_value_abs_difference": 0.13039574878556387,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.642619252204895,
+    "max_value_abs_difference": 0.7926010489463806,
+    "mean_policy_kl": 0.1710428808416639,
+    "mean_policy_l1": 0.45278602625642506,
+    "mean_value_abs_difference": 0.1985809930733272,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5258399844169617,
+    "max_value_abs_difference": 0.7249200940132141,
+    "mean_policy_kl": 0.15687826062951768,
+    "mean_policy_l1": 0.4390754412327494,
+    "mean_value_abs_difference": 0.16070097365549632,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5258399844169617,
+    "max_value_abs_difference": 0.7249200940132141,
+    "mean_policy_kl": 0.15687826062951768,
+    "mean_policy_l1": 0.4390754412327494,
+    "mean_value_abs_difference": 0.16070097365549632,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6096857190132141,
+    "max_value_abs_difference": 0.5145052075386047,
+    "mean_policy_kl": 0.16975658972348487,
+    "mean_policy_l1": 0.4582051107926028,
+    "mean_value_abs_difference": 0.122767373919487,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6096857190132141,
+    "max_value_abs_difference": 0.5145052075386047,
+    "mean_policy_kl": 0.16975658972348487,
+    "mean_policy_l1": 0.4582051107926028,
+    "mean_value_abs_difference": 0.122767373919487,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6096857190132141,
+    "max_value_abs_difference": 0.5145052075386047,
+    "mean_policy_kl": 0.16975658972348487,
+    "mean_policy_l1": 0.4582051107926028,
+    "mean_value_abs_difference": 0.122767373919487,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5620852708816528,
+    "max_value_abs_difference": 0.5921550989151001,
+    "mean_policy_kl": 0.14965470481131757,
+    "mean_policy_l1": 0.42757428171379225,
+    "mean_value_abs_difference": 0.14174074679613113,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5159458518028259,
+    "max_value_abs_difference": 0.36202239990234375,
+    "mean_policy_kl": 0.13996246989284242,
+    "mean_policy_l1": 0.41067008461271015,
+    "mean_value_abs_difference": 0.10711489511387688,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6314572095870972,
+    "max_value_abs_difference": 0.668325662612915,
+    "mean_policy_kl": 0.15232639826302016,
+    "mean_policy_l1": 0.433168213814497,
+    "mean_value_abs_difference": 0.15488461511475698,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6314572095870972,
+    "max_value_abs_difference": 0.668325662612915,
+    "mean_policy_kl": 0.15232639826302016,
+    "mean_policy_l1": 0.433168213814497,
+    "mean_value_abs_difference": 0.15488461511475698,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.592488169670105,
+    "max_value_abs_difference": 0.28157883882522583,
+    "mean_policy_kl": 0.14237546641379595,
+    "mean_policy_l1": 0.4185579408492361,
+    "mean_value_abs_difference": 0.10199705404894692,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.6051790118217468,
+    "max_value_abs_difference": 0.3481804132461548,
+    "mean_policy_kl": 0.15681409423372575,
+    "mean_policy_l1": 0.4421889414744718,
+    "mean_value_abs_difference": 0.09207221333469663,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5589908361434937,
+    "max_value_abs_difference": 0.3425583243370056,
+    "mean_policy_kl": 0.14845273829996586,
+    "mean_policy_l1": 0.42198689760906355,
+    "mean_value_abs_difference": 0.10356866887637547,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5589908361434937,
+    "max_value_abs_difference": 0.3425583243370056,
+    "mean_policy_kl": 0.14845273829996586,
+    "mean_policy_l1": 0.42198689760906355,
+    "mean_value_abs_difference": 0.10356866887637547,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5589908361434937,
+    "max_value_abs_difference": 0.3425583243370056,
+    "mean_policy_kl": 0.14845273829996586,
+    "mean_policy_l1": 0.42198689760906355,
+    "mean_value_abs_difference": 0.10356866887637547,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5589908361434937,
+    "max_value_abs_difference": 0.3425583243370056,
+    "mean_policy_kl": 0.14845273829996586,
+    "mean_policy_l1": 0.42198689760906355,
+    "mean_value_abs_difference": 0.10356866887637547,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5589908361434937,
+    "max_value_abs_difference": 0.3425583243370056,
+    "mean_policy_kl": 0.14845273829996586,
+    "mean_policy_l1": 0.42198689760906355,
+    "mean_value_abs_difference": 0.10356866887637547,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5589908361434937,
+    "max_value_abs_difference": 0.3425583243370056,
+    "mean_policy_kl": 0.14845273829996586,
+    "mean_policy_l1": 0.42198689760906355,
+    "mean_value_abs_difference": 0.10356866887637547,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5689262747764587,
+    "max_value_abs_difference": 0.469762921333313,
+    "mean_policy_kl": 0.14215785491147212,
+    "mean_policy_l1": 0.41697551416499273,
+    "mean_value_abs_difference": 0.14030538499355316,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5689262747764587,
+    "max_value_abs_difference": 0.469762921333313,
+    "mean_policy_kl": 0.14215785491147212,
+    "mean_policy_l1": 0.41697551416499273,
+    "mean_value_abs_difference": 0.14030538499355316,
+    "states": 8,
+    "transformed_comparisons": 56
+  },
+  {
+    "max_policy_l1": 0.5377135276794434,
+    "max_value_abs_difference": 0.4731673002243042,
+    "mean_policy_kl": 0.15084571857005358,
+    "mean_policy_l1": 0.4311708728117602,
+    "mean_value_abs_difference": 0.11948406270572118,
+    "states": 8,
+    "transformed_comparisons": 56
+  }
+]

@@ -130,7 +130,7 @@ def should_promote(arena, tactical, threshold):
     )
 
 
-def aggregate_self_play(games):
+def aggregate_self_play(games, examples=None):
     total_moves = sum(game["game_length"] for game in games)
     keys = (
         "immediate_win_opportunities", "immediate_win_taken", "defense_threat_states",
@@ -141,7 +141,7 @@ def aggregate_self_play(games):
         "network_value_count", "network_value_abs_ge_0_9", "network_value_abs_ge_0_99",
     )
     totals = {key: int(sum(game[key] for game in games)) for key in keys}
-    return {
+    summary = {
         "new_games": len(games), "new_samples": total_moves,
         "initial_start_games": sum(game["start_type"] == "initial" for game in games),
         "territory_start_games": sum(game["start_type"] == "territory_midgame" for game in games),
@@ -162,6 +162,11 @@ def aggregate_self_play(games):
         "value_abs_ge_0_9_fraction": totals["network_value_abs_ge_0_9"] / max(1, totals["network_value_count"]),
         "value_abs_ge_0_99_fraction": totals["network_value_abs_ge_0_99"] / max(1, totals["network_value_count"]),
     }
+    if examples is not None:
+        targets = np.asarray([example.value for example in examples], dtype=np.float32)
+        summary["value_target_mean"] = float(targets.mean())
+        summary["value_target_std"] = float(targets.std())
+    return summary
 
 
 def _checkpoint_payload(state, config):
@@ -269,7 +274,7 @@ def run_cycle(run_dir, state, config, device, start_pool, arena_openings):
     selfplay_seconds = time.perf_counter() - selfplay_started
     if not examples:
         raise RuntimeError("V5 self-play generated no samples")
-    behavior = aggregate_self_play(games)
+    behavior = aggregate_self_play(games, examples)
     if behavior["illegal_violations"]:
         raise RuntimeError("V5 self-play illegal-action violation")
     if network_digest(state.best_network) != before_digest:
@@ -370,7 +375,7 @@ def run_throughput_measurement(network, temperature, config, device, rng, start_
     started = time.perf_counter()
     examples, results, inference = generate_self_play(network, temperature, config, device, rng, start_pool, games)
     elapsed = time.perf_counter() - started
-    behavior = aggregate_self_play(results)
+    behavior = aggregate_self_play(results, examples)
     return {
         "games": len(results), "positions": len(examples), "elapsed_seconds": elapsed,
         "games_per_second": len(results) / elapsed, "positions_per_second": len(examples) / elapsed,

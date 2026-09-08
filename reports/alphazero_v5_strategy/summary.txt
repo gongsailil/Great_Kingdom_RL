@@ -1,0 +1,23 @@
+AlphaZero V5 strategy integrated run
+====================================
+Cycles: 31
+BEST version/promotions: 20 / 20
+Generated games/samples: 7936 / 219336
+Replay size: 200000
+Automatic classification: AUTO_PASS_PENDING_HUMAN
+
+Final paired arenas (V5 wins / games):
+- v2_iter375: 100/100 (100.0%), paired 95% CI [100.0%, 100.0%]
+- v3_iter50: 100/100 (100.0%), paired 95% CI [100.0%, 100.0%]
+- v4_iter50: 100/100 (100.0%), paired 95% CI [100.0%, 100.0%]
+
+Fixed tactical suite: PASS
+Human-log challenge states: 20
+Training endings: capture 7702, PASS-score 234
+Training territory-state fraction: 41.0%
+Training forced-loss entry rate: 94.3%
+  (includes the losing side's inevitable final forced-loss root before capture)
+Final calibration T: 1.3098
+Symmetry mean policy L1 first/final: 0.2094 / 0.4312
+Symmetry mean value |delta| first/final: 0.2275 / 0.1195
+Human game logs were evaluation-only and were never inserted into replay.
